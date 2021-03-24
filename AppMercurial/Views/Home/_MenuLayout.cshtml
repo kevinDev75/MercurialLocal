@@ -1,0 +1,102 @@
+﻿@using Mercurial.CrossCuting.Utilities;
+@model List<Mercurial.DomainEntities.Home.ModelMenu>
+<br />
+@{
+    if (Model != null)
+    {
+        foreach (var item in Model.Where(x => x.NumNivel == "1"))
+        {
+            
+
+                <label class="sidebar-label pd-x-10 mg-t-20 op-3 FontMenu">@item.Description</label>
+                <ul class="br-sideleft-menu">
+                    @foreach (var Menu in Model.Where(x => x.NumNivel == "2" && x.idModule == item.idModule))
+                    {
+                        var countSubMenu = Model.Where(y => y.IdSubMenu == Menu.IdMenu).Count();
+                        var stylMenu = countSubMenu == 0 ? "br-menu-link" : "br-menu-link with-sub pointer";
+                        <li class="br-menu-item">
+                            @if (countSubMenu == 0)
+                            {
+                                <a class="@stylMenu" style="cursor: pointer;">
+                                    <i class="menu-item-icon icon @Menu.icon tx-20"></i>
+                                    <span class="menu-item-label">@Html.ActionLink(Menu.Description, Menu.View, Menu.Control, null, new { @class = "page-scroll" })</span>
+                                </a><!-- br-menu-link -->
+                            }
+                            else
+                            {
+                                <a class="@stylMenu">
+                                    <i class="menu-item-icon icon @Menu.icon tx-20"></i>
+                                    <span class="menu-item-label">@Menu.Description</span>
+                                </a><!-- br-menu-link -->
+                                <ul class="br-menu-sub">
+                                    @foreach (var SubMenu in Model.Where(z => z.IdSubMenu == Menu.IdMenu && z.NumNivel == "3"))
+                                    {
+                                        @*<li class="sub-item">@Html.ActionLink((String.IsNullOrEmpty(SubMenu.Description) ? "nulo" : SubMenu.Description),
+                                            (String.IsNullOrEmpty(SubMenu.View) ? "Main" : SubMenu.View),
+                                            (String.IsNullOrEmpty(SubMenu.Control) ? "Home" : SubMenu.Control),
+                                            null,
+                                            new { @class = "sub-link" })</li>*@
+
+
+                                        <li class="sub-item">
+                                            <a class="sub-link" href="@Url.Action(SubMenu.View,SubMenu.Control, new { id = UrlParameter.Optional })">@SubMenu.Description</a>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+
+                        </li>
+                    }
+                </ul>
+            
+
+        }
+    }
+}
+
+<!--<ul class="br-sideleft-menu">
+    <li class="br-menu-item">
+        <a class="br-menu-link with-sub pointer show-sub">
+            <i class="menu-item-icon icon mdi-action-assignment-ind tx-20"></i>
+            <span class="menu-item-label">Riesgos Internos</span>
+        </a>-->
+<!-- br-menu-link -->
+<!--<ul class="br-menu-sub" style="display: block;">
+    <li class="sub-item">
+        <a class="sub-link" href="/Services/WorkIntegrity">Integridad Laboral</a>
+    </li>
+    <li class="sub-item">
+        <a class="sub-link" href="/Services/Ciberseguridad">Ciberseguridad</a>
+    </li>
+    <li class="sub-item">
+        <a class="br-menu-link with-sub pointer show-sub" href="#">
+            <i class="menu-item-icon icon mdi-action-assignment-ind tx-20"></i>
+            <span class="menu-item-label">SAFETY &amp; SECURITY</span>
+        </a>-->
+<!-- br-menu-link -->
+<!--<ul class="br-menu-sub" style="display: block;">
+                <li class="sub-item">
+                    <a class="sub-link" href="/Services/Ciberseguridad">Barrido</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</li>
+<li class="br-menu-item">
+    <a class="br-menu-link with-sub pointer">
+        <i class="menu-item-icon icon mdi-action-event tx-20"></i>
+        <span class="menu-item-label">Riesgos Externos</span>
+    </a>-->
+<!-- br-menu-link -->
+<!--<ul class="br-menu-sub">
+            <li class="sub-item">
+                <a class="sub-link" href="/Diagnostico.aspx">Mapa de Riesgos</a>
+            </li>
+            <li class="sub-item">
+                <a class="sub-link" href="/Tarifa.aspx/MenuLayout">Gestion de Riesgos</a>
+            </li>
+        </ul>
+
+    </li>
+</ul>-->

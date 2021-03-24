@@ -1,0 +1,237 @@
+﻿
+@{
+    ViewBag.Title = "WorkIntegrity";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="br-mainpanel">
+    <div class="br-pageheader">
+
+    </div>
+    <div class="br-pagetitle">
+        <i class="icon ion-ios-book-outline"></i>
+        <div>
+            <h4 id="lbl_titulo" data-i18n="users">Usuarios</h4>
+        </div>
+    </div>
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+
+            <div class="table-wrapper">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h6 class="tx-inverse tx-uppercase tx-bold" id="lbl_listado_registro" data-i18n="list-users"> Listado de usuarios</h6>
+                    </div>
+                    <div class="col-sm-2">
+                        @*<a href="#" class="btn btn-dark btn-icon rounded-circle" data-toggle="modal" data-target="#modal_register" style="float: right;"><div><i class="fa fa-plus"></i></div></a>*@
+                        <a href="#" onclick="showModal()" class="btn btn-dark btn-icon rounded-circle" data-toggle="modal" style="float: right;"><div><i class="fa fa-plus"></i></div></a>
+
+                    </div>
+                </div>
+                <br />
+                <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_data" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th class="wd-10p" id="lbl_table_codigo" data-i18n="code">Código</th>
+                            <th class="wd-30p" id="lbl_table_servicios" data-i18n="user-name-table">Nombre Usuario</th>
+                            <th class="wd-25p" id="lbl_table_enviado_por" data-i18n="email-table">Correo</th>
+                            <th class="wd-15p" id="lbl_table_fecha_hora" data-i18n="document-type-table">Tipo Doc.</th>
+                            <th class="wd-10p" id="lbl_table_estado" data-i18n="phone-table">Telefono</th>
+                            <th class="wd-10p" id="lbl_table_estado" data-i18n="state">Estado</th>
+                            <th class="wd-10p" id="lbl_table_accion" data-i18n="action">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl_list_work_integrity">
+                        <!-- DYNAMIC -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal Register -->
+        <div id="modal_register" class="modal fade">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content tx-size-sm">
+                    <div class="modal-header pd-x-20">
+                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="lbl_modal_register_registro_verificacion" data-i18n="user-register">Registro de usuario</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body pd-20">
+
+                        <div class="col-lg-12">
+                            <div class="row">
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label data-i18n="country">Pais: </label> <span class="tx-danger">*</span>
+                                        <select class="form-control" id="sl_pais" data-placeholder="-" required="">
+                                            <option>[Seleccionar]</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label data-i18n="enterprise">Empresa: </label><span class="tx-danger">*</span>
+                                        <select class="form-control" id="sl_empresa" data-placeholder="-" required="">
+                                            <option>[Seleccionar]</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="row">
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label data-i18n="user-name">Nombre de usuario: </label> <span class="tx-danger">*</span>
+                                        <input type="text" id="txt_nombre_usuario" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Password: <span class="tx-danger">*</span></label>
+                                        <input type="password" id="txt_password" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="row">
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label data-i18n="last-name">Apellido paterno: </label><span class="tx-danger">*</span>
+                                        <input type="text" id="txt_apellido_paterno" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label data-i18n="m-last-name">Apellido materno: </label><span class="tx-danger">*</span>
+                                        <input type="text" id="txt_apellido_materno" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="row">
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label data-i18n="name">Nombres: </label><span class="tx-danger">*</span>
+                                        <input type="text" id="txt_nombres" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Email: <span class="tx-danger">*</span></label>
+                                        <input type="text" id="txt_email" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="row">
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label data-i18n="document-type">Tipo documento: </label><span class="tx-danger">*</span>
+                                        <select class="form-control" id="sl_tipo_documento" data-placeholder="-" required="">
+                                            <option>[Seleccionar]</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label data-i18n="document-number">Número de documento:</label> <span class="tx-danger">*</span>
+                                        <input type="text" id="txt_num_documento" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="row">
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label data-i18n="phone-number">Número de teléfono: </label><span class="tx-danger">*</span>
+                                        <input type="number" id="txt_num_telefono" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label data-i18n="role">Rol: </label><span class="tx-danger">*</span>
+                                        <select class="form-control" id="sl_rol" data-placeholder="-" required="">
+                                            <option>[Seleccionar]</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="form-control-label" id="lbl_modal_register_RiskManagement_Tipo Alerta">Sucursal: </label> <span class="tx-danger">*</span>
+                                        <select class="form-control" data-placeholder="-" id="sl_modal_register_sucursal" required>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="ckbox">
+                                        <input type="checkbox" checked="" id="check_estado"><span id="lbl_estado" data-i18n="active">Activo</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <a class="btn btn-primary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium text-white" onclick="saveData()" id="btn_guardar_usuario" data-i18n="save">Guardar</a>
+                        </div>
+
+
+                    </div><!-- modal-body -->
+
+                </div>
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+
+
+    </div>
+
+</div>
+<script>
+    var urlGetDocumentType = '@Url.Action("GetDocumentType", "Users")';
+    var urlSaveUser = '@Url.Action("SaveUser", "Users")';
+    var urlGetBranchOffices = '@Url.Action("GetBranchOffices", "Services")';
+    var urlGetListCompanies = '@Url.Action("GetListCompanies", "Users")';
+    var urlGetListUsers = '@Url.Action("GetUsers", "Users")';
+    var urlGetListCountries = '@Url.Action("GetCountries", "Users")';
+    var urlGetPayMethod = '@Url.Action("GetPayMethod", "Services")';
+    var urlGetRoles = '@Url.Action("GetRoles", "Users")';
+    var urlGetListBranchOffice = '@Url.Action("getListBranchOffice", "Administration")';
+</script>
+@Scripts.Render("~/bundles/users")

@@ -1,0 +1,17 @@
+Mercurial.CrossCuting.Log.LoggerService/obj/
+Mercurial.CrossCuting.Utilities/obj/
+Mercurial.Domain.Interfaces/obj/
+Mercurial.Domain.Service/obj/
+Mercurial.Infrastructure.Data/obj/
+AppMercurial/obj/
+AppMercurial/bin/
+AppMercurial/AppMercurial.csproj.user
+Mercurial.Infrastructure.Data/bin/
+packages/
+.vs/
+Mercurial.CrossCuting.Log.LoggerService/bin/
+Mercurial.CrossCuting.Utilities/bin/
+Mercurial.Domain.Interfaces/bin/
+Mercurial.Domain.Service/bin/
+Mercurial.DomainEntities/bin/
+Mercurial.DomainEntities/obj/

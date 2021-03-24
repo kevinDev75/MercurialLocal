@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewBag.Title = "FormatoAnalisisRiesgo03Brasil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>FormatoAnalisisRiesgo03Brasil</h2>
+
+<div class="br-mainpanel">
+    <div class="br-pageheader">
+
+    </div>
+    <div class="br-pagetitle">
+        <i class="icon ion-ios-book-outline"></i>
+        <div>
+            <h4 id="lbl_titulo">FICHA ANÁLISE DE RISCO 03 - PAIS >> BRASIL</h4>
+        </div>
+    </div>
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+            <!-- I.	RELATÓRIO DE ANTECEDENTES DA CRIMINAIS -->
+            <div class="row mg-b-25">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <h4 style="text-align: center ;">I. RELATÓRIO DE ANTECEDENTES DA CRIMINAIS E JUDICIAIS</h4>
+                </div>
+            </div>
+
+            <!-- 1.1 INFORMAÇÕES BÁSICAS AO CANDIDATO -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">1.1 INFORMAÇÕES BÁSICAS AO CANDIDATO</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+
+                <!-- Formulary -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Nome:<span class="tx-danger"> *</span>
+                        </label>
+                        <input type="text" id="txt_1_2_ofac" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>CPF:<span class="tx-danger"> *</span>
+                        </label>
+                        <input type="text" id="txt_1_2_interpol" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Endereço:<span class="tx-danger"> *</span>
+                        </label>
+                        <input type="text" id="txt_1_2_onu" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+            <!-- GUARDAR -->
+            <div class="row mg-b-25">
+                <div class="col-lg-9">
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group mg-b-10-force">
+                        <label><span class="tx-danger">&nbsp;</span></label>
+                        <div class="input-group">
+                            <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_guardar">  <i class="fa fa-save"></i> <span> Salvar </span> </button>
+                        </div>
+                        <br />
+                        <div class="input-group">
+                            <button class="btn btn-oblong btn-dark btn-block mg-b-2" id="btn_generar"><i class="fa fa-save"></i>   <span> Gerar </span> </button>
+                        </div>
+                    </div>
+                    <!-- Salto -->
+                    <br>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- Modal Upload -->
+<div id="modal_file" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bd-0 tx-14">
+            <div class="modal-header pd-y-20 pd-x-25">
+                <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="lbl_title_modal_upload">Adjuntar CSV</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body pd-25">
+                    <div class="d-flex mg-b-30">
+                        <div class="parsley-input" style="width:100%">
+                            <label>Seleccionar archivo: <span class="tx-danger">*</span><span class="tx-success"></span></label>
+                            <input type="file" id="file_csv" class="form-control" placeholder="-" required>
+                        </div><!-- form-group -->
+                    </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" id="btn_guardar_csv">Guardar</button>
+                <button type="button" class="btn btn-secondary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" data-dismiss="modal">Cerrar</button>
+            </div>
+
+            <div class="modal-body">
+                <hr />
+                <span id="txt_message_error" class="tx-danger"></span>
+            </div>
+
+        </div>
+    </div><!-- modal-dialog -->
+</div><!-- modal -->
+
+<script>
+    var urlSaveorUpdateIntegrity03Brasil = '@Url.Action("SaveorUpdateIntegrity03Brasil", "Services")';
+    var UrlGetStatusCivil = '@Url.Action("getStatusCivil", "Services", new { IdPais = 2 })';
+    var UrlGetDocumentType = '@Url.Action("GetDocumentType", "Services", new { IdPais = 2 })';
+    var urlGetRiskAnalysisFormat03Brasil= '@Url.Action("GetRiskAnalysisFormat03Brasil", "Services")';
+    var urlGenerateDocument = '@Url.Action("GenerateDocumentFinale", "Services")';
+    var urlDownloadBase64 = '@Url.Action("GetPreviewFileBase64", "Services")';
+    var urlGetDataCSVBrasil  = '@Url.Action("GetDataCSVBrasil", "Services")';
+</script>
+
+@Scripts.Render("~/bundles/analisis_riesgo_03_brasil")

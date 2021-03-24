@@ -1,0 +1,43 @@
+﻿using AppMercurial.Tags;
+using Mercurial.CrossCuting.Utilities;
+using Mercurial.Domain.Interfaces.HomeModule;
+using Mercurial.Domain.Service;
+using Mercurial.Domain.Service.HomeModule;
+using Mercurial.DomainEntities;
+using Mercurial.DomainEntities.Home;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.UI.WebControls;
+
+namespace AppMercurial.Controllers
+{
+    public class LoginController : Controller
+    {
+        public readonly ILoginService _ILoginService;
+
+        public LoginController()
+        {
+            _ILoginService = new LoginService();
+        }
+
+
+        [HttpPost]
+        public ActionResult Login(LoginRequest loginRequest)
+        {
+            ApiResponse apiResponse = _ILoginService.Authenticate(loginRequest);
+            User UserResponse = JsonConvert.DeserializeObject<User>(apiResponse.Data.ToString());
+            if (UserResponse != null) SessionHelper.AddUserToSession(UserResponse.IdUser);
+
+            return Json(apiResponse);
+        }
+        [NoLogin]
+        public ActionResult Index()
+        {
+            return View();
+        }
+    }
+}

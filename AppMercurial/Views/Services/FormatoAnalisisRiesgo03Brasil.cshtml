@@ -1,0 +1,820 @@
+﻿
+@{
+    ViewBag.Title = "FormatoAnalisisRiesgo03Brasil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>FormatoAnalisisRiesgo03Brasil</h2>
+
+<div class="br-mainpanel">
+    <div class="br-pageheader">
+
+    </div>
+    <div class="br-pagetitle">
+        <i class="icon ion-ios-book-outline"></i>
+        <div>
+            <h4 id="lbl_titulo">FICHA ANÁLISE DE RISCO 03 - PAIS >> BRASIL</h4>
+        </div>
+    </div>
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+            <!-- I.	RELATÓRIO DE ANTECEDENTES DA CRIMINAIS -->
+            <div class="row mg-b-25">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <h4 style="text-align: center ;">I.	RELATÓRIO DE ANTECEDENTES DA CRIMINAIS</h4>
+                    <a href="#" id="btn_upload" class="btn btn-dark btn-icon rounded-circle" style="float: right;" data-toggle="modal" data-target="#modal_upload"><div><i class="icon ion-upload"></i></div></a>
+                </div>
+            </div>
+
+            <!-- INFORMAÇÕES BÁSICAS AO CANDIDATO -->
+            @*<div class="row mg-b-25 border_content" hidden>
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">1.1 INFORMAÇÕES BÁSICAS AO CANDIDATO</th>
+                            </tr>
+
+                        </thead>
+                    </table>
+                    <br />
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Nome: <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_1_1_nombre" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Registro Geral: <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_1_1_registro_general" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Cidade de Nascimento: <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_1_1_lugar_nacimiento" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Dados de Nascimento: <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_1_1_fecha_nacimiento" class="form-control" placeholder="" required>
+                    </div>
+                    <br />
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Nacionalidade: <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_1_1_nacionalidad" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Idade: <span class="tx-danger">*</span></label>
+                        <input type="number" id="txt_1_1_edad" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Estado Civil: <span class="tx-danger">*</span></label>
+                        <select id="sl_1_1_estado_civil" class="form-control ClassStatusCivil" data-placeholder="Choose Browser">
+                        </select>
+                    </div>
+                </div>
+            </div>*@
+
+
+
+
+
+            <!-- 1.2 SARLAFT - LISTAS RESTRITIVAS INTERNACIONAIS -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">1.2 SARLAFT - LISTAS RESTRITIVAS INTERNACIONAIS</th>
+
+                            </tr>
+
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Sistema de Gestãode Riscos de Lavagem de Ativos e Financiamento do Terrorismo</b> <span class="tx-danger">*</span></label>
+
+                    </div>
+                </div>
+
+                <!-- Formulary -->
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>
+                            OFAC:
+                            Lista Clinton <span class="tx-danger">*</span>
+                        </label>
+                        <input type="text" id="txt_1_2_ofac" class="form-control" placeholder="SEM CONCIDÊNCIAS" required>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            INTERPOL:
+                            Organización Internacional de Policía Criminal <span class="tx-danger">*</span>
+                        </label>
+                        <input type="text" id="txt_1_2_interpol" class="form-control" placeholder="SEM CONCIDÊNCIAS" required>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            ONU :
+                            Consejo de Seguridad de las Naciones Unidas <span class="tx-danger">*</span>
+                        </label>
+                        <input type="text" id="txt_1_2_onu" class="form-control" placeholder="SEM CONCIDÊNCIAS" required>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <!-- 1.3	LISTAS RESTRITIVAS NACIONAIS -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;"> 1.3 LISTAS RESTRITIVAS NACIONAIS </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+                <!-- Formulary -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>PODER JUDICIÁRIO <span class="tx-danger">* A Polícia Civil informa:  </span></label>
+                        @*<input type="text" id="txt_1_1_nombre" class="form-control" placeholder="-" required>*@
+                        <label class="rdiobox">
+                            <input name="radio_1_2_poder_juridico_civil" type="radio" value="1" checked>
+                            <span>Não tem problemas pendentes com as autoridades judiciais</span>
+                        </label>
+                        <label class="rdiobox">
+                            <input name="radio_1_2_poder_juridico_civil" type="radio" value="2">
+                            <span>O cidadão tem</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label><b>MANDADO DE PRISÃO - Ordem escrita emanada da autoridade competente, determinando a prisão da pessoa em virtude de condenação criminal.</b> <span class="tx-danger">*</span></label>
+                        <input type="file" id="file_1_2_poder_juridico_civil" class="form-control" placeholder="-" required>
+                        <div class="row" style="margin-top:4px" id="PreviewPoderJuridicoCivil">
+                            <div class="col-lg-5">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Formulary -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>PODER JUDICIÁRIO <span class="tx-danger">* A Polícia Federal informa:  </span></label>
+                        @*<input type="text" id="txt_1_1_nombre" class="form-control" placeholder="-" required>*@
+                        <label class="rdiobox">
+                            <input name="radio_1_2_poder_juridico_federal" type="radio" value="1" checked>
+                            <span>Não tem problemas pendentes com as autoridades judiciais</span>
+                        </label>
+                        <label class="rdiobox">
+                            <input name="radio_1_2_poder_juridico_federal" type="radio" value="2">
+                            <span>O cidadão tem</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>
+                            <b>
+                                LAVA JATO - Conjunto de investigações em andamento pela Polícia Federal do Brasil.
+                                SEM plano de fundo - Relatório anexado (informações de corte de relatório anexadas manualmente).
+                            </b> <span class="tx-danger">*</span>
+                        </label>
+                        <input type="file" id="file_1_2_poder_juridico_federal" class="form-control" placeholder="-" required>
+                        <div class="row" style="margin-top:4px" id="PreviewPoderJuridicoFederal">
+                            <div class="col-lg-5">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Formulary -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>PODER EXECUTIVO <span class="tx-danger">* CVM - Comissão de valores imobiliários informa:  </span></label>
+                        <input type="text" id="txt_1_2_poder_ejecutivo" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>
+                            <b>
+                                Fiscaliza, normatiza, disciplina e desenvolve o mercado de valores mobiliários.
+                                SEM plano de fundo - Relatório anexado (informações de corte de relatório anexadas manualmente).
+                            </b> <span class="tx-danger">*</span>
+                        </label>
+                        <input type="file" id="file_1_2_poder_ejecutivo" class="form-control" placeholder="-" required>
+                        <div class="row" style="margin-top:4px" id="PreviewPoderEjecutivo">
+                            <div class="col-lg-5">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Formulary -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>MEI – Micro empreendedor individual <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_1_2_mei" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label><b>Informações de corte de relatório anexadas manualmente.</b> <span class="tx-danger">*</span></label>
+                        <input type="file" id="file_1_2_mei" class="form-control" placeholder="-" required>
+                        <div class="row" style="margin-top:4px" id="PreviewMei">
+                            <div class="col-lg-5">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Formulary -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>PEP - Pessoa Exposta Politicamente <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_1_2_pep" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label><b> Informações de corte de relatório anexadas manualmente.</b> <span class="tx-danger">*</span></label>
+                        <input type="file" id="file_1_2_pep" class="form-control" placeholder="-" required>
+                        <div class="row" style="margin-top:4px" id="PreviewPep">
+                            <div class="col-lg-5">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Formulary -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>FUNCIONÁRIO PÚBLICO <span class="tx-danger">* </span></label>
+                        <input type="text" id="txt_1_2_funcionario_publico" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label><b> Informações de corte de relatório anexadas manualmente.</b> <span class="tx-danger">*</span></label>
+                        <input type="file" id="file_1_2_funcionario_publico" class="form-control" placeholder="-" required>
+                        <div class="row" style="margin-top:4px" id="PreviewFuncionarioPublico">
+                            <div class="col-lg-5">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!-- TEST CONFIABILIDAD -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">II. TESTE DE CONFIABILIDADE </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+                <!-- Contador de registro -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label><b>SELECIONE O ANEXO:</b> <span class="tx-danger">*</span></label>
+                        <input type="file" id="file_2_0_test_confiabilidad" class="form-control" placeholder="-" required>
+                        <div class="row" style="margin-top:4px" id="PreviewTestConfiabilidad">
+                            <div class="col-lg-5">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="nuevo_formato">
+
+                <!-- I.	INFORME ANTECEDENTES JUDICIALES -->
+                <div class="row mg-b-25">
+                    <!-- Title -->
+                    <div class="col-lg-12">
+                        <h4 style="text-align: center;">I. Dados Pessoais do Avaliado</h4>
+                    </div>
+                </div>
+
+                <!-- DATOS BASICOS DEL CANDIDATO -->
+                <div class="row mg-b-25 border_content">
+                    <!-- FORMULARIO -->
+                    <div class="col-lg-7">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">I. Dados Pessoais do Avaliado</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- Salto -->
+                        <br />
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>
+                                    NOME COMPLETO: <span class="tx-danger">*</span>
+                                </label>
+                                <input type="text" id="txt_1_nombres_apellidos" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>CPF: <span class="tx-danger">*</span></label>
+                                <input type="text" id="txt_1_nro_documento" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>LOCAL DE NASCIMENTO: <span class="tx-danger">*</span></label>
+                                <input type="text" id="txt_1_lugar_nacimiento" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>DATA DE NASCIMENTO: <span class="tx-danger">*</span></label>
+                                <input type="text" id="txt_1_fecha_nacimiento" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>NACIONALIDADE: <span class="tx-danger">*</span></label>
+                                <input type="text" id="txt_1_nacionalidad" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>IDADE: <span class="tx-danger">*</span></label>
+                                <input type="number" id="txt_1_edad" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>ESTADO CIVIL: <span class="tx-danger">*</span></label>
+                                <select id="sl_1_estado_civil" class="form-control ClassStatusCivil" data-placeholder="Choose Browser">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>Registro Geral: <span class="tx-danger">*</span></label>
+                                <input type="text" id="txt_1_registro_general" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ESTADISTICA -->
+                    <div class="col-lg-5">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">RESULTADO FINAL</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- Salto -->
+                        <br />
+
+
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label style="font-size:15pt;">Nivel de Risco</label>
+                                        <label class="rdiobox">
+                                            <input name="radioNivel" type="radio" value="1" checked>
+                                            <span><b style="color: red; font-size:12pt;">Alto</b></span>
+                                        </label>
+                                        <label class="rdiobox">
+                                            <input name="radioNivel" type="radio" value="2">
+                                            <span><b style="color: darkgoldenrod; font-size:12pt;">Medio</b></span>
+                                        </label>
+                                        <label class="rdiobox">
+                                            <input name="radioNivel" type="radio" value="3">
+                                            <span><b style="color: limegreen; font-size:12pt;">Baixo</b></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label>
+                                        <label class="rdiobox">
+                                            <input name="radioCalificacion" type="radio" value="1" checked>
+                                            <span><b style="font-size:12pt;">Recomendado</b></span>
+                                        </label>
+                                        <label class="rdiobox">
+                                            <input name="radioCalificacion" type="radio" value="2">
+                                            <span><b style="font-size:12pt;">Ñao Recomendado</b></span>
+                                        </label>
+                                        <label class="rdiobox">
+                                            <input name="radioCalificacion" type="radio" value="3">
+                                            <span><b style="font-size:12pt;">Em Observação</b></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Salto -->
+                        <br />
+                        <br />
+
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Escala Sinceridade: <span class="tx-danger">* 1 - 100</span></label>
+                                        <input type="number" id="txt_escala_sinceridad" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Nivel de Risco: <span class="tx-danger">* 1 - 100</span></label>
+                                        <input type="number" id="txt_nivel_riesgo" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label>
+                                        <div class="input-group">
+                                            <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_buscar" onclick="calculateGraphic()"><span>Calcular</span> </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div class="col-lg-12">
+                            <div id="container-graphic"></div>
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">
+                                        II. Análise de antecedentes pessoais nacionais
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>
+                                PODER JUDICIÁRIO - A Polícia Civil informa: <span class="tx-danger">*</span>
+                            </label>
+                            <input type="text" id="txt_policia_civil_informa" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>
+                                PODER JUDICIÁRIO - A Polícia Federal informa: <span class="tx-danger">*</span>
+                            </label>
+                            <input type="text" id="txt_policia_federal_informa" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>
+                                PODER EXECUTIVO - CVM - Comissão de valores imobiliários informa: <span class="tx-danger">*</span>
+                            </label>
+                            <input type="text" id="txt_comision_inmobiliaria_informa" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>
+                                INFORMAÇÕES ADICIONAIS - MEI – Micro emprendedor individual : <span class="tx-danger">*</span>
+                            </label>
+                            <input type="text" id="txt_micro_emprendedor_individual" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">
+                                        III. Análise de antecedentes pessoais internacionais
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>
+                                OFAC: <span class="tx-danger">*</span>
+                            </label>
+                            <input type="text" id="txt_ofac" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>
+                                INTERPOL: <span class="tx-danger">*</span>
+                            </label>
+                            <input type="text" id="txt_interpol" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>
+                                ONU: <span class="tx-danger">*</span>
+                            </label>
+                            <input type="text" id="txt_onu" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>
+                                INFORMAÇÕES ADICIONAIS: <span class="tx-danger">*</span>
+                            </label>
+                            <input type="text" id="txt_informes_adicionales" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">
+                                        VI. Análise de Teste de confiabilidade
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <input type="text" id="txt_analisis_test_antes_plus" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">
+                                        VIII. Conclusão
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <textarea class="col-lg-12" id="txt_conclusion" rows="4">Tras el análisis integral se concluye que el nivel de riesgo del evaluado es: medio, bajo, alto. Es por ello que Recomendamos /No recomendamos su contratación o continuidad de servicio. La evaluación, debido a los factores de confiabilidad o ausencia de antecedes, no son concluyente por lo que se recomienda profundizar en el análisis o cruzar información con su desempeño y vinculaciones laborales. 
+                                </textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">IX. Anexos</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <!-- Contador de registro -->
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label><b>SELECCIONAR ARCHIVO:</b> <span class="tx-danger">*</span></label>
+
+                            <input type="file" id="file_anexo" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group mg-b-10-force">
+                            <label><span class="tx-danger">&nbsp;</span></label>
+                            <div class="input-group">
+                                <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_anexo_agregar"><i class="fa fa-plus-circle"></i> <span>Agregar</span> </button>
+                            </div>
+                        </div>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+                    <!-- Tabla -->
+                    <div class="col-lg-12">
+                        <div class="table-wrapper">
+                            <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_anexo_list" style="width: 100%;">
+                                <thead class="font-size-8">
+                                    <tr>
+                                        <th class="wd-5p">INDEX</th>
+                                        <th class="wd-15p">NOMBRE</th>
+                                        <th class="wd-15p">ACCIÓN</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <!-- GUARDAR -->
+            <div class="row mg-b-25">
+                <div class="col-lg-9">
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group mg-b-10-force">
+                        <label><span class="tx-danger">&nbsp;</span></label>
+                        <div class="input-group">
+                            <button class="btn btn-oblong btn-warning btn-block mg-b-2"  id="btn_guardar">  <i class="fa fa-save"></i> <span> Salvar </span> </button>
+                        </div>
+                        <br />
+                        <div class="input-group">
+                            <button class="btn btn-oblong btn-dark btn-block mg-b-2"     id="btn_generar"><i class="fa fa-save"></i>   <span> Gerar </span> </button>
+                        </div>
+                    </div>
+                    <!-- Salto -->
+                    <br>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- Modal Upload -->
+<div id="modal_file" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bd-0 tx-14">
+            <div class="modal-header pd-y-20 pd-x-25">
+                <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="lbl_title_modal_upload">Adjuntar CSV</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body pd-25">
+                    <div class="d-flex mg-b-30">
+                        <div class="parsley-input" style="width:100%">
+                            <label>Seleccionar archivo: <span class="tx-danger">*</span><span class="tx-success"></span></label>
+                            <input type="file" id="file_csv" class="form-control" placeholder="-" required>
+                        </div><!-- form-group -->
+                    </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" id="btn_guardar_csv">Guardar</button>
+                <button type="button" class="btn btn-secondary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" data-dismiss="modal">Cerrar</button>
+            </div>
+
+            <div class="modal-body">
+                <hr />
+                <span id="txt_message_error" class="tx-danger"></span>
+            </div>
+
+        </div>
+    </div><!-- modal-dialog -->
+</div><!-- modal -->
+
+<script>
+    var urlSaveorUpdateIntegrity03Brasil = '@Url.Action("SaveorUpdateIntegrity03Brasil", "Services")';
+    var UrlGetStatusCivil = '@Url.Action("getStatusCivil", "Services", new { IdPais = 2 })';
+    var UrlGetDocumentType = '@Url.Action("GetDocumentType", "Services", new { IdPais = 2 })';
+    var urlGetRiskAnalysisFormat03Brasil= '@Url.Action("GetRiskAnalysisFormat03Brasil", "Services")';
+    var urlGenerateDocument = '@Url.Action("GenerateDocumentFinale", "Services")';
+    var urlDownloadBase64 = '@Url.Action("GetPreviewFileBase64", "Services")';
+    var urlGetDataCSVBrasil  = '@Url.Action("GetDataCSVBrasil", "Services")';
+</script>
+
+@Scripts.Render("~/bundles/analisis_riesgo_03_brasil")

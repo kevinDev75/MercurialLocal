@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
+    <meta name="author" content="ThemePixels">
+
+    <title>Mercurio</title>
+
+    @Styles.Render("~/Content/fortawesome")
+    @Styles.Render("~/Content/ionicons")
+    @Styles.Render("~/Content/bracket")
+    @Styles.Render("~/Content/Login")
+    @Styles.Render("~/Content/sweetalert")
+    @Styles.Render("~/Content/sweetalert-minimal")
+
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery-ui")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/sweetalert")
+    @Scripts.Render("~/bundles/jquery.i18n")
+    @Scripts.Render("~/bundles/jquery.i18n.messagestore")
+    @Scripts.Render("~/bundles/jquery.i18n.fallbacks")
+    @Scripts.Render("~/bundles/jquery.i18n.language")
+    @Scripts.Render("~/bundles/jquery.i18n.parser")
+    @Scripts.Render("~/bundles/jquery.i18n.emitter")
+    @Scripts.Render("~/bundles/jquery.i18n.emitter.bidi")
+
+</head>
+
+<body>
+
+    <div class="d-flex align-items-center justify-content-center bg-br-primary ht-100v animate__animated animate__fadeIn" id="sectionLogin">
+        <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white rounded shadow-base">
+
+            <div>
+                <img style="height: 100%; width: 100%;" src="https://images.squarespace-cdn.com/content/5c79879b65a7074459923db4/1551899701493-N575FRWS89SFXCON2O9D/logo-completo.png?format=1500w&content-type=image%2Fpng">
+            </div>
+
+            <br><br>
+
+            <div class="form-group" style="">
+                <input type="text" class="form-control" id="username" placeholder="Usuario">
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" placeholder="Contraseña">
+
+            </div>
+
+            <div class="form-group row">
+                <div class="dv-captcha col-9 col-sm-12">
+                    <span id="sp-captcha"></span>
+                    <button id="refresh" class="btn btn-naranja"><i class="icon ion-shuffle"></i></button>
+                </div>
+            </div>
+
+            <input type="text" class="form-control" id="txtcaptcha">
+            <br><br>
+
+            <button value="Ingresar" data-i18n="login" id="btn_login" style="background-color: #FF7F07; border-color: #FF7F07;" class="btn btn-info btn-block">Ingresar</button>
+            @*<div style="" class="mg-t-60 tx-center">No estas registrado? <a href="" style="color: #FF7F07;" class="tx-info">Registrate</a></div>*@
+            <div style="" class="mg-t-10 tx-center"><a href="#" style="color: #FF7F07;" onclick="changeOpc(0)" class="tx-info">Recuperar Contraseña</a></div>
+            <div style="" class="mg-t-60 tx-center"><a href="#" style="color: #FF7F07;" onclick="defaultIdioma2(1)" class="tx-info">Español</a> - <a href="#" onclick="defaultIdioma2(2)" style="color: #FF7F07;" class="tx-info">Portugues</a></div>
+
+        </div>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-center bg-br-primary ht-100v animate__animated animate__fadeIn" id="sectionRecover">
+        <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white rounded shadow-base">
+
+            <div>
+                <img style="height: 100%; width: 100%;" src="https://images.squarespace-cdn.com/content/5c79879b65a7074459923db4/1551899701493-N575FRWS89SFXCON2O9D/logo-completo.png?format=1500w&content-type=image%2Fpng">
+            </div>
+            <br />
+            <span style="text-align:center">Recuperar Password</span>
+            <br /><br />
+            <div class="form-group" style="">
+                <input type="email" class="form-control" id="txtEmailRecover" placeholder="Email">
+            </div>
+
+
+
+
+            <br><br>
+            <button value="Ingresar" data-i18n="login" id="btn_recover" style="background-color: #FF7F07; border-color: #FF7F07;" class="btn btn-info btn-block">Ingresar</button>
+            @*<div style="" class="mg-t-60 tx-center">No estas registrado? <a href="" style="color: #FF7F07;" class="tx-info">Registrate</a></div>*@
+            <div style="" class="mg-t-10 tx-center"><a href="#" style="color: #FF7F07;" onclick="changeOpc(1)" class="tx-info">Volver</a></div>
+            <div style="" class="mg-t-60 tx-center"><a href="#" style="color: #FF7F07;" onclick="defaultIdioma2(1)" class="tx-info">Español</a> - <a href="#" onclick="defaultIdioma2(2)" style="color: #FF7F07;" class="tx-info">Portugues</a></div>
+        </div>
+    </div>
+
+    <script>
+    var urlMain = '@Url.Action("Main", "Home")';
+        var urlSendMailRecover = '@Url.Action("RecoverPassword", "Login")';
+    var urlCaptcha = '@Url.Action("Captcha", "Login")';
+
+    </script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery-ui")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrap-notify")
+    @Scripts.Render("~/bundles/config")
+    @Scripts.Render("~/bundles/function")
+    @Scripts.Render("~/bundles/login")
+
+    @Scripts.Render("~/bundles/jquery.i18n")
+    @Scripts.Render("~/bundles/jquery.i18n.messagestore")
+    @Scripts.Render("~/bundles/jquery.i18n.fallbacks")
+    @Scripts.Render("~/bundles/jquery.i18n.language")
+    @Scripts.Render("~/bundles/jquery.i18n.parser")
+    @Scripts.Render("~/bundles/jquery.i18n.emitter")
+    @Scripts.Render("~/bundles/jquery.i18n.emitter.bidi")
+    @Scripts.Render("~/bundles/internationalization")
+</body>
+</html>

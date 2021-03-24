@@ -1,0 +1,621 @@
+﻿
+@{
+    ViewBag.Title = "FormatoPoligrafoColombia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="br-mainpanel">
+    <div class="br-pageheader">
+
+    </div>
+    <div class="br-pagetitle">
+        <i class="icon ion-ios-book-outline"></i>
+        <div>
+            <h4 id="lbl_titulo">Polígrafo Colombia</h4>
+        </div>
+    </div>
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+
+            <!-- I.	INFORME ANTECEDENTES JUDICIALES -->
+            @*<div class="row mg-b-25">*@
+            <!-- Title -->
+            @*<div class="col-lg-12">
+                <h4 style="text-align: center;">I.	INFORME ANTECEDENTES JUDICIALES</h4>
+            </div>
+        </div>*@
+
+            <div class="row mg-b-25 border_content">
+                <!-- Formulary -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>SEÑORES: <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_senores" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>FOTO: <span class="tx-danger">*</span></label>
+                        <input type="file" id="file_foto" class="form-control" placeholder="-" required>
+                        <div class="row" style="margin-top:4px" id="PreviewFoto">
+                            <div class="col-lg-5">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1.1 DATOS PERSONALES -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">DATOS PERSONALES</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+                <!-- Formulary -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>NOMBRE: <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_nombre" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>DIRECCION: <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_direccion" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>CELULAR: <span class="tx-danger">*</span></label>
+                        <input type="number" id="txt_celular" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <!-- -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>PUESTO AL QUE POSTULA: <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_puesto_postula" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                </div>
+
+                <!-- -->
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>PERSONAS CON LAS QUE VIVE:</label>
+                        <textarea id="txt_personas_convive" style="min-height:170px;" class="form-control">Mencionó que vive con los padres, hermano e hijo.
+
+Indicó que en la actualidad está viviendo en casa de tipo familiar, en la dirección,xxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx.
+Convive con: Xxxxxxxxxxxxxxxxxxxxxxx Xxxxxxxxxxxxxxxxxxxxxxx Xxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxte.
+
+Hermanos: xxxxxxxxxxxxxxxxxxxxxxxx. xxxxxxxxxxxxxxxxxxxxxxx.</textarea>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 1.2 EXAMEN DE POLÍGRAFO DE -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">EXAMEN DE POLÍGRAFO DE</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+                <!-- Formulary -->
+                <div class="col-lg-12">
+                    <textarea id="txt_1_2_examen_poligrafo" style="min-height:275px;" class="form-control">El día 02 de marzo 2020, la señorita ***xxxxxxxxxxxxxxx***, identificado con ***CC.xxxxxxxx de xxxxxxx***, se presentó voluntariamente a las instalaciones del Grupo Atenea Colombia, con el fin de que se le administrara un examen de polígrafo.
+
+Respecto a su estado de salud manifestó ser Excelente. No sufre de ninguna molestia, en las últimas 24 horas, admite que ha consumido medicamentos. También manifiesta estar en buenas condiciones físicas y mentales para realizar el examen, no ha consumido alcohol en las últimas 24 horas.
+
+Manifestó que llegó a la empresa ***xxxxxxxxxx***, por medio de ***ELEMPLEO.COM Y COMPUTRABAJO***.
+
+No tiene familiares trabajando en la empresa y no está participando en otros procesos de selección con otras empresas.
+
+Durante la entrevista, la señora ***xxxxxxxxxxxxxxxx***, manifestó sustancialmente lo siguiente:</textarea>
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+
+                <!-- Formulario -->
+                <!-- ESTUDIOS REALIZADOS -->
+                <div class="col-lg-12">
+                    <!---->
+                    <div class="form-group">
+                        <label style="font-size: 14px;"><b>ESTUDIOS REALIZADOS</b></label>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <!---->
+                    <div class="form-group">
+                        <label>Estudio Realizado: <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_1_2_estudio_realizado" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group mg-b-10-force">
+                        <label><span class="tx-danger">&nbsp;</span></label>
+                        <div class="input-group">
+                            <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_1_2_agregar_estudio_realizado"><i class="fa fa-plus-circle"></i> <span>Agregar</span> </button>
+                        </div>
+                    </div>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+                <!-- Tabla -->
+                <div class="col-lg-12">
+                    <div class="table-wrapper">
+                        <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_1_2_estudios_realizados" style="width: 100%;">
+                            <thead class="font-size-8">
+                                <tr>
+                                    <th class="wd-5p">INDEX</th>
+                                    <th class="wd-95p">ESTUDIO REALIZADO</th>
+                                    <th class="wd-15p">ACCIÓN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Salto -->
+                    <br />
+                </div>
+                <div class="col-lg-12">
+                    <p>Aseguró que la información académica relacionada en el proceso de selección tiene su documento soporte y garantizó que puede ser validada su originalidad en cualquier momento con las entidades emisoras y con el Ministerio de Educación. Garantizó entender que al presentar documentos falsos se comete el delito de falsedad en documento público y que al detectar esa situación las instituciones educativas compulsan copias a la Fiscalía General de la Nación.</p>
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+
+                <!-- Formulario -->
+                <!-- EXPERIENCIA LABORAL -->
+                <div class="col-lg-12">
+                    <!---->
+                    <div class="form-group">
+                        <label style="font-size: 14px;"><b>EXPERIENCIA LABORAL</b></label>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <!---->
+                    <div class="form-group">
+                        <label>Nombre Cargo: <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_1_2_nombre_cargo" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <!---->
+                    <div class="form-group">
+                        <label>Descripción Cargo: <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_1_2_descripcion_cargo" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group mg-b-10-force">
+                        <label><span class="tx-danger">&nbsp;</span></label>
+                        <div class="input-group">
+                            <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_1_2_agregar_experiencia_laboral"><i class="fa fa-plus-circle"></i> <span>Agregar</span> </button>
+                        </div>
+                    </div>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+                <!-- Tabla -->
+                <div class="col-lg-12">
+                    <div class="table-wrapper">
+                        <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_1_2_experiencia_laboral" style="width: 100%;">
+                            <thead class="font-size-8">
+                                <tr>
+                                    <th class="wd-5p">INDEX</th>
+                                    <th class="wd-15p">CARGO</th>
+                                    <th class="wd-80p">DESCRIPCIÓN</th>
+                                    <th class="wd-15p">ACCIÓN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+                <!-- Formulario -->
+                <!-- Vacíos laborales -->
+                <div class="col-lg-12">
+                    <!---->
+                    <div class="form-group">
+                        <label style="font-size: 14px;"><b>Vacíos laborales </b></label>
+                        <textarea id="txt_1_2_vacio_laboral" class="form-control">Mencionó que ha tenido vacíos laborales en el periodo del xxxxxxxx aproximadamente xxxxx meses, en este tiempo realizó trabajos de manera informal, como vendedora comidas rápidas.</textarea>
+                    </div>
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+                <!-- Formulario -->
+                <!-- CONDUCTA LABORAL -->
+                <div class="col-lg-12">
+                    <!---->
+                    <div class="form-group">
+                        <label style="font-size: 14px;"><b>CONDUCTA LABORAL</b></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <!---->
+                    <textarea id="txt_1_2_conducta_laboral" class="form-control" style="min-height:170px;">La examinada admite que cuando laboró para la empresa xxxxxxxxxxxxxx, le realizaron un llamado de atención y posteriormente fue llamada a presentar descargos por no enviar una correspondencia. También admite que cuando laboró para la empresa xxxxxxxxxxx,  le cancelaron el contrato por el incumplimiento al horario.
+
+Refirió que con el cumplimiento de sus funciones no ha habido ningún problema. Con los horarios argumenta que tuvo problemas con la empresa de xxxxxxxxxxxx, el trato que brinda a sus compañeros es respetuoso, excepto una compañera con la cual no se llevó bien, en la empresa xxxxxxxxxxxxxxxxx.</textarea>
+
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+            </div>
+
+            <!-- 1.3 ACTIVIDADES DESHONESTAS EN SU CONDUCTA LABORAL -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">ACTIVIDADES DESHONESTAS EN SU CONDUCTA LABORAL</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+
+                <!-- Formulario -->
+                <!-- VERIFICACIÓN DE ANTECEDENTES -->
+                <div class="col-lg-12">
+                    <!---->
+                    <div class="form-group">
+                        <label style="font-size: 14px;"><b>VERIFICACIÓN DE ANTECEDENTES</b></label>
+                    </div>
+                </div>
+
+                <!-- Formulary -->
+                <div class="col-lg-12">
+                    <textarea id="txt_1_3_verificacion_antecedentes" style="min-height:170px;" class="form-control">Indicó que nunca ha registrado antecedentes en su pasado judicial y que jamás ha sido citada a un despacho de la Fiscalía General de la Nación, en calidad de imputada, sindicada, indiciada o testigo de hechos criminales.
+
+Negó saber que esté siendo investigada o procesada por la comisión de actos ilícitos como Homicidio, intento de Homicidio, Lesiones Personales, Violencia intrafamiliar, Secuestro, Estafa, Sabotaje, Vandalismo, Fraudes de Seguros, Falsificación y Alteración de Documentos, Portar Armas ilegalmente, Hurtos, Robos, Crímenes Sexuales, interceptación ilícita de comunicaciones escritas o electrónicas o cualquier otro delito.</textarea>
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+
+                <!-- Formulario -->
+                <!-- SITUACION FINANCIERA -->
+                <div class="col-lg-12">
+                    <!---->
+                    <div class="form-group">
+                        <label style="font-size: 14px;"><b>SITUACION FINANCIERA</b></label>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <!---->
+                    <textarea id="txt_1_3_situacion_financiera" class="form-control" style="min-height:220px;">La examinada asegura que la responsabilidad de su núcleo familiar está a cargo de un hermano y la examinada.
+
+Sus egresos mensuales propios de gastos básicos son: $xxxxxxxxxx, destinados para transporte, mercado, crédito, servicios y gastos personales.
+
+La examinada asegura que no se encuentra reportada ante las centrales de riesgos. Manifestó no tener comparendos pendientes por pagar.
+
+No cuenta con patrimonio a su nombre.</textarea>
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+                <!-- Formulario -->
+                <!-- BEBIDAS ALCOHÓLICAS -->
+                <div class="col-lg-12">
+                    <!---->
+                    <div class="form-group">
+                        <label style="font-size: 14px;"><b>BEBIDAS ALCOHÓLICAS</b></label>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <!---->
+                    <textarea id="txt_1_3_bebidas_alcoholicas" class="form-control" style="min-height:220px;">A nivel social manifiesta que bebe licor ocasional y moderadamente.
+
+Manifestó que consume eventualmente a Cerveza, estas actividades las desarrolla en un promedio de cada mes; con amigos y novio.
+
+La entrevistada asegura que nunca se ha presentado a laborar enguayabada en ninguna empresa.
+
+Negó haber participado en riñas en estado de alicoramiento.
+
+Aseguró que en una ocasión manejó Motocicleta habiendo ingerido bebidas alcohólicas.</textarea>
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+
+                <!-- Formulario -->
+                <!-- DROGAS ILEGALES -->
+                <div class="col-lg-12">
+                    <!---->
+                    <div class="form-group">
+                        <label style="font-size: 14px;"><b>DROGAS ILEGALES</b></label>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <!---->
+                    <textarea id="txt_1_3_drogas_ilegales" class="form-control" style="min-height:90px;">Aseguró que nunca ha tenido participación o beneficio directo o indirecto de actividades como transporte, venta, almacenamiento, financiación, comercialización, producción o cultivo de drogas ilegales; certificó que nunca ha recibido propuestas de realizar estas actividades.</textarea>
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+
+                <!-- Formulario -->
+                <!-- VÍNCULOS CON PERSONAS O GRUPOS AL MARGEN DE LA LEY -->
+                <div class="col-lg-12">
+                    <!---->
+                    <div class="form-group">
+                        <label style="font-size: 14px;"><b>VÍNCULOS CON PERSONAS O GRUPOS AL MARGEN DE LA LEY</b></label>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <!---->
+                    <textarea id="txt_1_3_vinculo_personas_margen_ley" class="form-control" style="min-height:380px;">Garantizó que ni en el pasado ni en el presente ha tenido algún tipo de relación familiar, laboral, comercial o social con grupos o personas que desarrollen actividades al margen de la ley como delincuencia común u organizada; tampoco ha llegado a tener una vinculación directa o indirecta con personas integrantes de grupos como guerrilla, autodefensas, bandas criminales, combos o pandillas; negó ser o tener relación con reinsertados, desmovilizados o desplazados por la violencia.
+
+Se le preguntó si ha falseado cualquier tipo de información referente a su solicitud de empleo y comentó que: no relacionó en su hoja de vida algún documento con falta de veracidad.
+
+Se le preguntó si tiene intensión de ingresar a la empresa xxxxxxxxxxxxx, para cometer algún tipo de ilícito en ella perjudicándola de alguna manera, a lo que responde: No.
+
+Para finalizar, la examinada aseguró no tener más información que agregar a la presente entrevista.
+
+El examen de polígrafo fue numéricamente evaluado por xxxxxxxxxxxxx. Miembro de la Asociación Americana de Poligrafía APA y Asociación Colombiana de Poligrafista ACP.</textarea>
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+
+                <!-- Formulario -->
+                <!-- TIPO DE EVALUACIÓN POLIGRÁFICA -->
+                <div class="col-lg-12">
+                    <!---->
+                    <div class="form-group">
+                        <label style="font-size: 14px;"><b>TIPO DE EVALUACIÓN POLIGRÁFICA</b></label>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <!---->
+                    <textarea id="txt_1_3_tipo_evaluacion_poligrafica" class="form-control" style="min-height:270px;">Una vez firmada la autorización por parte de la evaluada, para realizar su valoración poligráfica, se aplicó una evaluación técnico-científica para PRE EMPLEO, cuyo propósito es confirmar o desvirtuar signos de confiabilidad específica para el ejercicio de las funciones propias del cargo de xxxxxxxxx, se busca establecer si la candidata, tiene algún tipo de vínculos con organizaciones al margen de la ley, o si oculta algún tipo de actividad irregular o personal que impida su vinculación laboral a xxxxxxxxxxx, la evaluación se realiza aplicando la Técnica Modificada de Preguntas Generales FA Versión 2, validada por las diferentes asociaciones poligráficas a nivel mundial.
+
+En el proceso de la evaluación poligráfica se desarrolla una completa entrevista con multiplicidad de preguntas relacionadas con empleos anteriores,costumbres, antecedentes familiares, consumo de alcohol y sustancias psicoactivas.
+
+Luego se aplica el test poligráfico conformado por preguntas irrelevantes, relevantes y comparativas, se obtienen graficas comparativas, las cuales fueron examinadas por el analista de poligrafía.</textarea>
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+
+            </div>
+
+            <!-- 1.4 EXPLICACIÓN DEL INSTRUMENTO DE POLIGRAFÍA -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">EXPLICACIÓN DEL INSTRUMENTO DE POLIGRAFÍA</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+
+                <!-- Formulary -->
+                <div class="col-lg-12">
+                    <p class="">A la examinada se le explicaron los componentes del polígrafo que consisten en la unidad de CARDIO, la unidad de NEUMO y la unidad de GSR. Además, se le informó que el examen era voluntario. El examinado aceptó voluntariamente tomar la prueba y diligenció la autorización correspondiente.</p>
+                </div>
+
+            </div>
+
+            <!-- 1.5 TÉCNICA POLIGRÁFICA EMPLEADA -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">TÉCNICA POLIGRÁFICA EMPLEADA</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+
+                <!-- Formulary -->
+                <div class="col-lg-12">
+                    <p class="">El examen de polígrafo fue administrado utilizando el Sistema de Polígrafo Computarizado Lafayette LX 4,000; los patrones de verdad y decepción se establecieron a través de una técnica conocida como AFMGQT multitema, que incluye en el formato preguntas relevantes, comparativas, neutrales y de sacrificio.</p>
+                </div>
+
+            </div>
+
+            <!-- 1.6 REPASO DE PREGUNTAS RELEVANTES REALIZADAS EN EL EXAMEN -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">REPASO DE PREGUNTAS RELEVANTES REALIZADAS EN EL EXAMEN</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+
+                <!-- Formulary -->
+                <div class="col-lg-12">
+                    <textarea id="txt_1_6_repaso_preguntas_realizadas_examen" class="form-control" style="min-height:90px;">Previamente, se repasó con la evaluada, cada pregunta incluida en la prueba. El examinado respondió “No” a cada pregunta relevante y aseguró haber entendido perfectamente su contenido. Se procedió entonces a administrar el Examen de Selección a xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.</textarea>
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+            </div>
+
+            <!-- 1.7 PREGUNTAS RELEVANTES REALIZADAS EN EL EXAMEN -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">PREGUNTAS RELEVANTES REALIZADAS EN EL EXAMEN</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+
+                <!-- Formulary -->
+                <div class="col-lg-12">
+                    <textarea id="txt_1_7_preguntas_relevantes_examen" class="form-control" style="min-height:280px;">R1: ¿TIENE VÍNCULOS ILÍCITOS CON GRUPOS AL MARGEN DE LA LEY?
+
+R2: ¿HA REALIZADO ACTIVIDADES RELACIONADAS CON EL NARCOTRÁFICO?
+
+R3: ¿FALSIFICÓ ALGUN DOCUMENTO QUE PRESENTO PARA LABORAR CON
+xxxxxxxxxxxxxx?
+
+R4: ¿HA COMETIDO ILÍCITOS EN ALGUNO DE SUS ANTERIORES TRABAJOS?
+
+Detección Técnica
+
+No se registraron reacciones de falta de veracidad.</textarea>
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+            </div>
+
+            <!-- 1.8 CONCLUSIÓN -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">CONCLUSIÓN</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+
+                <!-- Formulary -->
+                <div class="col-lg-12">
+                    <textarea id="txt_1_8_conclusion" class="form-control" style="min-height:80px;">Después de un cuidadoso análisis de los resultados matemáticos del Sistema Computarizado de Polígrafo, así como una detallada revisión de las gráficas poligráficas, es la opinión del examinador que xxxxxxxxxxxxxxxxxxxxxxxxxx, NO PRESENTÓ RESPUESTA SIGNIFICATIVA DE ENGAÑO (NSR).</textarea>
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+            </div>
+
+            <div class="row mg-b-25 border_content">
+                <!-- Formulary -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Examen realizado por: <span class="tx-danger">*</span></label>
+                        <input type="text" id="txt_examen_realizado_por" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- GUARDAR -->
+            <div class="row mg-b-25">
+                <div class="col-lg-9">
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group mg-b-10-force">
+                        <label><span class="tx-danger">&nbsp;</span></label>
+                        <div class="input-group">
+                            <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_guardar"><i class="fa fa-save"></i> <span> Guardar </span> </button>
+                        </div>
+                        <br />
+                        <div class="input-group">
+                            <button class="btn btn-oblong btn-dark btn-block mg-b-2" id="btn_generar"><i class="fa fa-save"></i> <span> Generar </span> </button>
+                        </div>
+                    </div>
+                    <!-- Salto -->
+                    <br>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+    var urlGetDocumentType = '@Url.Action("GetDocumentType", "Services")';
+    var urlSaveorUpdateFormatPolygraphColombia = '@Url.Action("SaveorUpdateFormatPolygraphColombia", "Services")';
+    var UrlGetStatusCivil = '@Url.Action("getStatusCivil", "Services", new { IdPais = 3 })';
+    var urlGetFormatPolygraphColombia = '@Url.Action("GetFormatPolygraphColombia", "Services")';
+    var urlGenerateDocument = '@Url.Action("GenerateDocumentFinale", "Services")';
+    var urlDownloadBase64  = '@Url.Action("GetPreviewFileBase64", "Services")';
+</script>
+@Scripts.Render("~/bundles/poligrafo_colombia")

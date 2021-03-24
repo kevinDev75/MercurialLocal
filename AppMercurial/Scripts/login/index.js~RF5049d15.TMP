@@ -1,0 +1,111 @@
+﻿// --
+const functions = new Functions()
+// --
+
+var captcha = "";
+
+GetCaptcha();
+
+function GetCaptcha() {
+    $.ajax({
+        type: "GET",
+        url: urlCaptcha,
+        data: null,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: true,
+        success: function (data) {
+            $("#sp-captcha").text(data.Captcha);
+            captcha = data.Captcha;
+            console.log(captcha);
+        },
+        error: function (err) {
+            swal({ title: "Información", text: err.statusText, icon: "warning", });
+        }
+    });
+}
+
+$("#refresh").click(function () {
+    GetCaptcha();
+});
+
+$("#sp-captcha").on('copy', function (e) {
+    e.preventDefault();
+    //console.log('Esta acción está prohibida');
+    return;
+});
+
+$(function () {
+    $("#sp-captcha").bind("contextmenu", function (e) {
+        return false;
+    });
+});
+
+
+function login() {
+    // --
+
+    if ($("#txtcaptcha").val() !== "") {
+        if (captcha === $("#txtcaptcha").val()) {
+
+
+            let username = $('#username').val()
+            let password = $('#password').val()
+            // -- 
+            if (username === '' || password === '') {
+                // --
+                functions.notify_message('Ups! Es necesario ingresar usuario y contraseña :(', 'warning')
+            } else {
+                // --
+                let datos = {
+                    'username': username,
+                    'password': password,
+                }
+                // --
+                $.ajax({
+                    url: BASE_URL + 'Login/login',
+                    type: 'POST',
+                    data: datos,
+                    dataType: 'json',
+                    cache: false,
+                    success: function (data) {
+                        // --
+                        console.log(data);
+                        if (data.Status === 'OK') {
+                            window.location.href = urlMain;
+                            // window.location.replace(BASE_URL + 'Home/Main')
+                        } else {
+                            functions.notify_message('Ups! Crendenciales incorrectas :(', 'warning')
+                        }
+                    }
+                })
+            }
+
+
+          
+        } else {
+            functions.notify_message('El código captcha no es el correcto', 'warning');
+        }
+    } else {
+        functions.notify_message('Ingresar el código captcha', 'warning');
+    }
+
+
+    
+}
+
+// --
+$("#btn_login").on("click", function () {
+    // --
+    login()
+})
+
+
+// -- 
+$("#password").keypress(function (e) {
+    // -- 
+    let code = (e.keyCode ? e.keyCode : e.which)
+    if (code === 13) {
+        login()
+    }
+})

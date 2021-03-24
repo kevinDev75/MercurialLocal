@@ -1,0 +1,194 @@
+﻿// -- GLOBAL
+const BASE_URL = '/'
+
+// -- FECHA ACTUAL GLOBAL
+let date = new Date();
+var day = date.getDate();           // -- obteniendo dia
+var month = date.getMonth() + 1;    // -- obteniendo mes
+var year = date.getFullYear();      // -- obteniendo año
+// --
+if (day < 10)
+    day = '0' + day;                    // -- agrega cero si el menor de 10
+if (month < 10)
+    month = '0' + month                 // -- agrega cero si el menor de 10
+// --
+const FECHA_HOY = day + '/' + month + '/' + year
+
+// -- MENSAJES GLOBAL
+const MESSAGE = new Object()
+// --
+let es = new Object()
+// --
+es["success_insert"] = 'Registro almacenado en el sistema con exito'
+es["error_insert"] = 'No fue posible guardar el registro ingresado, verificar'
+es["success_select"] = 'Retornando lista de registros encontrados'
+es["error_select"] = 'No se encontraron registros en el sistema'
+es["success_update"] = 'Edicion del registro exitosa'
+es["error_update"] = 'No fue posible editar el registro seleccionado, verificar'
+es["success_delete"] = 'Registro eliminado con exito del sistema'
+es["error_delete"] = 'No fue posible eliminar el registro seleccionado, verificar'
+// --
+es["complete_formulary"] = 'Es necesario completar el formulario :('
+// --
+MESSAGE["es"] = es
+
+// -- LABELS
+let jsonLabel = {
+    // -- 
+    "ES": { // -- Español
+        "HOME": {
+            "lbl_titulo": "Principal"
+        },
+        "WORK_INTEGRITY": {
+            "lbl_titulo": "Registro de solicitudes",
+            "lbl_codigo_buscador": "Código",
+            "lbl_fecha_inicio_buscador": "Fecha Inicio:",
+            "lbl_fecha_fin_buscador": "Fecha Fin:",
+            "lbl_dni_buscador": "DNI :",
+            "lbl_buscar_buscador": "Buscar",
+            "lbl_estado_buscador": "Estado",
+            "lbl_marcar_buscador": "Marcar / Desmarcar todos",
+            "lbl_listado_registro": "Listado de registros",
+            // --
+            "lbl_table_codigo": "Código",
+            "lbl_table_servicios": "Servicios",     
+            "lbl_table_enviado_por": "Enviado por",
+            "lbl_table_fecha_hora": "Fecha y hora",
+            "lbl_table_estado": "Estado",
+            "lbl_table_accion": "Acción",
+            // --
+            "lbl_modal_register_informacion_personal": "Información Personal",
+            "lbl_modal_register_tipo_documento": "Tipo de documento: ",
+            "lbl_modal_register_nro_documento": "N° de documento: ",
+            "lbl_modal_register_telefono": "Telefono: ",
+            "lbl_modal_register_celular": "Célular: ",
+            "lbl_modal_register_departamento": "Departamento: ",
+            "lbl_modal_register_distrito": "Distrito: ",
+            "lbl_modal_register_direccion": "Dirección: ",
+            "lbl_modal_register_email": "Email: ",
+            "lbl_modal_register_servicio": "Servicio: ",
+            "lbl_modal_register_agregar": "Agregar",
+            // --
+            "lbl_modal_register_table_id": "ID",
+            "lbl_modal_register_table_tipo_documento": "T. Doc.",
+            "lbl_modal_register_table_numero_documento": "N°. Doc.",
+            "lbl_modal_register_table_telefono": "Tel.",
+            "lbl_modal_register_table_celular": "Cel.",
+            "lbl_modal_register_table_departamento": "Departamento",
+            "lbl_modal_register_table_distrito": "Distrito",
+            "lbl_modal_register_table_direccion": "Dirección",
+            "lbl_modal_register_table_email": "Email",
+            "lbl_modal_register_table_servicio": "Serv.",
+            "lbl_modal_register_table_accion": "Acción",
+            // --
+            "lbl_completar_informacion": "Completar información"
+        },
+        "WORK_INTEGRITY_DETAIL": {
+
+        }
+    },
+    "BR": { // -- Portugués
+        "HOME": {
+            "lbl_titulo": "Diretor"
+        },
+        "WORK_INTEGRITY": {
+            "lbl_titulo": "Registro de pedidos",
+            "lbl_codigo_buscador": "Código",
+            "lbl_fecha_inicio_buscador": "Data de Início:",
+            "lbl_fecha_fin_buscador": "Data Final:",
+            "lbl_dni_buscador": "DNI :",
+            "lbl_buscar_buscador": "Olhe para",                                                
+            "lbl_estado_buscador": "Estado",
+            "lbl_marcar_buscador": "Marca / Desmarque tudo",
+            "lbl_listado_registro": "Lista de registros",
+            // --
+            "lbl_table_codigo": "Código",
+            "lbl_table_servicios": "Serviços",
+            "lbl_table_enviado_por": "Enviado por",
+            "lbl_table_fecha_hora": "Data e Hora",
+            "lbl_table_estado": "Estado",
+            "lbl_table_accion": "Açao",
+            // --
+            "lbl_modal_register_informacion_personal": "Informação Pessoal",
+            "lbl_modal_register_tipo_documento": "Tipo de documento: ",
+            "lbl_modal_register_nro_documento": "N° do documento: ",
+            "lbl_modal_register_telefono": "Telefone: ",
+            "lbl_modal_register_celular": "Móvel: ",
+            "lbl_modal_register_departamento": "Departamento: ",
+            "lbl_modal_register_distrito": "Distrito: ",
+            "lbl_modal_register_direccion": "Direção: ",
+            "lbl_modal_register_email": "Email: ",
+            "lbl_modal_register_servicio": "Serviço: ",
+            "lbl_modal_register_agregar": "Adicionar",
+            // --
+            "lbl_modal_register_table_id": "ID",
+            "lbl_modal_register_table_tipo_documento": "T. Doc.",
+            "lbl_modal_register_table_numero_documento": "N°. Doc.",
+            "lbl_modal_register_table_telefono": "Tel.",
+            "lbl_modal_register_table_celular": "Cel.",
+            "lbl_modal_register_table_departamento": "Departamento",
+            "lbl_modal_register_table_distrito": "Distrito",
+            "lbl_modal_register_table_direccion": "Dirección",
+            "lbl_modal_register_table_email": "Email",
+            "lbl_modal_register_table_servicio": "Serv.",
+            "lbl_modal_register_table_accion": "Acción"
+        },
+        "WORK_INTEGRITY_DETAIL": {
+
+        }   
+    },
+}
+
+function setInputDatePicker(value) {
+    $("#" + value).datepicker({
+        dateFormat: "dd/mm/yy",
+
+
+    });
+}
+
+function convertToString(value) {
+    return value + ""
+}
+
+function formatSave(value) {  //Formato para guardar date
+    try {
+        if (value != null && value != "-" && value != "") {
+            return moment(value, 'DD/MM/YYYY').format("YYYY-MM-DD");
+        }
+    } catch (ex) {
+        return null;
+    }
+}
+
+function formatDate(value) { //Formato para obtener date
+
+    if (value != null && value != undefined) {
+        value = value.split(' ')[0];
+        return value;
+    } else {
+        return null;
+    }
+
+}
+function FillDatatable(table, entidad, orden) {
+    if (entidad != undefined && entidad.length > 0) { 
+    entidad.forEach((element) => {
+        console.log(element);
+        var index = table.length + 1;
+
+        var ListString = orden.join(',');
+        console.log(ListString);
+        
+        table.row.add([
+            index,
+            orden.forEach((element) => {
+              entidad[element]      
+            }),
+            ' <button class= "btn btn-sm btn-danger" data-id="' + index + '" id="btn_1_3_delete_row"> <i class="fa fa-trash"></i></button >'
+        ]).draw(false);
+        table.columns.adjust()
+            .responsive.recalc();
+    });
+  }
+}

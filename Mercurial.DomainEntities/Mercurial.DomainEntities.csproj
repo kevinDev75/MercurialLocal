@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26FED9BF-8168-428E-8FA0-4C1A291735AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mercurial.DomainEntities</RootNamespace>
+    <AssemblyName>Mercurial.DomainEntities</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiResponse.cs" />
+    <Compile Include="Cibersecurity\FLT\SaveHackeoEticoFlt.cs" />
+    <Compile Include="Cibersecurity\FLT\SaveOsintFlt.cs" />
+    <Compile Include="Cibersecurity\FLT\SavePentestingFlt.cs" />
+    <Compile Include="Cibersecurity\VM\HackeoEticoVm.cs" />
+    <Compile Include="Cibersecurity\VM\OsintVm.cs" />
+    <Compile Include="Cibersecurity\VM\PentestingVm.cs" />
+    <Compile Include="Company\BranchOfficeFlt.cs" />
+    <Compile Include="Company\CompanyFlt.cs" />
+    <Compile Include="Company\GetCompanyRsl.cs" />
+    <Compile Include="CorporateServices\FLT\SaveCorporateRiskManagementFlt.cs" />
+    <Compile Include="CorporateServices\FLT\SectoralMapsFlt.cs" />
+    <Compile Include="CorporateServices\VM\CorporateRiskManagementVm.cs" />
+    <Compile Include="CorporateServices\VM\SectoralMapsVm.cs" />
+    <Compile Include="Home\LoginRequest.cs" />
+    <Compile Include="Home\LoginResponse.cs" />
+    <Compile Include="Home\ModelMenu.cs" />
+    <Compile Include="Home\RequestCodexUsuario.cs" />
+    <Compile Include="Home\Rol.cs" />
+    <Compile Include="Home\UpdatePassword.cs" />
+    <Compile Include="Home\User.cs" />
+    <Compile Include="InterestInformation\FLT\SaveInterestInformationFlt.cs" />
+    <Compile Include="InterestInformation\RSL\InterestInformationRsl.cs" />
+    <Compile Include="Master\GenerateResponse.cs" />
+    <Compile Include="Master\StatusCivil.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RiskManagement\FLT\SaveRiskManagementFlt.cs" />
+    <Compile Include="RiskManagement\RSL\TypeAlertRiskManagementRsl.cs" />
+    <Compile Include="RiskManagement\VM\RiskManagementVm.cs" />
+    <Compile Include="RiskMap\FLT\SaveRiskMapFlt.cs" />
+    <Compile Include="RiskMap\VM\RiskMapVm.cs" />
+    <Compile Include="SafetySecurity\FLT\SaveAssetSecurityFlt.cs" />
+    <Compile Include="SafetySecurity\FLT\SaveCorporateInvestigationsFlt.cs" />
+    <Compile Include="SafetySecurity\FLT\SaveElectronicScanningFlt.cs" />
+    <Compile Include="SafetySecurity\FLT\SaveInternalStaffFlt.cs" />
+    <Compile Include="SafetySecurity\FLT\SavePhysicalSecurityFlt.cs" />
+    <Compile Include="SafetySecurity\VM\AssetSecurityVm.cs" />
+    <Compile Include="SafetySecurity\VM\CorporateInvestigationsVm.cs" />
+    <Compile Include="SafetySecurity\VM\ElectronicScanningVm.cs" />
+    <Compile Include="SafetySecurity\VM\InternalStaffVm.cs" />
+    <Compile Include="SafetySecurity\VM\PhysicalSecurityVm.cs" />
+    <Compile Include="Ubigeo\UbigeoPeruDepartmentRsl.cs" />
+    <Compile Include="Ubigeo\UbigeoPeruDistrictRsl.cs" />
+    <Compile Include="Ubigeo\UbigeoPeruProvinceRsl.cs" />
+    <Compile Include="User\FLT\SaveUserFlt.cs" />
+    <Compile Include="User\RSL\CountryRsl.cs" />
+    <Compile Include="User\RSL\GetUserRsl.cs" />
+    <Compile Include="User\RSL\GetUsers_RolRsl.cs" />
+    <Compile Include="User\RSL\GetZodiacSignRsl.cs" />
+    <Compile Include="WorkIntegrity\GetControlsWorkIntegrityRequest.cs" />
+    <Compile Include="WorkIntegrity\GetControlsWorkIntegrityRsl.cs" />
+    <Compile Include="WorkIntegrity\Master\AcademicInformation\AcademicInformationCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\AcademicInformation\AcademicInformationCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\AcademicLaborAnalysis\AcademicLaborAnalysisCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\AcademicVerification\AcademicVerificationCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\AcademicVerification\AcademicVerificationCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\AcademicVerification\AcademicVerification_ColCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\AnalysisReliabilityTest\AnalysisReliabilityTestCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\AnalysisTestDarkFactor\AnalysisTestDarkFactorCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\Anexos\AnexosCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\Anexos\AnexosCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\Archive.cs" />
+    <Compile Include="WorkIntegrity\Master\AssessmentEvaluator\AssessmentEvaluatorCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\BackgroundDrugTraffic\BackgroundDrugTrafficCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\BackgroundDrugTraffic\BackgroundDrugTrafficCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\BasicCandidateInformation_Brasil\BasicCandidateInformation_BrasilCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\BasicCandidateInfo\BasicCandidateInfoCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\BasicHousingFeatures\BasicHousingFeaturesCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\BasicHousingFeatures\CommunityRelationShipDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\BasicDatacandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\BasicInformationEvaluated\BasicInformationEvaluatedCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\BasicInformation_Brasil\BasicInformation_BrasilCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\Conclusion\ConclusionCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\CriminalProceeding\CriminalProceedingsCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\CriminalProceeding\CriminalProceedingsCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\CriminalRecord\CriminalRecordCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\DarkFactor\DarkFactorCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\DefinitionMilitarySituation\DefinitionMilitarySituationCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\DiscardHomony\DiscardHomonyCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\DiscardHomony\DiscardHomonyCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\DriverRecordCheck\DriverRecordCheckCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\EconomicInformation\EconomicInformationCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\EconomicInformation\EconomicInformationCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\ElectoralFines\ElectoralFinesCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\ElectoralFines\ElectoralFinesCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\EndResult\EndResultCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\EsSaludVerification\EsSaludVerificationCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\FamilyEnvironment\FamilyEnvironmentCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\FamilyEnvironment\FamilyEnvironmentCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\FederalRegionalCourts\FederalRegionalCourtsCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\FederalRegionalCourts\FederalRegionalCourts_ResumeCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\FinancialBehavior\FinancialBehaviorCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\FinancialBehavior_Brasil\FinancialBehavior_BrasilCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\FinancialRecordsAnalysis\FinancialRecordsAnalysisCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\FinancialRecordsAnalysis\FinancialRecordsAnalysisCandidate_Col.cs" />
+    <Compile Include="WorkIntegrity\Master\FinancialVerification\FinancialVerificationCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\FinancialVerification\ListCreditLineCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\FinancialVerification\ListDebtDetailCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\HealthSituation\HealthSituationCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\HouseCallsAnalysis\HouseCallsAnalysisCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\InternationalBackgroundAnalysis_Brasil\InternationalBackgroundAnalysis_BrasilCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\InternationalRestrictiveLists_Brasil\InternationalRestrictiveLists_BrasilCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\JobPerformance\JobPerformanceCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\JudicialProceeding\JudicialProceedingsCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\JudicialProceeding\JudicialProceedingsCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\LaborVerification\LaborVerificationCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\MoneyLaundering\MoneyLaunderingCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\MoneyLaundering\MoneyLaunderingCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\NationalBackgroundAnalysis_Brasil\NationalBackgroundAnalysis_BrasilCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\NationalRestrictiveLists\NationalRestrictiveListsCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\NationalRestrictiveLists_Brasil\NationalRestrictiveLists_BrasilCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\PersonalDataEvaluated\PersonalDataEvaluatedCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\PhotographicRecord.cs\PhotographicRecordCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\PhotographicRecord.cs\PhotographicStandar.cs" />
+    <Compile Include="WorkIntegrity\Master\PhysicalPersonRegistration\PhysicalPersonRegistrationCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\PoliticalAffiliationVerification\PoliticalAffiliationVerificationCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\PoliticalAffiliationVerification\PoliticalAffiliationVerificationCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\PoliticalSocialBackgroundAnalysis\PoliticalSocialBackgroundAnalysisCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\Polygraph\PolygraphCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\Polygraph\StudyConductedCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\Polygraph\WorkExperienceCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\PremiumPersonalHistory\PremiumPersonalHistoryCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\PsychologicalTestAnalysis\PsychologicalTestAnalysisCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\PublicOfficeVerification\PublicOfficeVerificationCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\PublicOfficeVerification\PublicOfficeVerificationCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\RegistrationData\RegistrationDataCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\RegistrationData\RegistrationData_ResumeCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\ReliabilityTest\ReliabilityTestCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\SheetReniec\FotoAdjuntaCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\SheetReniec\SheetReniecCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\PoliceProceeding\PoliceProceedingsCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\PoliceProceeding\PoliceProceedingsCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\ProfessionalEnvironment\ProfessionalEnvironmentCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\ProfessionalEnvironment\ProfessionalEnvironmentCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\RegisterMaintenanceDb\RegisterMaintenanceDbCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\RegisterMaintenanceDb\RegisterMaintenanceDbCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\SocioeconomicReport\SocioeconomicReportCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\SunatVerification\SunatVerificationCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\TerrorismBackground\TerrorismBackgroundCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\TerrorismBackground\TerrorismBackgroundCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\VerifExcludedPerson\VerifExcludedPersonCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\VerifExcludedPerson\VerifExcludedPersonCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\WorkBackgroundCheck\WorkBackgroundCheckCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\WorkBackgroundCheck\WorkBackgroundCheckCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\Master\WorkInactivity\WorkInactivityCandidate.cs" />
+    <Compile Include="WorkIntegrity\Master\WorkInactivity\WorkInactivityCandidateDetail.cs" />
+    <Compile Include="WorkIntegrity\RequestGenerateDocument.cs" />
+    <Compile Include="WorkIntegrity\UpdateStatus.cs" />
+    <Compile Include="WorkIntegrity\VM\AcademicInformation\AcademicInformationCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\AcademicInformation\AcademicInformationCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\AcademicLaborAnalysis\AcademicLaborAnalysisCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\AcademicVerification\AcademicVerificationCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\AcademicVerification\AcademicVerificationCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\AcademicVerification\AcademicVerification_ColCandidateVm.cs" />
+    <Compile Include="WorkIntegrity\VM\AnalysisReliabilityTest\AnalysisReliabilityTestCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\AnalysisTestDarkFactor\AnalysisTestDarkFactorCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\AnexosCandidate\AnexosCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\AnexosCandidate\AnexosCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\AssessmentEvaluator\AssessmentEvaluatorCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\BackgroundDrugTraffic\BackgroundDrugTrafficCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\BackgroundDrugTraffic\BackgroundDrugTrafficCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\BasicCandidateInformation\BasicCandidateInformationCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\BasicCandidateInformation_BrasilCandidateVM\BasicCandidateInformation_BrasilCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\BasicData\BasicDataCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\BasicHousingFeatures\BasicHousingFeaturesCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\BasicHousingFeatures\CommunityRelationShipDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\BasicInformationEvaluated\BasicInformationEvaluatedCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\BasicInformation_Brasil\BasicInformation_BrasilCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\BasicInformation_Brasil\BI_BraVm.cs" />
+    <Compile Include="WorkIntegrity\VM\Conclusion\ConclusionCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\CriminalProceeding\CriminalProceedingsCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\CriminalProceeding\CriminalProceedingsCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\CriminalRecord\CriminalRecordCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\DarkFactor\DarkFactorCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\DefinitionMilitarySituation\DefinitionMilitarySituationCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\DiscardHomony\DiscardHomonyCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\DiscardHomony\DiscardHomonyCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\DriverRecordCheck\DriverRecordCheckCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\EconomicInformation\EconomicInformationCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\EconomicInformation\EconomicInformationCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\ElectoralFines\ElectoralFinesCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\ElectoralFines\ElectoralFinesCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\EndResult\EndResultCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\EsSaludVerification\EsSaludVerificationCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\FamilyEnvironment\FamilyEnvironmentCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\FamilyEnvironment\FamilyEnvironmentCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\FederalRegionalCourts\FederalRegionalCourtsCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\FederalRegionalCourts\FederalRegionalCourts_ResumeCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\FinancialBehavior\FinancialBehaviorCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\FinancialBehavior_Brasil\FinancialBehavior_BrasilCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\FinancialRecordsAnalysis\FinancialRecordsAnalysisCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\FinancialRecordsAnalysis\FinancialRecordsAnalysisCandidate_ColVM.cs" />
+    <Compile Include="WorkIntegrity\VM\FinancialVerification\FinancialVerificationCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\FinancialVerification\ListCreditLineCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\FinancialVerification\ListDebtDetailCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\HealthSituation\HealthSituationCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\HouseCallsAnalysis\HouseCallsAnalysisCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\InternationalBackgroundAnalysis_Brasil\InternationalBackgroundAnalysis_BrasilCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\InternationalRestrictiveLists_Brasil\InternationalRestrictiveLists_BrasilCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\JobPerformance\JobPerformanceCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\JudicialProceeding\JudicialProceedingsCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\JudicialProceeding\JudicialProceedingsCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\LaborVerification\LaborVerificationCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\MoneyLaundering\MoneyLaunderingCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\MoneyLaundering\MoneyLaunderingCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\NationalBackgroundAnalysis_Brasil\NationalBackgroundAnalysis_BrasilCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\NationalRestrictiveLists\NationalRestrictiveListsCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\NationalRestrictiveLists_Brasil\NationalRestrictiveLists_BrasilCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\PersonalDataEvaluated\PersonalDataEvaluatedCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\PhotographicRecord\PhotographicRecordCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\PhysicalPersonRegistration\PhysicalPersonRegistrationCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\PoliceProceeding\PoliceProceedingsCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\PoliceProceeding\PoliceProceedingsCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\PoliticalAffiliationVerification\PoliticalAffiliationVerificationCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\PoliticalAffiliationVerification\PoliticalAffiliationVerificationCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\PoliticalSocialBackgroundAnalysis\PoliticalSocialBackgroundAnalysisCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\Polygraph\GenericTemplatePoligraphColombia.cs" />
+    <Compile Include="WorkIntegrity\VM\Polygraph\PolygraphCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\Polygraph\StudyConductedCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\Polygraph\WorkExperienceCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\PremiumPersonalHistory\PremiumPersonalHistoryCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\ProfessionalEnvironment\ProfessionalEnvironmentCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\ProfessionalEnvironment\ProfessionalEnvironmentCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\PsychologicalTestAnalysisCandidateVM\PsychologicalTestAnalysisCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\PublicOfficeVerification\PublicOfficeVerificationCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\PublicOfficeVerification\PublicOfficeVerificationCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\RegisterMaintenanceDb\RegisterMaintenanceDbCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\RegisterMaintenanceDb\RegisterMaintenanceDbCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\RegistrationData\RegistrationDataCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\RegistrationData\RegistrationData_ResumeCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\ReliabilityTest\ReliabilityTestCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\SheetReniec\SheetReniecCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\SocioeconomicReport\SocioeconomicReportCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\SunatVerification\SunatVerificationCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\TerrorismBackground\TerrorismBackgroundCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\TerrorismBackground\TerrorismBackgroundCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\VerifExcludedPerson\VerifExcludedPersonCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\VerifExcludedPerson\VerifExcludedPersonCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\WorkBackgroundCheck\WorkBackgroundCheckCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\WorkBackgroundCheck\WorkBackgroundCheckCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\VM\WorkInactivity\WorkInactivityCandidateDetailVM.cs" />
+    <Compile Include="WorkIntegrity\VM\WorkInactivity\WorkInactivityCandidateVM.cs" />
+    <Compile Include="WorkIntegrity\work03Brasil\GenericTemplateIntegrity93Brasil.cs" />
+    <Compile Include="WorkIntegrity\work03Brasil\MasterEntity03Brasil.cs" />
+    <Compile Include="WorkIntegrity\work03Brasil\MasterEntity03BrasilVM.cs" />
+    <Compile Include="WorkIntegrity\work180plus\GenericTemplateIntegrity180PlusColombia.cs" />
+    <Compile Include="WorkIntegrity\work180plus\GenericTemplateIntegrity180PlusPeru.cs" />
+    <Compile Include="WorkIntegrity\work180plus\MasterClient180PlusColombiaVM.cs" />
+    <Compile Include="WorkIntegrity\work180plus\MasterClient180PlusPeruVM.cs" />
+    <Compile Include="WorkIntegrity\work180plus\MasterEntity180PlusColombia.cs" />
+    <Compile Include="WorkIntegrity\work180plus\MasterEntity180PlusPeru.cs" />
+    <Compile Include="WorkIntegrity\work180\GenericTemplateIntegrity180Colombia.cs" />
+    <Compile Include="WorkIntegrity\work180\GenericTemplateIntegrity180Peru.cs" />
+    <Compile Include="WorkIntegrity\work180\MasterClient180ColombiaVM.cs" />
+    <Compile Include="WorkIntegrity\work180\MasterClient180PeruVM.cs" />
+    <Compile Include="WorkIntegrity\work180\MasterEntity180Colombia.cs" />
+    <Compile Include="WorkIntegrity\work180\MasterEntity180Peru.cs" />
+    <Compile Include="WorkIntegrity\work270plus\GenericTemplateIntegrity270PlusColombia.cs" />
+    <Compile Include="WorkIntegrity\work270plus\GenericTemplateIntegrity270PlusPeru.cs" />
+    <Compile Include="WorkIntegrity\work270\GenerateTemplateIntegrity270Brasil.cs" />
+    <Compile Include="WorkIntegrity\work270\MasterClient270BrasilVM.cs" />
+    <Compile Include="WorkIntegrity\work270plus\MasterClient270PlusColombiaVM.cs" />
+    <Compile Include="WorkIntegrity\work270plus\MasterClient270PlusPeruVM.cs" />
+    <Compile Include="WorkIntegrity\work270\MasterEntity270Brasil.cs" />
+    <Compile Include="WorkIntegrity\work270plus\MasterEntity270PlusColombia.cs" />
+    <Compile Include="WorkIntegrity\work270plus\MasterEntity270PlusPeru.cs" />
+    <Compile Include="WorkIntegrity\work270\GenericTemplateIntegrity270.cs" />
+    <Compile Include="WorkIntegrity\work270\GenericTemplateIntegrity270Colombia.cs" />
+    <Compile Include="WorkIntegrity\work270\MasterClient270VM.cs" />
+    <Compile Include="WorkIntegrity\work270\MasterClient270ColombiaVM.cs" />
+    <Compile Include="WorkIntegrity\work270\MasterEntity270.cs" />
+    <Compile Include="WorkIntegrity\work270\MasterEntity270Colombia.cs" />
+    <Compile Include="WorkIntegrity\work360plus\GenericTemplateIntegrity360PlusColombia.cs" />
+    <Compile Include="WorkIntegrity\work360plus\GenericTemplateIntegrity360PlusPeru.cs" />
+    <Compile Include="WorkIntegrity\work360plus\MasterClient360PlusColombiaVM.cs" />
+    <Compile Include="WorkIntegrity\work360plus\MasterClient360PlusPeruVM.cs" />
+    <Compile Include="WorkIntegrity\work360plus\MasterEntity360PlusColombia.cs" />
+    <Compile Include="WorkIntegrity\work360plus\MasterEntity360PlusPeru.cs" />
+    <Compile Include="WorkIntegrity\work360\GenericTemplateIntegrity360Brasil.cs" />
+    <Compile Include="WorkIntegrity\work360\GenericTemplateIntegrity360Colombia.cs" />
+    <Compile Include="WorkIntegrity\work360\GenericTemplateIntegrity360Peru.cs" />
+    <Compile Include="WorkIntegrity\work360\MasterClient360BrasilVM.cs" />
+    <Compile Include="WorkIntegrity\work360\MasterClient360ColombiaVM.cs" />
+    <Compile Include="WorkIntegrity\work360\MasterClient360PeruVM.cs" />
+    <Compile Include="WorkIntegrity\work360\MasterEntity360Brasil.cs" />
+    <Compile Include="WorkIntegrity\work360\MasterEntity360Colombia.cs" />
+    <Compile Include="WorkIntegrity\work360\MasterEntity360Peru.cs" />
+    <Compile Include="WorkIntegrity\work90plus\GenericTemplateIntegrity90PlusPeru.cs" />
+    <Compile Include="WorkIntegrity\work90plus\MasterClient90PlusPeruVM.cs" />
+    <Compile Include="WorkIntegrity\work90plus\MasterEntity90PlusPeru.cs" />
+    <Compile Include="WorkIntegrity\work90\GenericTemplateIntegrity90Peru.cs" />
+    <Compile Include="WorkIntegrity\work90\MasterClient90PeruVM.cs" />
+    <Compile Include="WorkIntegrity\work90\MasterEntity90Peru.cs" />
+    <Compile Include="WorkIntegrity\workbasic\MasterClientBasicPeruVM.cs" />
+    <Compile Include="WorkIntegrity\workbasic\MasterEntityBasicPeru.cs" />
+    <Compile Include="Work\CollaboratorWork.cs" />
+    <Compile Include="Work\ConsultsRequestIntegrity.cs" />
+    <Compile Include="Work\DocumentType.cs" />
+    <Compile Include="Work\DownloadZipWorkIntegrity.cs" />
+    <Compile Include="Work\ErrorExcelCollaborator.cs" />
+    <Compile Include="Work\FLT\WorkIntegrity_HabeasDataFlt.cs" />
+    <Compile Include="Work\FLT\WorkIntegrity_VoucherFlt.cs" />
+    <Compile Include="Work\GetBranchOfficesIntegrity.cs" />
+    <Compile Include="Work\GetPayMethodWorkIntegrity.cs" />
+    <Compile Include="Work\GetServicesWorkIntegrity.cs" />
+    <Compile Include="Work\ResponseExcelCollaborator.cs" />
+    <Compile Include="Work\RequestWorksIntegrity.cs" />
+    <Compile Include="Work\SaveWorkIntegrity.cs" />
+    <Compile Include="Work\SaveWorkIntegrityResponse.cs" />
+    <Compile Include="Work\StatusRequestIntegrity.cs" />
+    <Compile Include="Work\VM\GetWorkIntegrityVm.cs" />
+    <Compile Include="Work\VM\WorkIntegrity_HabeasDataVm.cs" />
+    <Compile Include="Work\VM\WorkIntegrity_VoucherVm.cs" />
+    <Compile Include="Work\WorkDownload.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProductIntegrityWork\" />
+    <Folder Include="TemplateWork\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Work\collaboratorWork.cs~RF9f66e37.TMP" />
+    <None Include="Work\LoadExcelCollaborator.cs~RF17d17353.TMP" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

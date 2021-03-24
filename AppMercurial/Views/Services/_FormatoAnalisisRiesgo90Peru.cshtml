@@ -1,0 +1,431 @@
+﻿
+@{
+    ViewBag.Title = "InformesAnalisisIntegralRiesgoPeru";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="br-mainpanel">
+    <div class="br-pageheader">
+
+    </div>
+    <div class="br-pagetitle">
+        <i class="icon ion-ios-book-outline"></i>
+        <div>
+            <h4>
+                INFORMES DE ANÁLISIS INTEGRAL DE RIESGO - PERÚ
+            </h4>
+        </div>
+    </div>
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+
+            <div id="componentes">
+
+
+                <!-- INFORMES DE ANÁLISIS INTEGRAL DE RIESGO - PERÚ -->
+                <div class="row mg-b-25">
+                    <!-- Title -->
+                    <div class="col-lg-12">
+                        <h4 style="text-align: center;">INFORMES DE ANÁLISIS INTEGRAL DE RIESGO - PERÚ</h4>
+                    </div>
+                </div>
+
+
+
+                <!-- ANALISIS DE RIESGO BASICO -->
+                <div class="row mg-b-25 border_content" id="analisis_riesgo_basico">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">1. ANÁLISIS DE RIESGO BÁSICO</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+
+
+                    <!-- ANTECEDENTES JUDICIALES -->
+                    <div class="col-lg-12" id="antecedentes_judiciales">
+                        <div class="form-group">
+                            <!-- TITLE -->
+                            <label class="tx-bold">ANTECEDENTES JUDICIALES</label>
+                            <!-- CHECKBOX -->
+                            <label class="ckbox">
+                                <input id="chk_antecedentes_judiciales" type="checkbox" value="true">
+                                <span>Visualizar en PDF</span>
+                            </label>
+                            <!-- FILE -->
+                            <input type="file" id="file_antecedentes_judiciales" class="form-control" placeholder="-" required>
+                            <!-- PREVIEW -->
+                            <div class="row" style="margin-top:4px" id="preview_antecedentes_judiciales">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- ANTECEDENTES PENALES -->
+                    <div class="col-lg-12" id="antecedentes_penales">
+                        <div class="form-group">
+                            <!-- TITLE -->
+                            <label class="tx-bold">ANTECEDENTES PENALES</label>
+                            <!-- CHECKBOX -->
+                            <label class="ckbox">
+                                <input id="chk_antecedentes_penales" type="checkbox" value="true">
+                                <span>Visualizar en PDF</span>
+                            </label>
+                            <!-- FILE -->
+                            <input type="file" id="file_antecedentes_penales" class="form-control" placeholder="-" required>
+                            <!-- PREVIEW -->
+                            <div class="row" style="margin-top:4px" id="preview_antecedentes_penales">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- ANTECEDENTES POLICIALES - DENUNCIAS -->
+                    <div class="col-lg-12" id="antecedentes_policiales_denuncias">
+                        <div class="form-group">
+                            <!-- TITLE -->
+                            <label class="tx-bold">ANTECEDENTES POLICIALES - DENUNCIAS</label>
+                            <!-- CHECKBOX -->
+                            <label class="ckbox">
+                                <input id="chk_antecedentes_policiales_denuncias" type="checkbox" value="true">
+                                <span>Visualizar en PDF</span>
+                            </label>
+                            <!-- FILE -->
+                            <input type="file" id="file_antecedentes_policiales_denuncias" class="form-control" placeholder="-" required>
+                            <!-- PREVIEW -->
+                            <div class="row" style="margin-top:4px" id="preview_antecedentes_policiales_denuncias">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- RENIEC -->
+                    <div class="col-lg-12" id="reniec">
+                        <div class="form-group">
+                            <!-- TITLE -->
+                            <label class="tx-bold">RENIEC</label>
+                            <!-- CHECKBOX -->
+                            <label class="ckbox">
+                                <input id="chk_reniec" type="checkbox" value="true">
+                                <span>Visualizar en PDF</span>
+                            </label>
+                            <!-- FILE -->
+                            <input type="file" id="file_reniec" class="form-control" placeholder="-" required>
+                            <!-- PREVIEW -->
+                            <div class="row" style="margin-top:4px" id="preview_reniec">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- ANTECEDENTES DE TERRORISMO -->
+                    <div class="col-lg-12" id="antecedentes_terrorismo">
+                        <div class="form-group">
+                            <!-- TITLE -->
+                            <label class="tx-bold">ANTECEDENTES DE TERRORISMO</label>
+                            <!-- CHECKBOX -->
+                            <label class="ckbox">
+                                <input id="chk_antecedentes_terrorismo" type="checkbox" value="true">
+                                <span>Visualizar en PDF</span>
+                            </label>
+                            <!-- FILE -->
+                            <input type="file" id="file_antecedentes_terrorismo" class="form-control" placeholder="-" required>
+                            <!-- PREVIEW -->
+                            <div class="row" style="margin-top:4px" id="preview_antecedentes_terrorismo">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- ANTECEDENTES TRAFICO DE DROGAS -->
+                    <div class="col-lg-12" id="antecedentes_trafico_drogas">
+                        <div class="form-group">
+                            <!-- TITLE -->
+                            <label class="tx-bold">ANTECEDENTES TRAFICO DE DROGAS</label>
+                            <!-- CHECKBOX -->
+                            <label class="ckbox">
+                                <input id="chk_antecedentes_trafico_drogas" type="checkbox" value="true">
+                                <span>Visualizar en PDF</span>
+                            </label>
+                            <!-- FILE -->
+                            <input type="file" id="file_antecedentes_trafico_drogas" class="form-control" placeholder="-" required>
+                            <!-- PREVIEW -->
+                            <div class="row" style="margin-top:4px" id="preview_antecedentes_trafico_drogas">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- COMPORTAMIENTO FINANCIERO SENTINEL -->
+                    <div class="col-lg-12" id="comportamiento_financiero_sentinel">
+                        <div class="form-group">
+                            <!-- TITLE -->
+                            <label class="tx-bold">COMPORTAMIENTO FINANCIERO SENTINEL</label>
+                            <!-- CHECKBOX -->
+                            <label class="ckbox">
+                                <input id="chk_comportamiento_financiero_sentinel" type="checkbox" value="true">
+                                <span>Visualizar en PDF</span>
+                            </label>
+                            <!-- FILE -->
+                            <input type="file" id="file_comportamiento_financiero_sentinel" class="form-control" placeholder="-" required>
+                            <!-- PREVIEW -->
+                            <div class="row" style="margin-top:4px" id="preview_comportamiento_financiero_sentinel">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">1. ANÁLISIS DE RIESGO BÁSICO</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <!-- Contador de registro -->
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label class="tx-bold">ITEMS</label>
+                            <select id="sl_items_analisis_riesgo_basico" class="form-control" data-placeholder="Choose Browser">
+                                <option value="0">[-- SELECCIONAR --]</option>
+                                <option value="ANTECEDENTES_JUDICIALES">ANTECEDENTES JUDICIALES</option>
+                                <option value="ANTECEDENTES_PENALES">ANTECEDENTES PENALES</option>
+                                <option value="ANTECEDENTES_POLICIALES_DENUNCIAS">ANTECEDENTES POLICIALES - DENUNCIAS</option>
+                                <option value="RENIEC">RENIEC</option>
+                                <option value="ANTECEDENTES_TERRORISMO">ANTECEDES DE TERRORISMO</option>
+                                <option value="ANTECEDENTES_TRAFICO_DROGAS">ANTECEDES TRAFICO DE DROGAS</option>
+                                <option value="COMPORTAMIENTO_FINANCIERO_SENTINEL">COMPORTAMIENTO FINANCIERO SENTINEL</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label><b>SELECCIONAR ARCHIVO:</b> <span class="tx-danger">*</span></label>
+
+                            <input type="file" id="file_analisis_riesgo_basico" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group mg-b-10-force">
+                            <label><span class="tx-danger">&nbsp;</span></label>
+                            <div class="input-group">
+                                <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_analisis_riesgo_basico"><i class="fa fa-plus-circle"></i> <span>Agregar</span> </button>
+                            </div>
+                        </div>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+                    <!-- Tabla -->
+                    <div class="col-lg-12">
+                        <div class="table-wrapper">
+                            <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_analisis_riesgo" style="width: 100%;">
+                                <thead class="font-size-8">
+                                    <tr>
+                                        <th class="wd-5p">INDEX</th>
+                                        <th class="wd-15p">ITEM</th>
+                                        <th class="wd-15p">ACCIÓN</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!-- PRUEBAS PSIGMA -->
+                <div class="row mg-b-25 border_content" id="pruebas_psigma">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">3. PRUEBAS PSIGMA</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+
+
+                    <!-- INFORME DE PRUEBA DE FACTOR OSCURO -->
+                    <div class="col-lg-12" id="factor_oscuro">
+                        <div class="form-group">
+                            <!-- TITLE -->
+                            <label class="tx-bold">INFORME DE PRUEBA DE FACTOR OSCURO</label>
+                            <!-- CHECKBOX -->
+                            <label class="ckbox">
+                                <input id="chk_factor_oscuro" type="checkbox" value="true">
+                                <span>Visualizar en PDF</span>
+                            </label>
+                            <!-- FILE -->
+                            <input type="file" id="file_factor_oscuro" class="form-control" placeholder="-" required>
+                            <!-- PREVIEW -->
+                            <div class="row" style="margin-top:4px" id="preview_factor_oscuro">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- INFORME DE PRUEBA ANTES PLUS -->
+                    <div class="col-lg-12" id="antes_plus">
+                        <div class="form-group">
+                            <!-- TITLE -->
+                            <label class="tx-bold">INFORME DE PRUEBA ANTES PLUS</label>
+                            <!-- CHECKBOX -->
+                            <label class="ckbox">
+                                <input id="chk_antes_plus" type="checkbox" value="true">
+                                <span>Visualizar en PDF</span>
+                            </label>
+                            <!-- FILE -->
+                            <input type="file" id="file_antes_plus" class="form-control" placeholder="-" required>
+                            <!-- PREVIEW -->
+                            <div class="row" style="margin-top:4px" id="preview_antes_plus">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- VISITA DOMICILIARIA -->
+                <div class="row mg-b-25 border_content" id="visita_domiciliaria">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">4. VISITA DOMICILIARIA</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+
+                    <!-- INFORME DEL PERSONAL ENCARGADO -->
+                    <div class="col-lg-12" id="personal_encargado">
+                        <div class="form-group">
+                            <!-- TITLE -->
+                            <label class="tx-bold">INFORME DEL PERSONAL ENCARGADO (FOTOS, CONFIRMACIÓN, BREVE ENTREVISTA) ADJUNTO</label>
+                            <!-- CHECKBOX -->
+                            <label class="ckbox">
+                                <input id="chk_personal_encargado" type="checkbox" value="true">
+                                <span>Visualizar en PDF</span>
+                            </label>
+                            <!-- FILE -->
+                            <input type="file" id="file_personal_encargado" class="form-control" placeholder="-" required>
+                            <!-- PREVIEW -->
+                            <div class="row" style="margin-top:4px" id="preview_personal_encargado">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!-- POLIGRADO-->
+                <div class="row mg-b-25 border_content" id="poligrafo">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">5. POLIGRAFO</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+
+                    <!-- ADJUNTO -->
+                    <div class="col-lg-12" id="poligrafo_adjunto">
+                        <div class="form-group">
+                            <!-- TITLE -->
+                            <label class="tx-bold">ADJUNTO</label>
+                            <!-- CHECKBOX -->
+                            <label class="ckbox">
+                                <input id="chk_poligrafo_adjunto" type="checkbox" value="true">
+                                <span>Visualizar en PDF</span>
+                            </label>
+                            <!-- FILE -->
+                            <input type="file" id="file_poligrafo_adjunto" class="form-control" placeholder="-" required>
+                            <!-- PREVIEW -->
+                            <div class="row" style="margin-top:4px" id="preview_poligrafo_adjunto">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/analisis_riesgo_90_peru")

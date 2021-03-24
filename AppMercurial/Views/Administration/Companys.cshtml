@@ -1,0 +1,185 @@
+﻿
+@{
+    ViewBag.Title = "Companys";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="br-mainpanel">
+    <div class="br-pageheader">
+
+    </div>
+    <div class="br-pagetitle">
+        <i class="icon ion-ios-book-outline"></i>
+        <div>
+            <h4 id="lbl_titulo">Empresas</h4>
+        </div>
+    </div>
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+
+            <div class="table-wrapper">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h6 class="tx-inverse tx-uppercase tx-bold" id="lbl_listado_registro"> Listado de empresas</h6>
+                    </div>
+                    <div class="col-sm-2">
+                        @*<a href="#" class="btn btn-dark btn-icon rounded-circle" data-toggle="modal" data-target="#modal_register" style="float: right;"><div><i class="fa fa-plus"></i></div></a>*@
+                        <a href="#" onclick="showModal()" class="btn btn-dark btn-icon rounded-circle" data-toggle="modal" style="float: right;"><div><i class="fa fa-plus"></i></div></a>
+
+                    </div>
+                </div>
+                <br />
+                <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_data" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th class="wd-10p" id="lbl_table_codigo">Código</th>
+                            <th class="wd-30p" id="lbl_table_servicios">Empresa</th>
+                            <th class="wd-25p" id="lbl_table_enviado_por">País</th>
+                            <th class="wd-15p" id="lbl_table_fecha_hora">Tipo Doc.</th>
+                            <th class="wd-10p" id="lbl_table_estado">Nro. Doc.</th>
+                            <th class="wd-10p" id="lbl_table_estado">Estado</th>
+                            <th class="wd-10p" id="lbl_table_accion">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl_list_work_integrity">
+                        <!-- DYNAMIC -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal Register -->
+        <div id="modal_register" class="modal fade">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content tx-size-sm">
+                    <div class="modal-header pd-x-20">
+                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="lbl_modal_register_registro_verificacion">Registro de Empresa</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body pd-20">
+
+                        <div class="col-lg-12">
+                            <div class="row">
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Pais: <span class="tx-danger">*</span></label>
+                                        <select class="form-control" id="sl_pais" data-placeholder="-" required="">
+                                            <option>[Seleccionar]</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Tipo documento: <span class="tx-danger">*</span></label>
+                                        <select class="form-control" id="sl_tipo_documento" data-placeholder="-" required="">
+                                            <option>[Seleccionar]</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="row">
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Número de documento: <span class="tx-danger">*</span></label>
+                                        <input type="text" id="txt_num_documento" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Descripción Empresa: <span class="tx-danger">*</span></label>
+                                        <input type="text" id="txt_descripcion_empresa" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <label class="ckbox">
+                                    <input type="checkbox" checked="" id="check_estado"><span id="lbl_estado">Activo</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <br />
+                        <br />
+
+                        <div id="wizard2">
+                            <h3 id="lbl_modal_register_sucursales">Sucursales</h3>
+
+                            <section>
+
+                                <div class="row mg-b-25">
+                                    
+                                    <div class="col-lg-8">
+                                        <div class="form-group">
+                                            <label class="form-control-label" id="lbl_modal_register_descripcion_sucursal">Descripción Sucursal: </label><span class="tx-danger">*</span>
+                                            <input class="form-control" type="text" id="txt_descripcion_sucursal" placeholder="-" required>
+                                        </div>
+                                    </div><!-- col-4 -->
+
+                                    <div class="col-lg-4">
+                                        <div class="form-group mg-b-10-force">
+                                            <label><span class="tx-danger">&nbsp;</span></label>
+                                            <div class="input-group">
+                                                <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_agregar_sucursal"><i class="fa fa-plus-circle"></i> <span id="lbl_modal_register_agregar" data-i18n="add">Agregar</span> </button>
+                                            </div>
+                                        </div>
+                                    </div><!-- col-4 -->
+
+                                </div><!-- row -->
+
+                                <div class="table-wrapper">
+                                    <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_list_sucursales" style="width: 100%;">
+                                        <thead class="font-size-8">
+                                            <tr>
+                                                <th class="wd-10p" id="lbl_modal_register_table_id">ID</th>
+                                                <th class="wd-50p" id="lbl_modal_register_table_tipo_documento">Desc. Sucursal</th>
+                                                <th class="wd-25p" id="lbl_modal_register_table_accion">Acción</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="font-size-8" id="tbody_list_add">
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </section>
+                            
+                        </div>
+
+
+                        <div class="col-lg-12">
+                            <button type="button" class="btn btn-primary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" onclick="saveData()" id="btn_guardar_usuario">Guardar</button>
+                        </div>
+
+
+                    </div><!-- modal-body -->
+
+                </div>
+            </div><!-- modal-dialog -->
+
+        </div><!-- modal -->
+
+
+    </div>
+
+</div>
+<script>
+    var urlGetDocumentType = '@Url.Action("GetDocumentType", "Administration")';
+    var urlSaveCompany = '@Url.Action("SaveOrUpdateCompany", "Administration")';
+    var urlGetBranchOffices = '@Url.Action("getListBranchOffice", "Administration")';
+    var urlGetListCompanies = '@Url.Action("GetCompanys", "Administration")';
+    var urlGetListCountries = '@Url.Action("GetCountries", "Users")';
+</script>
+@Scripts.Render("~/bundles/companys")

@@ -1,0 +1,518 @@
+﻿
+@{
+    ViewBag.Title = "Ciberseguridad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int IdRol = int.Parse(ViewData["IdRol"].ToString());
+}
+@model List<Mercurial.DomainEntities.Company.GetCompanyRsl>
+
+
+<div class="br-mainpanel">
+    <div class="br-pageheader">
+
+    </div>
+    <div class="br-pagetitle">
+        <i class="icon ion-ios-book-outline"></i>
+        <div>
+            <h4 id="lbl_titulo" data-i18n="cybersecurity">Ciberseguridad</h4>
+        </div>
+    </div>
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+
+            <div class="ht-md-60 wd-200 wd-md-auto bg-br-primary pd-y-20 pd-md-y-0 mg-t-30 d-flex align-items-center justify-content-center">
+                <ul class="nav nav-effect nav-effect-2 flex-column flex-md-row" role="tablist">
+                    <li class="nav-item"><a class="nav-link active show" data-toggle="tab" href="#tab_HackeoEtico" role="tab" aria-selected="false" data-i18n="ethical-hacking">HACKEO ETICO</a></li>
+                    <li class="nav-item current"><a class="nav-link" data-toggle="tab" href="#tab_OSINT" role="tab" aria-selected="true" data-i18n="osint">OSINT</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab_Pentesting" role="tab" data-i18n="pentesting">PENTESTING</a></li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tab_HackeoEtico" role="tabpanel" aria-labelledby="home-tab">
+
+                    <div class="table-wrapper">
+                        <br />
+                        <br />
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group mg-b-0">
+                                    <label id="lbl_fecha_inicio_buscador_HackeoEtico" data-i18n="start-date">Fecha Inicio: </label><span class="tx-danger">*</span>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                            </div>
+                                        </div>
+                                        <input type="text" name="txt_fecha_inicio_HackeoEtico" id="txt_fecha_inicio_HackeoEtico" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group mg-b-0">
+                                    <label id="lbl_fecha_fin_buscador_HackeoEtico" data-i18n="end-date">Fecha Fin: </label><span class="tx-danger">*</span>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                            </div>
+                                        </div>
+                                        <input type="text" name="txt_fecha_fin_HackeoEtico" id="txt_fecha_fin_HackeoEtico" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3"></div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label><span class="tx-danger">&nbsp;</span></label>
+                                    <div class="input-group">
+                                        <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_buscar_HackeoEtico"><i class="fa fa-search"></i> <span id="lbl_buscar_buscador" data-i18n="search">Buscar</span> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <h6 class="tx-inverse tx-uppercase tx-bold" id="lbl_listado_registro_HackeoEtico" data-i18n="ethical-hacking-format-list"> Listado de formatos Hackeo Etico</h6>
+                            </div>
+                            <div class="col-sm-2">
+                                @if (IdRol == 1 || IdRol == 2 || IdRol == 4)
+                                {
+                                    <a href="#" class="btn btn-dark btn-icon rounded-circle" data-toggle="modal" data-target="#modal_register_HackeoEtico" style="float: right;"><div><i class="fa fa-plus"></i></div></a>
+                                }
+                            </div>
+                        </div>
+                        <br />
+                        <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_data_Hackeo_Etico" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th class="wd-10p" id="lbl_tbl_data_Hackeo_Etico_index">INDEX</th>
+                                    <th class="wd-30p" id="lbl_tbl_data_Hackeo_Etico_servicios" data-i18n="enterprise-table">EMPRESA</th>
+                                    <th class="wd-15p" id="lbl_tbl_data_Hackeo_Etico_fecha_hora" data-i18n="date-hour">Fecha y hora</th>
+                                    <th class="wd-10p" id="lbl_tbl_data_Hackeo_Etico_estado" data-i18n="country">PAIS</th>
+                                    <th class="wd-10p" id="lbl_tbl_data_Hackeo_Etico_estado" data-i18n="name">NOMBRE</th>
+                                    <th class="wd-10p" id="lbl_tbl_data_Hackeo_Etico_accion" data-i18n="action">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- DYNAMIC -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="tab_OSINT" role="tabpanel" aria-labelledby="profile-tab">
+
+                    <div class="table-wrapper">
+                        <br />
+                        <br />
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group mg-b-0">
+                                    <label id="lbl_fecha_inicio_buscador_OSINT" data-i18n="start-date">Fecha Inicio: </label><span class="tx-danger">*</span>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                            </div>
+                                        </div>
+                                        <input type="text" name="txt_fecha_inicio_OSINT" id="txt_fecha_inicio_OSINT" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group mg-b-0">
+                                    <label id="lbl_fecha_fin_buscador_OSINT" data-i18n="end-date">Fecha Fin: </label><span class="tx-danger">*</span>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                            </div>
+                                        </div>
+                                        <input type="text" name="txt_fecha_fin_OSINT" id="txt_fecha_fin_OSINT" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3"></div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label><span class="tx-danger">&nbsp;</span></label>
+                                    <div class="input-group">
+                                        <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_buscar_OSINT"><i class="fa fa-search"></i> <span id="lbl_buscar_buscador" data-i18n="search">Buscar</span> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <h6 class="tx-inverse tx-uppercase tx-bold" id="lbl_listado_registro_OSINT"> Listado de formatos osint</h6>
+                            </div>
+                            <div class="col-sm-2">
+                                @if (IdRol == 1 || IdRol == 2 || IdRol == 4)
+                                {
+                                    <a href="#" class="btn btn-dark btn-icon rounded-circle" data-toggle="modal" data-target="#modal_register_OSINT" style="float: right;"><div><i class="fa fa-plus"></i></div></a>
+                                }
+                            </div>
+                        </div>
+                        <br />
+                        <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_data_OSINT" style="width: 100%;">
+                            <thead>
+								<tr>
+									<th class="wd-10p" id="lbl_tbl_data_Hackeo_Etico_index">INDEX</th>
+									<th class="wd-30p" id="lbl_tbl_data_Hackeo_Etico_servicios" data-i18n="enterprise-table">EMPRESA</th>
+									<th class="wd-15p" id="lbl_tbl_data_Hackeo_Etico_fecha_hora" data-i18n="date-hour">Fecha y hora</th>
+									<th class="wd-10p" id="lbl_tbl_data_Hackeo_Etico_estado" data-i18n="country">PAIS</th>
+									<th class="wd-10p" id="lbl_tbl_data_Hackeo_Etico_estado" data-i18n="name">NOMBRE</th>
+									<th class="wd-10p" id="lbl_tbl_data_Hackeo_Etico_accion" data-i18n="action">Acción</th>
+								</tr>
+                            </thead>
+                            <tbody>
+                                <!-- DYNAMIC -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="tab_Pentesting" role="tabpanel" aria-labelledby="contact-tab">
+
+                    <div class="table-wrapper">
+                        <br />
+                        <br />
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group mg-b-0">
+                                    <label id="lbl_fecha_inicio_buscador_Pentesting" data-i18n="start-date">Fecha Inicio: </label><span class="tx-danger">*</span>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                            </div>
+                                        </div>
+                                        <input type="text" name="txt_fecha_inicio_Pentesting" id="txt_fecha_inicio_Pentesting" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group mg-b-0">
+                                    <label id="lbl_fecha_fin_buscador_Pentesting" data-i18n="end-date">Fecha Fin: </label><span class="tx-danger">*</span>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                            </div>
+                                        </div>
+                                        <input type="text" name="txt_fecha_fin_Pentesting" id="txt_fecha_fin_Pentesting" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3"></div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label><span class="tx-danger">&nbsp;</span></label>
+                                    <div class="input-group">
+                                        <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_buscar_Pentesting"><i class="fa fa-search"></i> <span id="lbl_buscar_buscador" data-i18n="search">Buscar</span> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <h6 class="tx-inverse tx-uppercase tx-bold" id="lbl_listado_registro_Pentesting"> Listado de formatos pentesting</h6>
+                            </div>
+                            <div class="col-sm-2">
+                                @if (IdRol == 1 || IdRol == 2 || IdRol == 4)
+                                {
+                                    <a href="#" class="btn btn-dark btn-icon rounded-circle" data-toggle="modal" data-target="#modal_register_Pentesting" style="float: right;"><div><i class="fa fa-plus"></i></div></a>
+                                }
+                            </div>
+                        </div>
+                        <br />
+                        <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_data_Pentesting" style="width: 100%;">
+                            <thead>
+								<tr>
+									<th class="wd-10p" id="lbl_tbl_data_Hackeo_Etico_index">INDEX</th>
+									<th class="wd-30p" id="lbl_tbl_data_Hackeo_Etico_servicios" data-i18n="enterprise-table">EMPRESA</th>
+									<th class="wd-15p" id="lbl_tbl_data_Hackeo_Etico_fecha_hora" data-i18n="date-hour">Fecha y hora</th>
+									<th class="wd-10p" id="lbl_tbl_data_Hackeo_Etico_estado" data-i18n="country">PAIS</th>
+									<th class="wd-10p" id="lbl_tbl_data_Hackeo_Etico_estado" data-i18n="name">NOMBRE</th>
+									<th class="wd-10p" id="lbl_tbl_data_Hackeo_Etico_accion" data-i18n="action">Acción</th>
+								</tr>
+                            </thead>
+                            <tbody>
+                                <!-- DYNAMIC -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Modal Register -->
+        <div id="modal_register_HackeoEtico" class="modal fade">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content tx-size-sm">
+                    <div class="modal-header pd-x-20">
+                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="lbl_modal_register_HackeoEtico_registro">Registro Hackeo Etico</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body pd-20">
+
+                        <div id="wizard2">
+                            <section>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label data-i18n="attach-document">Adjuntar Documento: </label><span class="tx-danger">*</span>
+                                        <input type="file" id="file_modal_register_HackeoEtico_1" class="form-control" placeholder="-" required>
+                                        @*<div class="row" style="margin-top:4px" id="Previewmodal_register_HackeoEtico_1">
+                                            <div class="col-lg-5">
+                                                <span></span>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <button class="btn styleIcon previewClass"><i class="fa fa-folder"></i></button>
+                                            </div>
+                                        </div>*@
+                                    </div>
+                                </div>
+
+                                <div class="row mg-t-12">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="form-control-label" id="lbl_modal_register_HackeoEtico_empresa" data-i18n="enterprise">Empresa: </label><span class="tx-danger">*</span>
+                                            <select class="form-control select2-show-search" data-placeholder="Choose Browser" id="sl_modal_register_HackeoEtico_empresa" required>
+                                                <option value="0">SELECCIONE</option>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <option value="@item.IdEmpresa">@item.DescripcionEmpresa</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6" style="display:none">
+                                        <div class="form-group">
+                                            <label class="form-control-label" id="lbl_modal_register_HackeoEtico_Tipo Alerta">Sucursal: </label> <span class="tx-danger">*</span>
+                                            <select class="form-control" data-placeholder="Choose Browser" id="sl_modal_register_HackeoEtico_sucursal" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div><!-- col-4 -->
+
+
+
+
+
+
+
+
+
+
+                                <div class="parsley-select wd-250 mg-t-30">
+                                    <div class="parsley-input">
+                                        <label id="lbl_modal_register_HackeoEtico_comentario" data-i18n="name">Nombre: </label><span class="tx-danger"></span>
+                                        <input maxlength="200" type="text" id="txt_HackeoEtico_comentario" class="form-control wd-550" placeholder="-">
+                                    </div><!-- form-group -->
+                                </div>
+
+                                <div class="mg-t-30">
+                                    <a type="button" id="btn_guardar_registro_HackeoEtico" class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2 text-white" data-i18n="save" ></a>
+                                </div>
+
+                                <div class="content_loader" id="content_loader_HackeoEtico" style="display:none">
+                                </div>
+                            </section>
+                        </div>
+
+                    </div><!-- modal-body -->
+                </div>
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+
+        <!-- Modal Register -->
+        <div id="modal_register_OSINT" class="modal fade">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content tx-size-sm">
+                    <div class="modal-header pd-x-20">
+                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="lbl_modal_register_OSINT_registro">Registro OSINT</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body pd-20">
+
+                        <div id="wizard2">
+                            <section>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label data-i18n="attach-document">Adjuntar Documento: </label><span class="tx-danger">*</span>
+                                        <input type="file" id="file_modal_register_OSINT_1" class="form-control" placeholder="-" required>
+                                        @*<div class="row" style="margin-top:4px" id="Previewmodal_register_HackeoEtico_1">
+                    <div class="col-lg-5">
+                        <span></span>
+                    </div>
+                    <div class="col-lg-7">
+                        <button class="btn styleIcon previewClass"><i class="fa fa-folder"></i></button>
+                    </div>
+                </div>*@
+                                    </div>
+                                </div>
+
+                                <div class="row mg-t-12">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="form-control-label" id="lbl_modal_register_HackeoEtico_empresa" data-i18n="enterprise">Empresa: </label><span class="tx-danger">*</span>
+                                            <select class="form-control select2-show-search" data-placeholder="Choose Browser" id="sl_modal_register_OSINT_empresa" required>
+                                                <option value="0">SELECCIONE</option>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <option value="@item.IdEmpresa">@item.DescripcionEmpresa</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6" style="display:none">
+                                        <div class="form-group">
+                                            <label class="form-control-label" id="lbl_modal_register_HackeoEtico_Tipo Alerta">Sucursal: </label> <span class="tx-danger">*</span>
+                                            <select class="form-control" data-placeholder="Choose Browser" id="sl_modal_register_OSINT_sucursal" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div><!-- col-4 -->
+                               
+                                <div class="parsley-select wd-250 mg-t-30">
+                                    <div class="parsley-input">
+                                        <label id="lbl_modal_register_OSINT_comentario" data-i18n="name">Nombre: </label><span class="tx-danger"></span>
+                                        <input maxlength="200" type="text" id="txt_OSINT_comentario" class="form-control wd-550" placeholder="-">
+                                    </div><!-- form-group -->
+                                </div>
+
+                                <div class="mg-t-30">
+                                    <button id="btn_guardar_registro_OSINT" data-i18n="save" class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2" value="Guardar"> Guardar </button>
+                                </div>
+
+                                <div class="content_loader" id="content_loader_OSINT" style="display:none">
+                                </div>
+                            </section>
+                        </div>
+
+                    </div><!-- modal-body -->
+                </div>
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+
+
+        <!-- Modal Register -->
+        <div id="modal_register_Pentesting" class="modal fade">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content tx-size-sm">
+                    <div class="modal-header pd-x-20">
+                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="lbl_modal_register_Pentesting_registro">Registro Pentesting</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body pd-20">
+
+                        <div id="wizard2">
+                            <section>
+                                <div class="row">
+									<div class="col-lg-6">
+										<label data-i18n="attach-document">Adjuntar Documento: </label><span class="tx-danger">*</span>
+										<input type="file" id="file_modal_register_Pentesting_1" class="form-control" placeholder="-" required>
+										@*<div class="row" style="margin-top:4px" id="Previewmodal_register_HackeoEtico_1">
+			<div class="col-lg-5">
+				<span></span>
+			</div>
+			<div class="col-lg-7">
+				<button class="btn styleIcon previewClass"><i class="fa fa-folder"></i></button>
+			</div>
+		</div>*@
+									</div>
+                                </div>
+
+                                <div class="row mg-t-12">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="form-control-label" id="lbl_modal_register_Pentesting_empresa" data-i18n="enterprise">Empresa: </label><span class="tx-danger">*</span>
+                                            <select class="form-control select2-show-search" data-placeholder="Choose Browser" id="sl_modal_register_Pentesting_empresa" required>
+                                                <option value="0">SELECCIONE</option>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <option value="@item.IdEmpresa">@item.DescripcionEmpresa</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6" style="display:none">
+                                        <div class="form-group">
+                                            <label class="form-control-label" id="lbl_modal_register_Pentesting_Tipo Alerta">Sucursal: </label> <span class="tx-danger">*</span>
+                                            <select class="form-control" data-placeholder="Choose Browser" id="sl_modal_register_Pentesting_sucursal" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div><!-- col-4 -->
+
+                                <div class="parsley-select wd-250 mg-t-30">
+                                    <div class="parsley-input">
+                                        <label id="lbl_modal_register_Pentesting_comentario" data-i18n="name">Nombre: </label><span class="tx-danger"></span>
+                                        <input maxlength="200" type="text" id="txt_Pentesting_comentario" class="form-control wd-550" placeholder="-">
+                                    </div><!-- form-group -->
+                                </div>
+
+                                <div class="mg-t-30">
+                                    <button id="btn_guardar_registro_Pentesting"  data-i18n="save" class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2" value="Guardar" > Guardar</button>
+                                </div>
+
+                                <div class="content_loader" id="content_loader_Pentesting" style="display:none">
+                                </div>
+                            </section>
+                        </div>
+
+                    </div><!-- modal-body -->
+                </div>
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+
+
+    </div>
+
+</div>
+<script>
+    var urlGetListHackeoEtico = '@Url.Action("GetListHackeoEtico", "Cibersecurity")';
+    var urlSaveOrUpdateHackeoEtico = '@Url.Action("SaveOrUpdateHackeoEtico", "Cibersecurity")';
+    var urlUpdateStatusHackeoEtico = '@Url.Action("UpdateStatusHackeoEtico", "Cibersecurity")';
+    var urlGetListOsint = '@Url.Action("GetListOsint", "Cibersecurity")';
+    var urlSaveOrUpdateOsint = '@Url.Action("SaveOrUpdateOsint", "Cibersecurity")';
+    var urlUpdateStatusOsint = '@Url.Action("UpdateStatusOsint", "Cibersecurity")';
+    var urlGetListPentesting = '@Url.Action("GetListPentesting", "Cibersecurity")';
+    var urlSaveOrUpdatePentesting = '@Url.Action("SaveOrUpdatePentesting", "Cibersecurity")';
+    var urlUpdateStatusPentesting = '@Url.Action("UpdateStatusPentesting", "Cibersecurity")';
+    var urlGetdownloadFile = '@Url.Action("GetFileDownload", "Cibersecurity")';
+    var urlGetAccess = '@Url.Action("GetAccess", "Login")';
+    var urlGetListBranchOffice = '@Url.Action("getListBranchOffice", "Administration")';
+
+</script>
+@Scripts.Render("~/bundles/ciberseguridad")

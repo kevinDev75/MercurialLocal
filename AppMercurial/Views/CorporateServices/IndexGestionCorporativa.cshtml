@@ -1,0 +1,214 @@
+﻿
+@{
+    ViewBag.Title = "IndexGestionCorporativa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int IdRol = int.Parse(ViewData["IdRol"].ToString());
+}
+@model List<Mercurial.DomainEntities.Company.GetCompanyRsl>
+
+<div class="br-mainpanel">
+    <div class="br-pageheader">
+    </div>
+    <div class="br-pagetitle">
+        <i class="icon ion-ios-book-outline"></i>
+        <div>
+            <h4 id="lbl_titulo" data-i18n="corporate-management">Gestión Corporativa</h4>
+        </div>
+
+    </div>
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>Análisis de Riesgo</label>
+                </div>
+                <div class="col-lg-12">
+                    <label>E H</label>
+                </div>
+                <div class="col-lg-12">
+                    <label>PII</label>
+                </div>
+                <div class="col-lg-12">
+                    <label>Delphos</label>
+                </div>
+                <div class="col-lg-12">
+                    <label>Osint</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-9">
+
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label><span class="tx-danger">&nbsp;</span></label>
+                        <div class="input-group">
+                            <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_buscar" onclick="location.href='@Url.Action("AssetManager", "Safe")'"><i class="fa fa-search"></i> <span id="lbl_buscar_buscador" data-i18n="information-interest">Informaciones de Interes</span> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="table-wrapper">
+                <br />
+                <br />
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group mg-b-0">
+                            <label id="lbl_fecha_inicio_buscador_GestionCorporativa" data-i18n="start-date">Fecha Inicio: </label><span class="tx-danger">*</span>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="txt_fecha_inicio_GestionCorporativa" id="txt_fecha_inicio_GestionCorporativa" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group mg-b-0">
+                            <label id="lbl_fecha_fin_buscador_GestionCorporativa" data-i18n="end-date">Fecha Fin: </label><span class="tx-danger">*</span>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="txt_fecha_fin_GestionCorporativa" id="txt_fecha_fin_GestionCorporativa" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3"></div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label><span class="tx-danger">&nbsp;</span></label>
+                            <div class="input-group">
+                                <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_buscar_GestionCorporativa"><i class="fa fa-search"></i> <span id="lbl_buscar_buscador" data-i18n="search">Buscar</span> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h6 class="tx-inverse tx-uppercase tx-bold" id="lbl_listado_registro_GestionCorporativa" data-i18n="list-links-corporate-management"> Listado de links para gestion corporativa</h6>
+                    </div>
+                    <div class="col-sm-2">
+                        @if (IdRol == 1 || IdRol == 2 || IdRol == 4)
+                        {
+                            <a href="#" class="btn btn-dark btn-icon rounded-circle" data-toggle="modal" data-target="#modal_register_GestionCorporativa" style="float: right;"><div><i class="fa fa-plus"></i></div></a>
+                        }
+                    </div>
+                </div>
+                <br />
+                <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_data_GestionCorporativa" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th class="wd-10p" id="lbl_tbl_data_GestionCorporativa_index" data-i18n="code">CODIGO</th>
+                            <th class="wd-30p" id="lbl_tbl_data_GestionCorporativa_nombre" data-i18n="name-table">NOMBRE</th>
+                            <th class="wd-30p" id="lbl_tbl_data_GestionCorporativa_link">LINK</th>
+                            <th class="wd-15p" id="lbl_tbl_data_GestionCorporativa_enviado_por" data-i18n="send-for">ENVIADO POR</th>
+                            <th class="wd-10p" id="lbl_tbl_data_GestionCorporativa_fecha_hora" data-i18n="date-hour">FECHA Y HORA</th>
+                            <th class="wd-10p" id="lbl_tbl_data_GestionCorporativa_pais" data-i18n="country">PAIS</th>
+                            <th class="wd-10p" id="lbl_tbl_data_GestionCorporativa_estado" data-i18n="state">ESTADO</th>
+                            <th class="wd-10p" id="lbl_tbl_data_GestionCorporativa_accion">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- DYNAMIC -->
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+        <!-- Modal Register -->
+        <div id="modal_register_GestionCorporativa" class="modal fade">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content tx-size-sm">
+                    <div class="modal-header pd-x-20">
+                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="lbl_modal_register_GestionCorporativa_registro">Registro Gestión Corporativa</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body pd-20">
+
+                        <div id="wizard2">
+                            <section>
+
+                                <div class="row mg-t-10">
+                                    <div class="col-lg-6">
+                                        <label data-i18n="attach-document">Adjuntar Documento: </label><span class="tx-danger">*</span>
+                                        <input type="file" id="file_modal_register_GestionCorporativa_1" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                                <div class="row mg-t-10">
+                                    <div class="col-lg-6">
+                                        <label id="lbl_modal_register_GestionCorporativa_Nombre" data-i18n="name">Nombre: </label><span class="tx-danger"></span>
+                                        <input maxlength="200" type="text" id="txt_GestionCorporativa_Nombre" class="form-control wd-550" placeholder="-">
+                                    </div>
+                                </div>
+
+                                <div class="row mg-t-10">
+                                    <div class="col-lg-6">
+                                        <label id="lbl_modal_register_GestionCorporativa_Link">Link: <span class="tx-danger"></span></label>
+                                        <input maxlength="200" type="text" id="txt_GestionCorporativa_Link" class="form-control wd-550" placeholder="-">
+                                    </div>
+                                </div>
+
+                                <div class="row mg-t-10">
+                                    <div class="col-lg-5">
+                                        <div class="form-group">
+                                            <label class="form-control-label" id="lbl_modal_register_GestionCorporativa_empresa" data-i18n="enterprise">Empresa: </label><span class="tx-danger">*</span>
+                                            <select class="form-control select2-show-search" data-placeholder="Choose Browser" id="sl_modal_register_GestionCorporativa_empresa" required>
+                                                <option value="0">SELECCIONE</option>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <option value="@item.IdEmpresa">@item.DescripcionEmpresa</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="mg-t-30">
+                                    <a id="btn_guardar_registro_GestionCorporativa" class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2 text-white" data-i18n="save"></a>
+                                </div>
+
+                                <div class="content_loader" id="content_loader_GestionCorporativa" style="display:none">
+                                </div>
+                            </section>
+                        </div>
+
+                    </div><!-- modal-body -->
+                </div>
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+
+
+    </div>
+</div>
+
+<script>
+    var urlGetListCorporateRiskManagement = '@Url.Action("GetListCorporateRiskManagement", "CorporateServices")';
+    var urlSaveOrUpdateCorporateRiskManagement = '@Url.Action("SaveOrUpdateCorporateRiskManagement", "CorporateServices")';
+    var urlUpdateStatusCorporateManagement = '@Url.Action("UpdateStatusCorporateManagement", "CorporateServices")';
+    var urlGetdownloadFile = '@Url.Action("GetFileDownload", "CorporateServices")';
+    var urlGetAccess = '@Url.Action("GetAccess", "Login")';
+</script>
+@Scripts.Render("~/bundles/gestion-corporativa")
+

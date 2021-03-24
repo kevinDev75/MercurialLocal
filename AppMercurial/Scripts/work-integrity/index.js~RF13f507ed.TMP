@@ -1,0 +1,300 @@
+﻿// -- Load
+getListTypeDocument()
+getWorkIntegrity()
+
+// -- Datepicker
+$('#txt_fecha_inicio').datepicker({
+    showOtherMonths: true,
+    selectOtherMonths: true
+});
+
+// --
+$('#txt_fecha_fin').datepicker({
+    showOtherMonths: true,
+    selectOtherMonths: true
+});
+
+// -- Table
+$('#tbl_data').DataTable({
+    responsive: true,
+    language: {
+        searchPlaceholder: 'Search...',
+        sSearch: '',
+        lengthMenu: '_MENU_ items/page',
+    }
+});
+
+var tableList
+// -- Modal
+$('#modal_register').on('shown.bs.modal', function (e) {
+    // -- Datatable
+    tableList = $("#tbl_list").DataTable({
+        responsive: true,
+        language: {
+            searchPlaceholder: 'Search...',
+            sSearch: '',
+            lengthMenu: '_MENU_ items/page',
+        },
+        colReorder: true,
+        searching: false,
+        serverSide: false,
+        stateSave: true,
+        lengthChange: false,
+        bSort: false,
+        info: false,
+    })
+        .columns.adjust()
+        .responsive.recalc();
+
+})
+
+// -- Steps
+$('#wizard2').steps({
+    headerTag: 'h3',
+    bodyTag: 'section',
+    autoFocus: true,
+    titleTemplate: '<span class="number">#index#</span> <span class="title">#title#</span>'
+});
+
+// --
+$('#lbl_idioma_espanol').on('click', function () {
+    // --
+    let datos = {
+        "NombreVista": "ControlsWorkIntegrity"
+    }
+    // --
+    $.ajax({
+        url: '/WorkIntegrity/GetTextControlls',
+        type: 'POST',
+        data: datos,
+        dataType: 'json',
+        cache: false,
+        success: function (data) {
+            // --
+            console.log(data);
+            //if (data.Status === 'OK') {
+
+            //} else {
+            //    functions.notify_message('Ups! Crendenciales incorrectas :(', 'warning')
+            //}
+        }
+    })
+})
+
+
+
+// --
+$('#btn_detail').on('click', function () {
+    // --
+    console.log('redireccionar')
+    window.location.href = "./WorkIntegrityDetail";
+})
+
+// --
+$("#btn_add_list").on('click', function () {
+    addTableList()
+})
+
+// --
+$(document).on('click', '.btn_delete_test', function () {
+    // --
+    let value = $(this).attr('data-id')
+    var index;
+    tableList.rows(function (idx, data, node) {
+        console.log(data);
+        if (data[0] == value) {
+            index = idx;
+        }
+    });
+    tableList.row(index).remove().draw(false);
+    // -- 
+    //var position = listPersonalInformation.indexOf(value);
+    console.log(value);
+    var indexObject = listPersonalInformation.findIndex(x => x.id == value);
+
+    console.log(indexObject);
+    listPersonalInformation.splice(indexObject, 1);
+    console.log(listPersonalInformation);
+    // --
+})
+
+
+// --
+function getListTypeDocument() {
+    // --
+    $.ajax({
+        url: urlGetDocumentType,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            // --
+            let html = ''
+            html += '<option label="[Seleccionar]"></option>'
+            // --
+            let obj = data.Data
+            // --
+            if (obj.length > 0) { // -- Verificar si tiene datos
+                // --
+                $.each(obj, function (key, value) {
+                    // --
+                    html += '<option value="' + value.IdTipoDocIdentidad + '"> ' + value.DesTipoDocIdentidad + '</option>'
+                });
+            }
+            // --
+            $('#sl_tipo_documento').html(html)
+        }
+    })
+}
+
+// --
+function getWorkIntegrity() {
+    // --
+    $.ajax({
+        url: urlGetWorkIntegrity,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            // --
+            let html = ''
+            html += '<option label="[Seleccionar]"></option>'
+            // --
+            let obj = data.Data
+            // --
+            if (obj.length > 0) { // -- Verificar si tiene datos
+                // --
+                $.each(obj, function (key, value) {
+                    // --
+                    html += '<option value="' + value.IdServicio + '"> ' + value.DescripcionServicio + '</option>'
+                });
+            }
+            // --
+            $('#sl_servicio').html(html)
+        }
+    })
+}
+
+
+// --
+var listPersonalInformation = new Array()
+var countListPersonalInformation = 1
+var i = 0
+// --
+function addTableList() {
+    // -- Obtener valores
+    let idTipoDocumento = $("#sl_tipo_documento").val()
+    let descripcionTipoDocumento = $("#sl_tipo_documento option:selected").text()
+    // --
+    let nroDocumento = $("#txt_nro_documento").val()
+    let telefono = $("#txt_telefono").val()
+    let celular = $("#txt_celular").val()
+    let ciudad = $("#txt_ciudad").val()
+    let barrio = $("#txt_barrio").val()
+    let cep = $("#txt_cep").val()
+    // --
+    let idServicio = $("#sl_servicio").val()
+    let descripcionServicio = $("#sl_servicio option:selected").text()
+
+    // -- Construir objeto
+    var object = new Object()
+    // --
+    object["id"] = i
+    // --
+    var objTipoDocumento = new Object()
+    objTipoDocumento['id'] = idTipoDocumento
+    objTipoDocumento['descripcion'] = descripcionTipoDocumento.trim()
+    object["tipo_documento"] = objTipoDocumento
+    // --
+    object["nro_documento"] = nroDocumento
+    object["telefono"] = telefono
+    object["celular"] = celular
+    object["ciudad"] = ciudad
+    object["barrio"] = barrio
+    object["cep"] = cep
+    // --
+    var objServicio = new Object()
+    objServicio['id'] = idServicio
+    objServicio['descripcion'] = descripcionServicio.trim()
+    object["servicio"] = objServicio
+
+    // -- Agregar objeto al listado
+    listPersonalInformation.push(object)
+    console.log(object)
+    tableList.row.add([
+        i,
+        object.tipo_documento.descripcion,
+        object.nro_documento,
+        object.telefono,
+        object.celular,
+        object.ciudad,
+        object.barrio,
+        object.cep,
+        object.servicio.descripcion,
+        '<button class="btn btn-sm btn-primary " onclick="editPersonalInformation(' + i + ')"><i class="fa fa-edit"></i></button> <button class= "btn btn-sm btn-danger btn_delete_test" data-id="' + i + '"> <i class="fa fa-trash"></i></button >'
+    ]).draw(false);
+    tableList.columns.adjust()
+        .responsive.recalc();
+    // --
+    //reloadListPersonalInformation()
+    // --
+    i++
+}
+
+// --
+function editPersonalInformation(obj) {
+    // --
+    console.log(obj)
+}
+
+// --
+function deletePersonalInformation(i) {
+    // --
+    console.log(i)
+    //listPersonalInformation.splice(i, 1);
+    //$("#tbl_list").dataTable().fnDestroy();
+    //tableList = $("#tbl_list").DataTable({
+    //    colReorder: true,
+    //    responsive: true,
+    //    language: {
+    //        searchPlaceholder: 'Search...',
+    //        sSearch: '',
+    //        lengthMenu: '_MENU_ items/page',
+    //    },
+    //    colReorder: true,
+    //    searching: false,
+    //    serverSide: false,
+    //    stateSave: true,
+    //    lengthChange: false,
+    //    bSort: false,
+    //    info: false,
+    //})
+    //    .columns.adjust()
+    //    .responsive.recalc();
+
+    //tableList
+    //    .clear()
+    //    .draw();
+    //reloadListPersonalInformation()
+}
+
+// --
+function reloadListPersonalInformation() {
+    console.log(listPersonalInformation)
+    // -- Recorrer listado y mostrar en la tabla
+    //listPersonalInformation.forEach(function (item) {
+    //    // -- Añadir listado a la tabla
+    //    tableList.row.add([
+    //        item['id'],
+    //        item['tipo_documento'].descripcion,
+    //        item['nro_documento'],
+    //        item['telefono'],
+    //        item['celular'],
+    //        item['ciudad'],
+    //        item['barrio'],
+    //        item['cep'],
+    //        item['servicio'].descripcion,
+    //        '<button class="btn btn-sm btn-primary" onclick="editPersonalInformation(' + item['id'] + ')"><i class="fa fa-edit"></i></button> <button class= "btn btn-sm btn-danger" data-id="' + item['id']  +'" onclick="deletePersonalInformation(' + item['id'] + ')"> <i class="fa fa-trash"></i></button >'
+    //    ]).draw(false);
+    //});
+    //tableList.columns.adjust()
+    //    .responsive.recalc();
+}

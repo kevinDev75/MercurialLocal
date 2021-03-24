@@ -1,0 +1,66 @@
+﻿using AppMercurial.Tags;
+using Mercurial.CrossCuting.Utilities;
+using Mercurial.Domain.Interfaces.HomeModule;
+using Mercurial.Domain.Service;
+using Mercurial.Domain.Service.HomeModule;
+using Mercurial.DomainEntities;
+using Mercurial.DomainEntities.Home;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.UI.WebControls;
+
+namespace AppMercurial.Controllers
+{
+    public class LoginController : Controller
+    {
+
+        public readonly ILoginService _ILoginService;
+
+        public LoginController()
+        {
+            _ILoginService = new LoginService();
+        }
+
+        [HttpPost]
+        public ActionResult Login(LoginRequest loginRequest)
+        {
+            ApiResponse apiResponse = _ILoginService.Authenticate(loginRequest);
+
+            User UserResponse = JsonConvert.DeserializeObject<User>(apiResponse.Data.ToString());
+
+            if (UserResponse != null) 
+
+            SessionHelper.AddUserToSession(
+                UserResponse.IdUser,
+                UserResponse.ListRoles[0].IdRol,
+                UserResponse.Country.ToString(),
+                UserResponse.idIdioma,
+                UserResponse.IdEmpresa.ToString());
+
+            return Json(apiResponse);
+        }
+        [HttpGet]
+        public JsonResult Captcha()
+        {
+            const string _Chars = "abcdfghijklmnopqrstuvwxyz0123456789";
+            Random _Random = new Random();
+            string _Captcha = new string(Enumerable.Repeat(_Chars, 5).Select(s => s[_Random.Next(s.Length)]).ToArray());
+
+            return Json(new
+            {
+                Captcha = _Captcha
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult SingOut()
+        {
+            SessionHelper.DestroyUserSession();
+            return RedirectToAction("Index", "Home");
+        }
+    }
+}

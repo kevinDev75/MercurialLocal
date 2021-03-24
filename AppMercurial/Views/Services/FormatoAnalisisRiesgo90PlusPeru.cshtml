@@ -1,0 +1,1880 @@
+﻿
+@{
+    ViewBag.Title = "FormatoAnalisisRiesgo90PlusPeru";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="br-mainpanel">
+    <div class="br-pageheader">
+
+    </div>
+    <div class="br-pagetitle">
+        <i class="icon ion-ios-book-outline"></i>
+        <div>
+            <h4 id="lbl_titulo">Análisis Integral de Riesgo 90° Plus Perú</h4>
+        </div>
+    </div>
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+
+            <div id="formato">
+                <!-- I.	INFORME ANTECEDENTES JUDICIALES -->
+                <div class="row mg-b-25">
+                    <!-- Title -->
+                    <div class="col-lg-12">
+                        <h4 style="text-align: center;">Análisis Integral de Riesgo 90° Plus</h4>
+                    </div>
+                </div>
+
+                <!-- DATOS BASICOS DEL CANDIDATO -->
+                <div class="row mg-b-25 border_content">
+                    <!-- FORMULARIO -->
+                    <div class="col-lg-7">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">1. Datos Personales del Evaluado</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- Salto -->
+                        <br />
+                        <div class="row col-lg-18">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>APELLIDOS Y NOMBRES: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_nombres_apellidos" class="form-control" placeholder="-" required disabled>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>NRO DE DOCUMENTO: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_nro_documento" class="form-control" placeholder="-" required disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row col-lg-18">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>FECHA DE INSCRIPCIÓN: <span class="tx-danger">*</span></label>
+                                    <input type="date" id="txt_1_fecha_inscripcion" class="form-control" placeholder="-" required>
+                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_1_fecha_inscripcion" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>FECHA DE EXPEDICIÓN: <span class="tx-danger">*</span></label>
+                                    <input type="date" id="txt_1_fecha_expedicion" class="form-control" placeholder="-" required>
+                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_1_fecha_expedicion" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row col-lg-18">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>CADUCIDAD: <span class="tx-danger">*</span></label>
+                                    <input type="date" id="txt_1_caducidad" class="form-control" placeholder="-" required>
+                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_1_caducidad" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>DIRECCIÓN: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_direccion" class="form-control" placeholder="-" required disabled>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row col-lg-18">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>LUGAR DE NACIMIENTO: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_lugar_nacimiento" class="form-control" placeholder=" (Departamento, Provincia, Distrito)" required disabled>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>FECHA DE NACIMIENTO: <span class="tx-danger">*</span></label>
+                                    <input type="date" id="txt_1_fecha_nacimiento" class="form-control" placeholder="-" required disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row col-lg-18">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>NACIONALIDAD: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_nacionalidad" class="form-control" value="Peruano(a)" placeholder="-" required>
+                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_1_nacionalidad" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>EDAD: <span class="tx-danger">*</span></label>
+                                    <input type="number" id="txt_1_edad" class="form-control" placeholder="-" required>
+                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_1_edad" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row col-lg-18">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>ESTADO CIVIL: <span class="tx-danger">*</span></label>
+                                    <select id="txt_1_estado_civil" class="form-control ClassStatusCivil" data-placeholder="Choose Browser">
+                                    </select>
+                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_1_estado_civil" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>GRADO DE INSTRUCCIÓN: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_grado_instruccion" class="form-control" placeholder="-" required>
+                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_1_grado_instruccion" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row col-lg-18">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>ESTATURA: <span class="tx-danger">*</span></label>
+                                    <input type="number" id="txt_1_estatura" class="form-control" placeholder="-" required>
+                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_1_estatura" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>NOMBRE MADRE: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_nombre_madre" class="form-control" placeholder="-" required>
+                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_1_nombre_madre" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row col-lg-18">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>NOMBRE PADRE: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_nombre_padre" class="form-control" placeholder="-" required>
+                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_1_nombre_padre" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+                                </div>
+                            </div>
+                        </div>
+                       
+
+
+                    </div>
+
+                    <!-- ESTADISTICA -->
+                    <div class="col-lg-5">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">RESULTADO FINAL</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- Salto -->
+                        <br />
+
+
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label style="font-size:15pt;">Nivel de Riesgo</label>
+                                        <label class="rdiobox">
+                                            <input name="radioNivel" type="radio" value="1" checked>
+                                            <span><b style="color: red; font-size:12pt;">Alto</b></span>
+                                        </label>
+                                        <label class="rdiobox">
+                                            <input name="radioNivel" type="radio" value="2">
+                                            <span><b style="color: darkgoldenrod; font-size:12pt;">Medio</b></span>
+                                        </label>
+                                        <label class="rdiobox">
+                                            <input name="radioNivel" type="radio" value="3">
+                                            <span><b style="color: limegreen; font-size:12pt;">Bajo</b></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label>
+                                        <label class="rdiobox">
+                                            <input name="radioCalificacion" type="radio" value="1" checked>
+                                            <span><b style="font-size:12pt;">Recomendable</b></span>
+                                        </label>
+                                        <label class="rdiobox">
+                                            <input name="radioCalificacion" type="radio" value="2">
+                                            <span><b style="font-size:12pt;">No Recomendable</b></span>
+                                        </label>
+                                        <label class="rdiobox">
+                                            <input name="radioCalificacion" type="radio" value="3">
+                                            <span><b style="font-size:12pt;">En Observación</b></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Salto -->
+                        <br />
+                        <br />
+
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Escala Sinceridad: <span class="tx-danger">* 1 - 100</span></label>
+                                        <input type="number" id="txt_escala_sinceridad" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Nivel de Riesgo: <span class="tx-danger">* 1 - 100</span></label>
+                                        <input type="number" id="txt_nivel_riesgo" class="form-control" placeholder="-" required>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>&nbsp;</label>
+                                        <div class="input-group">
+                                            <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_buscar" onclick="calculateGraphic()"><span>Calcular</span> </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div class="col-lg-12">
+                            <div id="container-graphic"></div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">2. Análisis de Antecedentes Personales Premium</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <label class="rdiobox">
+                                <input name="radio_2_analisis" type="radio" value="true" checked>
+                                <span>Registra</span>
+                            </label>
+                            <label class="rdiobox">
+                                <input name="radio_2_analisis" type="radio" value="false">
+                                <span>No Registra</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Observaciones: <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="3" id="txt_2_observaciones" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Análisis: <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="3" id="txt_2_analisis" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">3. Análisis de Académicos y laborales</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>SUNEDU: <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="3" id="txt_3_sunedu" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" hidden>
+                        <div class="form-group">
+                            <label>REFERENCIAS LABORALES: <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="3" id="txt_3_referencias_laborales" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>ESSALUD: <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="3" id="txt_3_essalud" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">4. Análisis de Antecedentes Financieros</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <label class="rdiobox">
+                                <input name="radio_2_antecedentes" type="radio" value="Bajo" checked>
+                                <span>Bajo</span>
+                            </label>
+                            <label class="rdiobox">
+                                <input name="radio_2_antecedentes" type="radio" value="Medio">
+                                <span>Medio</span>
+                            </label>
+                            <label class="rdiobox">
+                                <input name="radio_2_antecedentes" type="radio" value="Alto">
+                                <span>Alto</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="form-group">
+                            <label>
+                                NIVEL DE RIESGO FINANCIERO: <span class="tx-danger">*</span>
+                            </label>
+                            <textarea type="text" rows="3" id="txt_4_financiero_sentienel" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>SUNAT: <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="3" id="txt_4_sunat" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" hidden>
+                        <div class="form-group">
+                            <label>
+                                VERIFICACIÓN PERSONAS EXCLUIDAS DE SBS Y AFP: <span class="tx-danger">*</span>
+                            </label>
+                            <textarea type="text" rows="3" id="txt_4_personas_excluidas" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">5. Análisis de Antecedentes Sociales y Políticos</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>VERIFICACIÓN DE CARGOS PÚBLICOS: <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="3" id="txt_5_verificacion_cargos_publicos" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>VERIFICACIÓN DE FILIACIÓN POLÍTICA: <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="3" id="txt_5_verificacion_filiacion_politica" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>MULTAS ELECTORALES: <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="3" id="txt_5_multas_electorales" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">6. Análisis de Visita Domiciliaria</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Dirección: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_7_direccion" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Fecha de Entrevista: <span class="tx-danger">*</span></label>
+                            <input type="datetime-local" id="txt_7_fecha_entrevista" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6" style="display:none">
+                        <div class="form-group">
+                            <label>Hora de Entrevista: <span class="tx-danger">*</span></label>
+                            <input type="time" id="txt_7_hora_entrevista" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Nombre del Entrevistado: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_7_personas_entrevistadas" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>Apreciación del entrevistador: <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="3" id="txt_7_analisis" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">7. Conclusión</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <textarea class="col-lg-12" id="txt_8_conclusion" rows="4">Tras el análisis integral se concluye que el nivel de riesgo del evaluado es: medio, bajo, alto. Es por ello que Recomendamos /No recomendamos su contratación o continuidad de servicio. La evaluación, debido a los factores de confiabilidad o ausencia de antecedes, no son concluyente por lo que se recomienda profundizar en el análisis o cruzar información con su desempeño y vinculaciones laborales. 
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">8. Anexos: Score Crediticio, Pruebas Psigma, Visita domiciliaria</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <!-- Contador de registro -->
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label><b>SELECCIONAR ARCHIVO:</b> <span class="tx-danger">*</span></label>
+
+                            <input type="file" id="file_9" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group mg-b-10-force">
+                            <label><span class="tx-danger">&nbsp;</span></label>
+                            <div class="input-group">
+                                <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_9_agregar"><i class="fa fa-plus-circle"></i> <span>Agregar</span> </button>
+                            </div>
+                        </div>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+                    <!-- Tabla -->
+                    <div class="col-lg-12">
+                        <div class="table-wrapper">
+                            <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_9_list" style="width: 100%;">
+                                <thead class="font-size-8">
+                                    <tr>
+                                        <th class="wd-5p">INDEX</th>
+                                        <th class="wd-15p">NOMBRE</th>
+                                        <th class="wd-15p">ACCIÓN</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div id="formato_visita_domiciliaria">
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+
+                    <!-- Title -->
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">INFORMACION BASICA DEL EVALUADO</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- Salto -->
+                        <br />
+
+                    </div>
+
+                    <!-- Formulary -->
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Nombres y Apellidos: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_1_nombres_apellidos" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Tipo Documento: <span class="tx-danger">*</span></label>
+                            <select id="sl_vd_1_tipo_documento" class="form-control ClassDocumentType" data-placeholder="Choose Browser">
+                                <option value="1">DNI</option>
+                                <option value="2">CARNET. EXTRANJERIA</option>
+                                <option value="3">PASAPORTE</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label>Nro: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_1_nro" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Lugar y Fecha de Nacimiento: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_1_lugar_fecha_nacimento" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label>Edad: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_vd_1_edad" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Dirección: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_1_direccion" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Teléfonos: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_1_telefonos" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Correo Eléctronico: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_1_correo_electronico" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Estado Civil: <span class="tx-danger">*</span></label>
+                            <select id="sl_vd_1_estado_civil" class="form-control  ClassStatusCivil" data-placeholder="Choose Browser">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Nivel Educativo: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_1_nivel_educativo" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <hr />
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Cargo al que Aplica o ejerce: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_1_cargo_aplica" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Fecha de la visita: <span class="tx-danger">*</span></label>
+                            <input type="date" id="txt_vd_1_fecha_visita" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Personas presentes en la visita: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_1_personas_presente_visita" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Tipo de evaluado: <span class="tx-danger">*</span></label>
+                            <select id="sl_vd_1_tipo_evaluado" class="form-control " data-placeholder="Choose Browser">
+                                <option value="1">CANDIDATO</option>
+                                <option value="2">EMPLEADO ACTIVO</option>
+                                <option value="3">OTRO</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <hr />
+                    </div>
+
+                    <div class="col-lg-12">
+                        <!---->
+                        <div class="form-group">
+                            <label style="font-size: 14px;"><b>PREGUNTAS DE INTERES</b></label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Actividades o Hobbies del evaluado <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="3" id="txt_vd_1_actividades_evaluado" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Proyectos y Proyecciones <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="3" id="txt_vd_1_proyectos_proyecciones" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>¿Ha tenido problemas con la Justicia? <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="3" id="txt_vd_1_problemas_justicia" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>¿Ha consumido alguna vez estupefacientes? <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="3" id="txt_vd_1_consumo_estupefacientes" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+
+                    <!-- Title -->
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">ENTORNO FAMILIAR</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+
+                    <!-- Formulary -->
+                    <div class="col-lg-12">
+                        <!---->
+                        <div class="form-group">
+                            <label style="font-size: 14px;"><b>PADRE </b></label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Nombres: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_padre_nombres" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Edad: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_vd_2_padre_edad" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Nivel Educativo: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_padre_nivel_educativo" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Ocupación: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_padre_ocupacion" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Empresa Y/O Institución: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_padre_empresa_institucion" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>¿Convive Con Usted?: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_padre_convive_usted" class="form-control" placeholder="-" required>
+                        </div>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+
+                    <!-- Formulary -->
+                    <div class="col-lg-12">
+                        <!---->
+                        <div class="form-group">
+                            <label style="font-size: 14px;"><b>MADRE </b></label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Nombres: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_madre_nombres" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Edad: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_vd_2_madre_edad" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Nivel Educativo: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_madre_nivel_educativo" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Ocupación: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_madre_ocupacion" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Empresa Y/O Institución: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_madre_empresa_institucion" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>¿Convive Con Usted?: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_madre_convive_usted" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <hr />
+                        <!-- Salto -->
+                        <br />
+                    </div>
+
+                    <!-- Formulary -->
+                    <div class="col-lg-12">
+                        <!---->
+                        <div class="form-group">
+                            <label style="font-size: 14px;"><b>HERMANOS </b></label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Nombres: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_hermanos_nombres" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Edad: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_vd_2_hermanos_edad" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Nivel Educativo: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_hermanos_nivel_educativo" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Ocupación: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_hermanos_ocupacion" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Empresa Y/O Institución: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_hermanos_empresa_institucion" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>¿Convive Con Usted?: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_hermanos_convive_usted" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9">
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group mg-b-10-force">
+                            <label><span class="tx-danger">&nbsp;</span></label>
+                            <div class="input-group">
+                                <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_vd_2_agregar_hermanos"><i class="fa fa-plus-circle"></i> <span>Agregar</span> </button>
+                            </div>
+                        </div>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+
+                    <!-- Tabla -->
+                    <div class="col-lg-12">
+                        <div class="table-wrapper">
+                            <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_vd_2_list_hermanos" style="width: 100%;">
+                                <thead class="font-size-8">
+                                    <tr>
+                                        <th class="wd-5p">INDEX</th>
+                                        <th class="wd-15p">NOMBRES</th>
+                                        <th class="wd-15p">EDAD</th>
+                                        <th class="wd-15p">NIVEL EDUCATIVO</th>
+                                        <th class="wd-15p">OCUPACIÓN</th>
+                                        <th class="wd-15p">EMPRESAS Y/O INSTITUCIÓN</th>
+                                        <th class="wd-15p">¿CONVIVE CON USTED?</th>
+                                        <th class="wd-15p">ACCIÓN</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Salto -->
+                        <br />
+                        <br />
+                    </div>
+
+                    <!-- Formulary -->
+                    <div class="col-lg-12">
+                        <!---->
+                        <div class="form-group">
+                            <label style="font-size: 14px;"><b>CONYUGUE </b></label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Nombres: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_conyugue_nombres" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Edad: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_vd_2_conyugue_edad" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Nivel Educativo: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_conyugue_nivel_educativo" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Ocupación: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_conyugue_ocupacion" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Empresa Y/O Institución: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_conyugue_empresa_institucion" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>¿Convive Con Usted?: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_conyugue_convive_usted" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <hr />
+                        <!-- Salto -->
+                        <br />
+                    </div>
+
+                    <!-- Formulary -->
+                    <div class="col-lg-12">
+                        <!---->
+                        <div class="form-group">
+                            <label style="font-size: 14px;"><b>HIJOS</b></label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Nombres: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_hijos_nombres" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Edad: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_vd_2_hijos_edad" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Nivel Educativo: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_hijos_nivel_educativo" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Ocupación: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_hijos_ocupacion" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Empresa Y/O Institución: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_hijos_empresa_institucion" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>¿Convive Con Usted?: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_2_hijos_convive_usted" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9">
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group mg-b-10-force">
+                            <label><span class="tx-danger">&nbsp;</span></label>
+                            <div class="input-group">
+                                <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_vd_2_agregar_hijos"><i class="fa fa-plus-circle"></i> <span>Agregar</span> </button>
+                            </div>
+                        </div>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+
+                    <!-- Tabla -->
+                    <div class="col-lg-12">
+                        <div class="table-wrapper">
+                            <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_vd_2_list_hijos" style="width: 100%;">
+                                <thead class="font-size-8">
+                                    <tr>
+                                        <th class="wd-5p">INDEX</th>
+                                        <th class="wd-15p">NOMBRES</th>
+                                        <th class="wd-15p">EDAD</th>
+                                        <th class="wd-15p">NIVEL EDUCATIVO</th>
+                                        <th class="wd-15p">OCUPACIÓN</th>
+                                        <th class="wd-15p">EMPRESAS Y/O INSTITUCIÓN</th>
+                                        <th class="wd-15p">¿CONVIVE CON USTED?</th>
+                                        <th class="wd-15p">ACCIÓN</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Salto -->
+                        <br />
+                        <br />
+                    </div>
+
+                </div>
+
+                <!-- -->
+                <div class="row mg-b-25 border_content">
+                    <div class="col-lg-12">
+                        <div><b>EN CASO DE SER CANDIDATO PREGUNTAR:</b></div>
+                        <br />
+                        <div>
+                            <label>
+                                ¿Motivos por los cuales ha cambiado de empleos? ¿Cuál sería su empleo ideal?
+                                ¿Cuál es su aspiración salarial?  ¿Qué conocimiento tiene de la Empresa?
+                                ¿Cómo llegó su CV a la Empresa?  ¿Conoce alguna persona dentro de la empresa?
+                                ¿Cuáles han sido los vacíos laborales y por qué?
+                            </label>
+                        </div>
+                        <br />
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <textarea class="col-lg-12" id="txt_vd_conclusion" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ENTORNO PROFESIONAL Y LABORAL -->
+                <div class="row mg-b-25 border_content">
+                    <!-- Title -->
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th class="wd-500" style="font-size: 14px; text-align: center;">ENTORNO PROFESIONAL Y LABORAL</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+
+                    <!-- Formulario -->
+                    <div class="col-lg-3">
+                        <!---->
+                        <div class="form-group">
+                            <label>Empresa: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_3_empresa" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <!---->
+                        <div class="form-group">
+                            <label>Cargo: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_3_cargo" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <!---->
+                        <div class="form-group">
+                            <label>Tiempo Laborado: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_3_tiempo_laborado" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <!---->
+                        <div class="form-group">
+                            <label>Jefe Inmediato: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_3_jefe_inmediato" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <!---->
+                        <div class="form-group">
+                            <label>Teléfonos: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_3_telefonos" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group mg-b-10-force">
+                            <label><span class="tx-danger">&nbsp;</span></label>
+                            <div class="input-group">
+                                <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_vd_3_agregar"><i class="fa fa-plus-circle"></i> <span>Agregar</span> </button>
+                            </div>
+                        </div>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+
+                    <!-- Tabla -->
+                    <div class="col-lg-12">
+                        <div class="table-wrapper">
+                            <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_vd_3_list" style="width: 100%;">
+                                <thead class="font-size-8">
+                                    <tr>
+                                        <th class="wd-5p">INDEX</th>
+                                        <th class="wd-15p">EMPRESA</th>
+                                        <th class="wd-15p">CARGO</th>
+                                        <th class="wd-15p">TIEMPO LABORADO</th>
+                                        <th class="wd-15p">JEFE INMEDIATO</th>
+                                        <th class="wd-15p">TELEFONOS</th>
+                                        <th class="wd-15p">ACCIÓN</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Salto -->
+                    <br />
+                    <br />
+                </div>
+
+                <!-- INFORMACION ECONÓMICA -->
+                <div class="row mg-b-25 border_content">
+                    <!-- Title -->
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th class="wd-500" style="font-size: 14px; text-align: center;">INFORMACION ECONÓMICA</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+
+                    <!-- Formulario -->
+                    <div class="col-lg-12">
+                        <!---->
+                        <div class="form-group">
+                            <label style="font-size: 14px;"><b>INGRESOS MENSUALES</b></label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Ingresos Fijos: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_vd_4_ingresos_mensuales_ingresos_fijos" value="0" class="form-control" placeholder="Valor" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Apoyo Económico: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_vd_4_ingresos_mensuales_apoyo_economico" value="0" class="form-control" placeholder="Valor" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Otros Ingresos: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_vd_4_ingresos_mensuales_otros_ingresos" value="0" class="form-control" placeholder="Valor" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Total Ingresos: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_vd_4_ingresos_mensuales_total_ingresos" value="0" class="form-control" placeholder="-" required="">
+                        </div>
+                        <!---->
+                        <br />
+                    </div>
+
+                    <!-- Formulario -->
+                    <div class="col-lg-12">
+                        <!---->
+                        <div class="form-group">
+                            <label style="font-size: 14px;"><b>GASTOS MENSUALES</b></label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Gastos Fijos: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_vd_4_gastos_mensuales_gastos_fijos" value="0" class="form-control" placeholder="Valor" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Créditos: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_vd_4_gastos_mensuales_creditos" value="0" class="form-control" placeholder="Valor" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Otros Gastos: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_vd_4_gastos_mensuales_valor" value="0" class="form-control" placeholder="Valor" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Total Egresos: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_vd_4_gastos_mensuales_total_egresos" value="0" class="form-control" placeholder="-" required="">
+                        </div>
+                        <!---->
+                        <br />
+                    </div>
+
+                    <div class="col-lg-12">
+                        <hr />
+                        <br />
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>¿Cuenta con bienes comerciales a su nombre?: <span class="tx-danger">*</span></label>
+                            @*<select id="sl_vd_4_bienes_comerciales" class="form-control " data-placeholder="Choose Browser">
+                                <option value="true">SI</option>
+                                <option value="false">NO</option>
+                            </select>*@
+                            <textarea rows="3" id="sl_vd_4_bienes_comerciales"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Proyectos y Proyecciones: <span class="tx-danger">*</span></label>
+                            <textarea rows="3" type="text" id="txt_vd_4_proyecto_proyecciones" class="form-control" placeholder="" required=""></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CARACTERISTICAS BASICAS DE  LA VIVIENDA -->
+                <div class="row mg-b-25 border_content">
+                    <!-- Title -->
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">CARACTERISTICAS BASICAS DE  LA VIVIENDA</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+
+                    <!-- Formulary -->
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Estrato Social: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_5_estrato_social" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Ubicación: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_5_ubicacion" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Tiempo de residencia en la vivienda: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_5_tiempo_residencia" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <hr />
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Tipo <span class="tx-danger">*</span></label>
+                            <select id="sl_vd_5_tipo" class="form-control " data-placeholder="Choose Browser">
+                                <option value="CASA">CASA</option>
+                                <option value="DEPARTAMENTO">DEPARTAMENTO</option>
+                                <option value="CASALOTE">CASALOTE</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Apreción Interna <span class="tx-danger">*</span></label>
+                            <select id="sl_vd_5_aprecion_interna" class="form-control " data-placeholder="Choose Browser">
+                                <option value="BUENA">BUENA</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="MALA">MALA</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Apreción Externa <span class="tx-danger">*</span></label>
+                            <select id="sl_vd_5_aprecion_externa" class="form-control " data-placeholder="Choose Browser">
+                                <option value="BUENA">BUENA</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="MALA">MALA</option>
+                            </select>
+                        </div>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        <div class="form-group">
+                            <label>Servicios públicos <span class="tx-danger">*</span></label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label class="ckbox">
+                                    <input type="checkbox" name="check_servicios_publicos[]" value="1"><span>AGUA</span>
+                                </label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="ckbox">
+                                    <input type="checkbox" name="check_servicios_publicos[]" value="2"><span>LUZ</span>
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="ckbox">
+                                    <input type="checkbox" name="check_servicios_publicos[]" value="3"><span>GAS NATURAL</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6">
+
+                        <div class="form-group">
+                            <label>Servicios instalados <span class="tx-danger">*</span></label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label class="ckbox">
+                                    <input type="checkbox" name="check_servicios_instalados[]" value="1"><span>INTERNET</span>
+                                </label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="ckbox">
+                                    <input type="checkbox" name="check_servicios_instalados[]" value="2"><span>CABLE</span>
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="ckbox">
+                                    <input type="checkbox" name="check_servicios_instalados[]" value="3"><span>TELEFONO</span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Salto -->
+                        <br />
+                        <br />
+                    </div>
+
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Estado <span class="tx-danger">*</span></label>
+                            <select id="sl_vd_5_estado" class="form-control " data-placeholder="Choose Browser">
+                                <option value="TERMINADA">BUENA</option>
+                                <option value="EN_CONSTRUCCION">EN CONSTRUCCION</option>
+                                <option value="DETERIORADA">DETERIORADA</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Servicio Alcantarillado <span class="tx-danger">*</span></label>
+                            <select id="sl_vd_5_servicio_alcantarillado" class="form-control " data-placeholder="Choose Browser">
+                                <option value="TOTAL">TOTAL</option>
+                                <option value="PARCIAL">PARCIAL</option>
+                                <option value="NO_EXISTE">NO EXISTE</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Ubicación <span class="tx-danger">*</span></label>
+                            <select id="sl_vd_5_ubicacion" class="form-control " data-placeholder="Choose Browser">
+                                <option value="RESIDENCIAL">RESIDENCIAL</option>
+                                <option value="COMERCIAL">COMERCIAL</option>
+                                <option value="OTROS">OTROS</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- COPIAR DESDE AQUÍ -->
+                    <div class="col-lg-12">
+                        <hr />
+                    </div>
+
+                    <!-- Formulario -->
+
+                    <div class="col-lg-12">
+                        <!---->
+                        <div class="form-group">
+                            <label style="font-size: 14px;"><b>DISTRIBUCIÓN</b></label>
+                        </div>
+                    </div>
+
+                    @*<div class="col-lg-4">
+            <div class="form-group">
+                <label>Distribución <span class="tx-danger">*</span></label>
+                <select id="sl_3_8_distribucion" class="form-control " data-placeholder="Choose Browser">
+                    <option value="NO_ALCOBAS">NO ALCOBAS</option>
+                    <option value="NO_BANOS">NO BAÑOS</option>
+                    <option value="NO_COCINAS">NO COCINAS</option>
+                </select>
+            </div>
+        </div>*@
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>N° Alcobas: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_3_8_numero_alcobas" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>N° Baños: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_3_8_numero_banos" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>N° Cocinas: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_3_8_numero_cocinas" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <hr />
+                    </div>
+
+                    <!-- COPIAR HASTA AQUÍ -->
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Ambiente Sector <span class="tx-danger">*</span></label>
+                            <select id="sl_vd_5_ambiente_sector" class="form-control " data-placeholder="Choose Browser">
+                                <option value="BUENO">BUENO</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="MALO">MALO</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Vías de Acceso <span class="tx-danger">*</span></label>
+                            <select id="sl_vd_5_vias_acceso" class="form-control " data-placeholder="Choose Browser">
+                                <option value="BUENO">BUENO</option>
+                                <option value="REGULAR">REGULAR</option>
+                                <option value="MALO">MALO</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Propiedad <span class="tx-danger">*</span></label>
+                            <select id="sl_vd_5_propiedad" class="form-control " data-placeholder="Choose Browser">
+                                <option value="ARRENDADA">ARRENDADA</option>
+                                <option value="PROPIA">PROPIA</option>
+                                <option value="FAMILIAR">FAMILIAR</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <div class="form-group">
+                            <label>Concepto: <span class="tx-danger">*</span></label>
+                            <textarea rows="3" type="text" id="txt_vd_5_concepto" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <hr />
+                    </div>
+
+                    <!-- Formulario -->
+
+                    <div class="col-lg-12">
+                        <!---->
+                        <div class="form-group">
+                            <label style="font-size: 14px;"><b>RELACIÓN CON LA COMUNIDAD (VECINOS DEL SECTOR)</b></label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <!---->
+                        <div class="form-group">
+                            <label>Nombre: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_5_relacion_comunidad_nombre" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <!---->
+                        <div class="form-group">
+                            <label>Hace cuanto tiempo lo conoce: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_5_relacion_comunidad_tiempo_conoce" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <!---->
+                        <div class="form-group">
+                            <label>Concepto: <span class="tx-danger">*</span></label>
+                            <textarea rows="3" type="text" id="txt_vd_5_relacion_comunidad_concepto" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group mg-b-10-force">
+                            <label><span class="tx-danger">&nbsp;</span></label>
+                            <div class="input-group">
+                                <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_vd_5_agregar"><i class="fa fa-plus-circle"></i> <span>Agregar</span> </button>
+                            </div>
+                        </div>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+
+                    <!-- Tabla -->
+                    <div class="col-lg-12">
+                        <div class="table-wrapper">
+                            <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_vd_5_list" style="width: 100%;">
+                                <thead class="font-size-8">
+                                    <tr>
+                                        <th class="wd-5p">INDEX</th>
+                                        <th class="wd-15p">NOMBRE</th>
+                                        <th class="wd-15p">HACE CUANTO TIEMPO LO CONOCE</th>
+                                        <th class="wd-15p">CONCEPTO</th>
+                                        <th class="wd-15p">ACCIÓN</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- APRECIACIÓN DEL EVALUADOR -->
+                <div class="row mg-b-25 border_content">
+                    <!-- Title -->
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">APRECIACIÓN DEL EVALUADOR</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+
+                    <!-- Formulary -->
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <textarea class="col-lg-12" id="txt_dv_6_conclusion" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Resultado: <span class="tx-danger">*</span></label>
+                            <select id="sl_vd_6_resultado" class="form-control " data-placeholder="Choose Browser">
+                                <option value="CONFIABLE">CONFIABLE</option>
+                                <option value="NO_CONFIABLE">NO CONFIABLE</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Concepto: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_vd_6_realizado_por" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Firma: <span class="tx-danger">*</span></label>
+                            <input type="file" id="txt_vd_6_firma" class="form-control" placeholder="-" required>
+                            <div class="row" style="margin-top:4px" id="PreviewFirma">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                                <div class="col-lg-7">
+                                    <button class="btn styleIcon previewClass"><i class="fa fa-folder"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- REGISTRO FOTOGRÁFICO-->
+                <div class="row mg-b-25 border_content">
+                    <!-- Title -->
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <thead class="thead-colored thead-warning">
+                                <tr>
+                                    <th style="font-size: 14px; text-align: center;">REGISTRO FOTOGRÁFICO</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- Salto -->
+                        <br />
+                    </div>
+
+                    <!-- Formulary -->
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Foto Candidato (Entrada del domicilio): <span class="tx-danger">*</span></label>
+                            <input type="file" id="file_vd_7_foto_entrada_domicilio" class="form-control" placeholder="-" required>
+                            <div class="row" style="margin-top:4px" id="PreviewDomicilio">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                                <div class="col-lg-7">
+                                    <button class="btn styleIcon previewClass"><i class="fa fa-folder"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Observaciones: <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="2" id="txt_vd_7_candidato_observaciones" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Foto (Ambiente social): <span class="tx-danger">*</span></label>
+                            <input type="file" id="file_vd_7_foto_ambiente_social" class="form-control" placeholder="-" required>
+                            <div class="row" style="margin-top:4px" id="PreviewSocial">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                                <div class="col-lg-7">
+                                    <button class="btn styleIcon previewClass"><i class="fa fa-folder"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Observaciones: <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="2" id="txt_vd_7_ambiente_social_observaciones" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Foto (Habitaciones): <span class="tx-danger">*</span></label>
+                            <input type="file" id="file_vd_7_foto_habitaciones" class="form-control" placeholder="-" required>
+                            <div class="row" style="margin-top:4px" id="PreviewHabitaciones">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                                <div class="col-lg-7">
+                                    <button class="btn styleIcon previewClass"><i class="fa fa-folder"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Observaciones: <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="2" id="txt_vd_7_habitaciones_observaciones" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Foto (Cocina): <span class="tx-danger">*</span></label>
+                            <input type="file" id="file_vd_7_foto_cocina" class="form-control" placeholder="-" required>
+                            <div class="row" style="margin-top:4px" id="PreviewCocina">
+                                <div class="col-lg-5">
+                                    <span></span>
+                                </div>
+                                <div class="col-lg-7">
+                                    <button class="btn styleIcon previewClass"><i class="fa fa-folder"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Observaciones: <span class="tx-danger">*</span></label>
+                            <textarea type="text" rows="2" id="txt_vd_7_cocina_observaciones" class="form-control" placeholder="-" required></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="row mg-b-25">
+                <div class="col-lg-9">
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group mg-b-10-force">
+                        <label><span class="tx-danger">&nbsp;</span></label>
+                        <div class="input-group">
+                            <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_guardar"><i class="fa fa-save"></i> <span> Guardar </span> </button>
+                        </div>
+                        <br />
+                        <div class="input-group">
+                            <button class="btn btn-oblong btn-dark btn-block mg-b-2" id="btn_generar"><i class="fa fa-save"></i> <span> Generar </span> </button>
+                        </div>
+                        <br />
+                        <div class="input-group">
+                            <button class="btn btn-oblong btn-dark btn-block mg-b-2" id="btn_regresar"><i class="fa fa-backward"></i> <span> Regresar </span> </button>
+                        </div>
+                    </div>
+                    <!-- Salto -->
+                    <br>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="modalIMG" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body mb-0 p-0">
+                <img id="imgPreview" src="https://i.gifer.com/YCZH.gif" alt="" style="width:100%">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var UrlGetStatusCivil = '@Url.Action("getStatusCivil", "Services", new { IdPais = 1 })';
+    var UrlGetDocumentType = '@Url.Action("GetDocumentType", "Services", new { IdPais = 1 })';
+    var urlGenerateDocument = '@Url.Action("GenerateDocumentFinale", "Services")';
+    var urlDownloadBase64 = '@Url.Action("GetPreviewFileBase64", "Services")';
+    var UrlSaveorUpdateIntegrity90PlusPeru = '@Url.Action("SaveorUpdateIntegrity90PlusPeru", "Services")';
+    var UrlGetRiskAnalysisFormat90PlusPeru = '@Url.Action("GetRiskAnalysisFormat90PlusPeru", "Services")';
+     //Obtener Datos de work integrity
+    var urlWorkIntegrityDetail = '@Url.Action("GetListWorkIntegrityDetail", "Services")';
+</script>
+@Scripts.Render("~/bundles/analisis_riesgo_90_plus_peru")

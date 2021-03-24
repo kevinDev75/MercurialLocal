@@ -1,0 +1,522 @@
+﻿
+@{
+    ViewBag.Title = "FormatoAnalisisRiesgoPremium";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="br-mainpanel">
+        <div class="br-pageheader">
+
+        </div>
+        <div class="br-pagetitle">
+            <i class="icon ion-ios-book-outline"></i>
+            <div>
+                <h4 id="lbl_titulo">Análisis de Riesgo Premium Perú</h4>
+            </div>
+        </div>
+        <div class="br-pagebody">
+            <div class="br-section-wrapper">
+
+                <div id="formato">
+                    <!-- I.	INFORME ANTECEDENTES JUDICIALES -->
+                    <div class="row mg-b-25">
+                        <!-- Title -->
+                        <div class="col-lg-12">
+                            <h4 style="text-align: center;">Análisis de Riesgo Premium Perú</h4>
+                        </div>
+                    </div>
+
+                    <!-- DATOS BASICOS DEL CANDIDATO -->
+                    <div class="row mg-b-25 border_content">
+                        <!-- FORMULARIO -->
+                        <div class="col-lg-7">
+                            <table class="table table-bordered">
+                                <thead class="thead-colored thead-warning">
+                                    <tr>
+                                        <th style="font-size: 14px; text-align: center;">1. Datos Personales del Evaluado</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <!-- Salto -->
+                            <br />
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>NOMBRES Y APELLIDOS: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_nombres_apellidos" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>NRO DE DOCUMENTO: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_nro_documento" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>FECHA DE INSCRIPCIÓN: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_fecha_inscripcion" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>FECHA DE EXPEDICIÓN: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_fecha_expedicion" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>CADUCIDAD: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_caducidad" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>DIRECCIÓN: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_direccion" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>LUGAR DE NACIMIENTO (Departamento, Provincia, Distrito): <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_lugar_nacimiento" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>FECHA DE NACIMIENTO: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_fecha_nacimiento" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>NACIONALIDAD: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_nacionalidad" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>EDAD: <span class="tx-danger">*</span></label>
+                                    <input type="number" id="txt_1_edad" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>ESTADO CIVIL: <span class="tx-danger">*</span></label>
+                                    <select id="txt_1_estado_civil" class="form-control ClassStatusCivil" data-placeholder="Choose Browser">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>GRADO DE INSTRUCCIÓN: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_grado_instruccion" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>ESTATURA: <span class="tx-danger">*</span></label>
+                                    <input type="number" id="txt_1_estatura" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>NOMBRE MADRE: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_nombre_madre" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>NOMBRE PADRE: <span class="tx-danger">*</span></label>
+                                    <input type="text" id="txt_1_nombre_padre" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <!-- ESTADISTICA -->
+                        <div class="col-lg-5">
+                            <table class="table table-bordered">
+                                <thead class="thead-colored thead-warning">
+                                    <tr>
+                                        <th style="font-size: 14px; text-align: center;">RESULTADO FINAL</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <!-- Salto -->
+                            <br />
+
+
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label style="font-size:15pt;">Nivel de Riesgo</label>
+                                            <label class="rdiobox">
+                                                <input name="radioNivel" type="radio" value="1" checked>
+                                                <span><b style="color: red; font-size:12pt;">Alto</b></span>
+                                            </label>
+                                            <label class="rdiobox">
+                                                <input name="radioNivel" type="radio" value="2">
+                                                <span><b style="color: darkgoldenrod; font-size:12pt;">Medio</b></span>
+                                            </label>
+                                            <label class="rdiobox">
+                                                <input name="radioNivel" type="radio" value="3">
+                                                <span><b style="color: limegreen; font-size:12pt;">Bajo</b></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <label class="rdiobox">
+                                                <input name="radioCalificacion" type="radio" value="1" checked>
+                                                <span><b style="font-size:12pt;">Recomendable</b></span>
+                                            </label>
+                                            <label class="rdiobox">
+                                                <input name="radioCalificacion" type="radio" value="2">
+                                                <span><b style="font-size:12pt;">No Recomendable</b></span>
+                                            </label>
+                                            <label class="rdiobox">
+                                                <input name="radioCalificacion" type="radio" value="3">
+                                                <span><b style="font-size:12pt;">En Observación</b></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Salto -->
+                            <br />
+                            <br />
+
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Escala Sinceridad: <span class="tx-danger">* 1 - 100</span></label>
+                                            <input type="number" id="txt_escala_sinceridad" class="form-control" placeholder="-" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Nivel de Riesgo: <span class="tx-danger">* 1 - 100</span></label>
+                                            <input type="number" id="txt_nivel_riesgo" class="form-control" placeholder="-" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>&nbsp;</label>
+                                            <div class="input-group">
+                                                <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_buscar" onclick="calculateGraphic()"><span>Calcular</span> </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br />
+
+                            <div class="col-lg-12">
+                                <div id="container-graphic"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!-- -->
+                    <div class="row mg-b-25 border_content">
+                        <div class="col-lg-12">
+                            <table class="table table-bordered">
+                                <thead class="thead-colored thead-warning">
+                                    <tr>
+                                        <th style="font-size: 14px; text-align: center;">2. Análisis de Antecedentes Personales Premium</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <label class="rdiobox">
+                                    <input name="radio_2_analisis" type="radio" value="true" checked>
+                                    <span>Registra</span>
+                                </label>
+                                <label class="rdiobox">
+                                    <input name="radio_2_analisis" type="radio" value="false">
+                                    <span>No Registra</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label>Observaciones: <span class="tx-danger">*</span></label>
+                                <input type="text" id="txt_2_observaciones" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label>Análisis: <span class="tx-danger">*</span></label>
+                                <input type="text" id="txt_2_analisis" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- -->
+                    <div class="row mg-b-25 border_content">
+
+                        <div class="col-lg-12">
+                            <table class="table table-bordered">
+                                <thead class="thead-colored thead-warning">
+                                    <tr>
+                                        <th style="font-size: 14px; text-align: center;">3. Análisis de Académicos y laborales</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>SUNEDU: <span class="tx-danger">*</span></label>
+                                <input type="text" id="txt_3_sunedu" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>REFERENCIAS LABORALES: <span class="tx-danger">*</span></label>
+                                <input type="text" id="txt_3_referencias_laborales" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>ESSALUD: <span class="tx-danger">*</span></label>
+                                <input type="text" id="txt_3_essalud" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- -->
+                    <div class="row mg-b-25 border_content">
+
+                        <div class="col-lg-12">
+                            <table class="table table-bordered">
+                                <thead class="thead-colored thead-warning">
+                                    <tr>
+                                        <th style="font-size: 14px; text-align: center;">4. Análisis de Antecedentes Financieros</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>
+                                    COMPORTAMIENTO FINANCIERO SENTINEL: <span class="tx-danger">*</span>
+                                </label>
+                                <input type="text" id="txt_4_financiero_sentienel" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>SUNAT: <span class="tx-danger">*</span></label>
+                                <input type="text" id="txt_4_sunat" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>
+                                    VERIFICACIÓN PERSONAS EXCLUIDAS DE SBS Y AFP: <span class="tx-danger">*</span>
+                                </label>
+                                <input type="text" id="txt_4_personas_excluidas" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- -->
+                    <div class="row mg-b-25 border_content">
+
+                        <div class="col-lg-12">
+                            <table class="table table-bordered">
+                                <thead class="thead-colored thead-warning">
+                                    <tr>
+                                        <th style="font-size: 14px; text-align: center;">5. Análisis de Antecedentes Sociales y Políticos</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>VERIFICACIÓN DE CARGOS PÚBLICOS: <span class="tx-danger">*</span></label>
+                                <input type="text" id="txt_5_verificacion_cargos_publicos" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>VERIFICACIÓN DE FILIACIÓN POLÍTICA: <span class="tx-danger">*</span></label>
+                                <input type="text" id="txt_5_verificacion_filiacion_politica" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>MULTAS ELECTORALES: <span class="tx-danger">*</span></label>
+                                <input type="text" id="txt_5_multas_electorales" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- -->
+                    <!-- -->
+                    <div class="row mg-b-25 border_content">
+
+                        <div class="col-lg-12">
+                            <table class="table table-bordered">
+                                <thead class="thead-colored thead-warning">
+                                    <tr>
+                                        <th style="font-size: 14px; text-align: center;">6. Analisis de "Otros"</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <textarea class="col-lg-12" id="txt_6_analisis_otros" rows="4"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- -->
+                    <div class="row mg-b-25 border_content">
+
+                        <div class="col-lg-12">
+                            <table class="table table-bordered">
+                                <thead class="thead-colored thead-warning">
+                                    <tr>
+                                        <th style="font-size: 14px; text-align: center;">7. Conclusión</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <textarea class="col-lg-12" id="txt_7_conclusion" rows="4">Tras el análisis integral se concluye que el nivel de riesgo del evaluado es: medio, bajo, alto. Es por ello que Recomendamos /No recomendamos su contratación o continuidad de servicio. La evaluación, debido a los factores de confiabilidad o ausencia de antecedes, no son concluyente por lo que se recomienda profundizar en el análisis o cruzar información con su desempeño y vinculaciones laborales. 
+                            </textarea>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- -->
+                    <div class="row mg-b-25 border_content">
+
+                        <div class="col-lg-12">
+                            <table class="table table-bordered">
+                                <thead class="thead-colored thead-warning">
+                                    <tr>
+                                        <th style="font-size: 14px; text-align: center;">8. Anexos</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <!-- Contador de registro -->
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label><b>SELECCIONAR ARCHIVO:</b> <span class="tx-danger">*</span></label>
+
+                                <input type="file" id="file_8" class="form-control" placeholder="-" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group mg-b-10-force">
+                                <label><span class="tx-danger">&nbsp;</span></label>
+                                <div class="input-group">
+                                    <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_8_agregar"><i class="fa fa-plus-circle"></i> <span>Agregar</span> </button>
+                                </div>
+                            </div>
+                            <!-- Salto -->
+                            <br />
+                        </div>
+                        <!-- Tabla -->
+                        <div class="col-lg-12">
+                            <div class="table-wrapper">
+                                <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_8_list" style="width: 100%;">
+                                    <thead class="font-size-8">
+                                        <tr>
+                                            <th class="wd-5p">INDEX</th>
+                                            <th class="wd-15p">NOMBRE</th>
+                                            <th class="wd-15p">ACCIÓN</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="row mg-b-25">
+                    <div class="col-lg-9">
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group mg-b-10-force">
+                            <label><span class="tx-danger">&nbsp;</span></label>
+                            <div class="input-group">
+                                <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_guardar"><i class="fa fa-save"></i> <span> Guardar </span> </button>
+                            </div>
+                            <br />
+                            <div class="input-group">
+                                <button class="btn btn-oblong btn-dark btn-block mg-b-2" id="btn_generar"><i class="fa fa-save"></i> <span> Generar </span> </button>
+                            </div>
+                        </div>
+                        <!-- Salto -->
+                        <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+@Scripts.Render("~/bundles/analisis_riesgo_premium_peru")

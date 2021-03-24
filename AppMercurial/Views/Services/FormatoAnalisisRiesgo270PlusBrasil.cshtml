@@ -1,0 +1,827 @@
+﻿
+@{
+    ViewBag.Title = "FormatoAnalisisRiesgo270PlusBrasil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>FormatoAnalisisRiesgo270PlusBrasil</h2>
+
+
+<div class="br-mainpanel">
+    <div class="br-pageheader">
+    </div>
+
+    <div class="br-pagetitle">
+        <i class="icon ion-ios-book-outline"></i>
+        <div>
+            <h4 id="lbl_titulo">FICHA ANÁLISE DE RISCO 270 PLUS - PAIS >> BRASIL</h4>
+        </div>
+    </div>
+
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+
+            <!-- DOCUMENT 01 -->
+            <!-- I.	INFORME ANTECEDENTES JUDICIALES -->
+            <div class="row mg-b-25">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <h4 style="text-align: center;">I. Dados Pessoais do Avaliado</h4>
+                </div>
+            </div>
+
+            <!-- DATOS BASICOS DEL CANDIDATO -->
+            <div class="row mg-b-25 border_content">
+                <!-- FORMULARIO -->
+                <div class="col-lg-7">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">I. Dados Pessoais do Avaliado</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>
+                                NOME COMPLETO: <span class="tx-danger">*</span>
+                            </label>
+                            <input type="text" id="txt_1_nombres_apellidos" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>CPF: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_1_nro_documento" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>CIDADE DE NASCIMENTO: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_1_lugar_nacimiento" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>NACIONALIDADE: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_1_nacionalidad" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>DADOS DE NASCIMENTO: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_1_fecha_nacimiento" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>IDADE: <span class="tx-danger">*</span></label>
+                            <input type="number" id="txt_1_edad" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>SIGNO: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_1_signo" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>GÊNERO: <span class="tx-danger">*</span></label>
+                            <select id="sl_1_sexo" class="form-control " data-placeholder="Choose Browser">
+                                <option value="M">MASCULINO</option>
+                                <option value="F">FEMENINO</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>ESTADO CIVIL: <span class="tx-danger">*</span></label>
+                            <select id="sl_1_estado_civil" class="form-control ClassStatusCivil" data-placeholder="Choose Browser">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>ENDEREÇO: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_1_direccion" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ESTADISTICA -->
+                <div class="col-lg-5">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">RESULTADO FINAL</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+
+
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label style="font-size:15pt;">Nivel de Risco</label>
+                                    <label class="rdiobox">
+                                        <input name="radio_1_nivel" type="radio" value="1" checked>
+                                        <span><b style="color: red; font-size:12pt;">Alto</b></span>
+                                    </label>
+                                    <label class="rdiobox">
+                                        <input name="radio_1_nivel" type="radio" value="2">
+                                        <span><b style="color: darkgoldenrod; font-size:12pt;">Medio</b></span>
+                                    </label>
+                                    <label class="rdiobox">
+                                        <input name="radio_1_nivel" type="radio" value="3">
+                                        <span><b style="color: limegreen; font-size:12pt;">Baixo</b></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <label class="rdiobox">
+                                        <input name="radio_1_calificacion" type="radio" value="1" checked>
+                                        <span><b style="font-size:12pt;">Recomendado</b></span>
+                                    </label>
+                                    <label class="rdiobox">
+                                        <input name="radio_1_calificacion" type="radio" value="2">
+                                        <span><b style="font-size:12pt;">Ñao Recomendado</b></span>
+                                    </label>
+                                    <label class="rdiobox">
+                                        <input name="radio_1_calificacion" type="radio" value="3">
+                                        <span><b style="font-size:12pt;">Em Observação</b></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Salto -->
+                    <br />
+                    <br />
+
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Escala Sinceridade: <span class="tx-danger">* 1 - 100</span></label>
+                                    <input type="number" id="txt_1_escala_sinceridad" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Nivel de Risco: <span class="tx-danger">* 1 - 100</span></label>
+                                    <input type="number" id="txt_1_nivel_riesgo" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>
+                                        Justiça no trabalho: <span class="tx-danger">* 1 - 100</span>
+                                    </label>
+                                    <input type="number" id="txt_1_justicia_trabajo" class="form-control" placeholder="-" required>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <div class="input-group">
+                                    <button class="btn btn-oblong btn-warning btn-block mg-b-2" onclick="calculateGraphic()"><span>Calcular</span> </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="col-lg-12">
+                        <div id="container-graphic"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- II. DADOS CADASTRAIS – PESSOA FÍSICA -->
+            <div class="row mg-b-25 border_content">
+
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">
+                                    II. DADOS CADASTRAIS – PESSOA FÍSICA
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <input type="text" id="txt_2_datos_registro" class="form-control" placeholder="Resumir as informações dos dados básicos. " required>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- III. COMPORTAMENTO FINANCEIRO – CADASTRO DE PESSOA FÍSICA -->
+            <div class="row mg-b-25 border_content">
+
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">
+                                    III. COMPORTAMENTO FINANCEIRO – CADASTRO DE PESSOA FÍSICA
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <input type="text" id="txt_3_comportamiento_financiero" class="form-control" placeholder="Resumir as informações dos dados básicos. " required>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- IV.  Análise do Teste Psicológico -->
+            <div class="row mg-b-25 border_content">
+
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">
+                                    IV.  LISTAS RESTRITIVAS NACIONAIS <br />
+                                    Tribunais Regionais Federais e Tribunais Estaduais
+
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <input type="text" id="txt_4_restrictivas_nacionales" class="form-control" placeholder="Resumir as informações dos dados básicos. " required>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- V.  Análise do Teste Psicológico -->
+            <div class="row mg-b-25 border_content">
+
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">
+                                    V.  ANÁLISE DO TESTE PSICOLÓGICO
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <input type="text" id="txt_5_analisis_test_psicologico" class="form-control" placeholder="Resumir as informações dos dados básicos. " required>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- VI. Conclusão -->
+            <div class="row mg-b-25 border_content">
+
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">
+                                    VI.  CONCLUSÃO
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <input type="text" id="txt_6_conclusion" class="form-control" placeholder="Resumir as informações dos dados básicos. " required>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- DOCUMENT 02 -->
+            <!-- I.	RELATÓRIO DE ANTECEDENTES DA CRIMINAIS -->
+            <div class="row mg-b-25">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <h4 style="text-align: center ;">I. RELATÓRIO DE ANTECEDENTES DA CRIMINAIS E JUDICIAIS</h4>
+                </div>
+            </div>
+
+            <!-- 1.1 INFORMAÇÕES BÁSICAS AO CANDIDATO -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">1.1 INFORMAÇÕES BÁSICAS AO CANDIDATO</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+
+                <!--  -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            Nome:<span class="tx-danger"> *</span>
+                        </label>
+                        <input type="text" id="txt_1_1_nombre" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            CPF:<span class="tx-danger"> *</span>
+                        </label>
+                        <input type="text" id="txt_1_1_cpf" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            Endereço:<span class="tx-danger"> *</span>
+                        </label>
+                        <input type="text" id="txt_1_1_habla" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <!--  -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            Cidade de Nascimento:<span class="tx-danger"> *</span>
+                        </label>
+                        <input type="text" id="txt_1_1_lugar_nacimiento" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            Nacionalidade:<span class="tx-danger"> *</span>
+                        </label>
+                        <input type="text" id="txt_1_1_nacionalidad" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            Dados de Nascimento:<span class="tx-danger"> *</span>
+                        </label>
+                        <input type="text" id="txt_1_1_fecha_nacimiento" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <!--  -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            Signo:<span class="tx-danger"> *</span>
+                        </label>
+                        <input type="text" id="txt_1_1_signo" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            Gênero:<span class="tx-danger"> *</span>
+                        </label>
+                        <select id="sl_1_1_genero" class="form-control " data-placeholder="Choose Browser">
+                            <option value="M">MASCULINO</option>
+                            <option value="F">FEMENINO</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            Idade:<span class="tx-danger"> *</span>
+                        </label>
+                        <input type="number" id="txt_1_1_edad" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+
+                <!--  -->
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            Estado Civil:<span class="tx-danger"> *</span>
+                        </label>
+                        <select id="sl_1_1_estado_civil" class="form-control " data-placeholder="Choose Browser">
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            Telefone:<span class="tx-danger"> *</span>
+                        </label>
+                        <input type="number" id="txt_1_1_telefono" class="form-control" placeholder="-" required>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            E-mail:<span class="tx-danger"> *</span>
+                        </label>
+                        <input type="number" id="txt_1_1_email" class="form-control" placeholder="-" required>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <!-- 1.2 DADOS CADASTRAIS – PESSOA FÍSICA  -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">1.2 DADOS CADASTRAIS – PESSOA FÍSICA</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Situação do CPF na Receita Federal</b></label>
+                        <div class="form-group">
+                            <label>Situação do CPF na Receita Federal: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_1_2_estado_cpf" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Qualificação Profissional (incluindo Servidores Públicos)</b></label>
+                        <div class="form-group">
+                            <label>Qualificação Profissional: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_1_2_calificacion_profesional" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Atividade Profissional - Segmento</b></label>
+                        <div class="form-group">
+                            <label>Empresa o qual trabalha: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_1_2_actividad_profesional" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Escolaridade</b></label>
+                        <div class="form-group">
+                            <label>Grau de Escolaridade: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_1_2_grado_escolaridad" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Título de eleitor (Zona e Seção)</b></label>
+                        <div class="form-group">
+                            <input type="text" id="txt_1_2_titulo_elector" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Household ou Pessoas Vinculadas</b></label>
+                        <div class="form-group">
+                            <label>Grau de parentesco: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_1_2_personas_hogar" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Cônjuge</b></label>
+                        <div class="form-group">
+                            <label>Dados do Cônjuge: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_1_2_esposa" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Fraud Checks</b></label>
+                        <div class="form-group">
+                            <label>Identifica se o documento corresponde a pessoa: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_1_2_cheques_fraude" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>PIS</b></label>
+                        <div class="form-group">
+                            <label>Programa de Integração Social: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_1_2_pis" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Óbito </b></label>
+                        <div class="form-group">
+                            <input type="text" id="txt_1_2_obito" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- II. COMPORTAMENTO FINANCEIRO – CADASTRO DE PESSOA FÍSICAS -->
+            <div class="row mg-b-25">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <h4 style="text-align: center ;">II. COMPORTAMENTO FINANCEIRO – CADASTRO DE PESSOA FÍSICA</h4>
+                </div>
+            </div>
+
+            <!-- 1.1 INFORMAÇÕES BÁSICAS AO CANDIDATO -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">2.3 COMPORTAMENTO FINANCEIRO – CADASTRO DE PESSOA FÍSICA </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Faixa de renda presumida</b></label>
+                        <div class="form-group">
+                            <label>Faixa de renda presumida: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_2_3_rango_ingresos_presuntos" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Poder de Compra</b></label>
+                        <div class="form-group">
+                            <label>Renda Individual ou Bancarização. Qual a faixa: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_2_3_poder_adquisitivo" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Risco e Crédito</b></label>
+                        <div class="form-group">
+                            <label>Classificação de acordo com o valor do Score, onde A é a faixa onde a recuperação é maior, B a segunda maior e assim até a faixa F que é a de menor recuperação: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_2_3_riesgo_credito" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Busca e Apreensão</b></label>
+                        <div class="form-group">
+                            <label>Busca e Apreensão de algum bem: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_2_3_busqueda_captura" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Execução e Despejo</b></label>
+                        <div class="form-group">
+                            <label>Ordem de despejo: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_2_3_ejecucion_desalojo" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Consulta Restituição de Imposto de Renda Pessoa Física</b></label>
+                        <div class="form-group">
+                            <label>Consulta Restituição de Imposto de Renda Pessoa Física: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_2_3_consulta_reembolso" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Recebe alguma ajuda do Governo</b></label>
+                        <div class="form-group">
+                            <label>Ex.: Bolsa Familia, Auxilio Emergencial, etc: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_2_3_recibe_ayuda_gobierno" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>Do not call – Procon</b></label>
+                        <div class="form-group">
+                            <label>“Não Me Ligue”, um mesmo consumidor pode cadastrar até cinco telefones (fixo ou móvel).: <span class="tx-danger">*</span></label>
+                            <input type="text" id="txt_2_3_no_llamar" class="form-control" placeholder="-" required>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- III. LISTAS RESTRITIVAS NACIONAIS -->
+            <div class="row mg-b-25">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <h4 style="text-align: center ;">III. LISTAS RESTRITIVAS NACIONAIS</h4>
+                </div>
+            </div>
+
+            <!-- LISTAS RESTRITIVAS NACIONAIS -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">
+                                    LISTAS RESTRITIVAS NACIONAIS <br />
+                                    Tribunais Regionais Federais e Tribunais Estaduais <br />
+                                    (Ver Bancos de Dados Públicos)
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>PODER JUDICIÁRIO</b></label>
+                        <div class="form-group">
+                            <textarea type="text" id="txt_3_1_poder_juridico" class="form-control" placeholder="-" required>Ações Judiciais: Número do processo. Tipo de Ação. Quantidade de ações. </textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea type="text" id="txt_3_2_poder_juridico" class="form-control" placeholder="-" required>A Polícia Civil informa: O cidadão tem/não tem problemas pendentes com as autoridades judiciais</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea type="text" id="txt_3_3_poder_juridico" class="form-control" placeholder="-" required>MANDADO DE PRISÃO - Ordem escrita emanada da autoridade competente, determinando a prisão da pessoa em virtude de condenação criminal. SEM plano de fundo – O CIDADÃO</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>INFORMAÇÕES ADICIONAIS</b></label>
+                        <div class="form-group">
+                            <textarea  rows="6" id="txt_3_1_informacion_adicional" class="form-control" placeholder="-" required>CPNPJ -  Cadastro Nacional da Pessoa Jurídica (Consultas de atividades laborais).  Relatório anexado CNPJ, Situação cadastral do CNPJ na Receita,  Inscrição Estadual,  Razão Social,  Nome fantasia, Data de Fundação,  Classificação Nacional de Atividade, Econômica (CNAE), Natureza Jurídica, Quadro de Sócios e Administradores, Probabilidade de funcionamento, Faixa de funcionários, Matriz e Filiais, Faturamento Presumido,  Autofalência,  Insolvência , Falência,  Liquidação,  Monitória ,  Porte e Segmento,  Busca e Apreensão,  Execução e Despejo,  Recuperação ,  Concordata   Sem  Concidências </textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea  rows="5" id="txt_3_2_informacion_adicional" class="form-control" placeholder="-" required>PEP - Pessoa Exposta Politicamente São indivíduos que desempenham ou desempenharam funções públicas importantes ou que gerenciam recursos públicos. Um PEP geralmente apresenta um risco aumentado de possível envolvimento em suborno e corrupção em virtude de sua posição e da influência que ele pode sustentar.  Relatório anexado.  Sem  Concidências</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea  rows="3" id="txt_3_3_informacion_adicional" class="form-control" placeholder="-" required>FUNCIONÁRIO PÚBLICO - Pessoa investida em cargo público que atua nos órgãos da Administração Pública (Consultas de atividades laborais).  Relatório anexado . Sem  Concidências</textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- IV. TESTE DE CONFIABILIDADE -->
+            <div class="row mg-b-25">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <h4 style="text-align: center ;">IV. TESTE DE CONFIABILIDADE</h4>
+                </div>
+            </div>
+
+            <!-- TEST CONFIABILIDAD -->
+            <div class="row mg-b-25 border_content">
+                <!-- Title -->
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <thead class="thead-colored thead-warning">
+                            <tr>
+                                <th style="font-size: 14px; text-align: center;">IV. TEST DE CONFIABILIDAD </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- Salto -->
+                    <br />
+                </div>
+
+                <!-- Contador de registro -->
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label><b>SELECCIONAR ADJUNTO:</b> <span class="tx-danger">*</span></label>
+                        <input type="file" id="file_4_test_confiabilidad" class="form-control" placeholder="-" required>
+                        <div class="row" style="margin-top:4px" id="PreviewTestConfiabilidad">
+                            <div class="col-lg-5">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    var UrlGetStatusCivil = '@Url.Action("getStatusCivil", "Services", new { IdPais = 2 })';
+    var urlGenerateDocument = '@Url.Action("GenerateDocumentFinale", "Services")';
+    var urlDownloadBase64  = '@Url.Action("GetPreviewFileBase64", "Services")';
+</script>
+
+
+@Scripts.Render("~/bundles/analisis_riesgo_270_plus_brasil")

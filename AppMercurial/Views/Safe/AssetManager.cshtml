@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = "AssetManager";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <div class="br-subleft">
+        <div class="pd-10 ml-10">
+            <a data-toggle="modal" data-target="#modal_register_asset_manager" class="btn btn-teal bd-0 btn-compose text-white"><i class="icon ion-ios-compose-outline"></i> Subir Archivos</a>
+            @*<a id="upload-file" data-toggle="modal" data-target="#modal_register_Pentesting" class="btn btn-teal bd-0 btn-compose text-white"><i class="icon ion-ios-compose-outline"></i> Subir Archivos</a>*@
+            @*<a href="#" class="btn btn-dark btn-icon rounded-circle"  style="float: right;"><div><i class="fa fa-plus"></i></div></a>*@
+            <input type="file" id="input-file" style="display: none" multiple />
+        </div>
+    </div>
+
+    <div class="br-contentpanel">
+        <div class="br-pageheader">
+        </div>
+        <div class="br-pagetitle">
+            <i class="icon ion-ios-filing-outline"></i>
+            <div>
+                <h4 id="lbl_titulo">Gestor de Archivos</h4>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-start pd-x-20 pd-sm-x-30 pd-t-25 mg-b-20 mg-sm-b-30">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group mg-b-0">
+                        <label id="lbl_fecha_inicio_buscador_BElectronico">Fecha Inicio: <span class="tx-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                </div>
+                            </div>
+                            <input type="text" name="txt_fecha_inicio_BElectronico" id="date-start" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group mg-b-0">
+                        <label id="lbl_fecha_fin_buscador_BElectronico">Fecha Fin: <span class="tx-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                </div>
+                            </div>
+                            <input type="text" name="txt_fecha_fin_BElectronico" id="date-end" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label><span class="tx-danger">&nbsp;</span></label>
+                        <div class="input-group">
+                            <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_search"><i class="fa fa-search"></i> <span id="lbl_buscar_buscador">Buscar</span> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="br-pagebody pd-x-20 pd-sm-x-30">
+            <div class="card bd-0 shadow-base">
+                <table class="table mg-b-0">
+                    <thead>
+                        <tr>
+                            <th class="wd-5p">
+                                <label class="ckbox mg-b-0">
+                                    <input type="checkbox"><span></span>
+                                </label>
+                            </th>
+                            <th class="tx-10-force tx-mont tx-medium">Nombre</th>
+                            <th class="tx-10-force tx-mont tx-medium">Asunto</th>
+                            <th class="tx-10-force tx-mont tx-medium hidden-xs-down">Modificado</th>
+                            <th class="wd-5p"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl-assets-files">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modal Upload -->
+<div id="modal_register_asset_manager" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bd-0 tx-14">
+            <div class="modal-header pd-y-20 pd-x-25">
+                <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">SUBIR ARCHIVO</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body pd-25">
+                <div>
+                    <div class="d-flex mg-b-30">
+                        <div class="parsley-input">
+                            <label>Archivo adjunto: <span class="tx-danger">*</span><span class="tx-success"></span></label>
+                            <div class="custom-file">
+                                <input type="file" class="form-control" id="input_file_asset_manager">
+                            </div>
+                        </div><!-- form-group -->
+                    </div>
+                </div>
+
+                <div>
+                    <div class="parsley-input">
+                        <label>Asunto: <span class="tx-danger"></span></label>
+                        <input type="text" id="txt_asunto_asset_manager" class="form-control" placeholder="Ingresar asunto">
+                    </div><!-- form-group -->
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" id="btn_guardar_file">Guardar</button>
+                <button type="button" class="btn btn-secondary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" data-dismiss="modal">Cerrar</button>
+            </div>
+            <div class="modal-body">
+                <hr />
+                <span id="txt_message_error" class="tx-danger"></span>
+            </div>
+        </div>
+    </div><!-- modal-dialog -->
+</div><!-- modal -->
+
+
+
+@Scripts.Render("~/bundles/asset-manager")

@@ -1,0 +1,939 @@
+﻿
+@{
+    ViewBag.Title = "WorkIntegrity";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var FechaInicio = DateTime.Now.AddDays(-7).ToShortDateString();
+    var FechaFin = DateTime.Now.ToShortDateString();
+}
+
+@{
+    if (Context.Request.Cookies["IdPais"].Value == "2")
+    {
+<style>
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+
+            .wizard .actions {
+                display: none;
+                visibility: hidden;
+            }
+</style>
+    }
+    else
+    {
+        <style>
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
+
+
+            
+        </style>
+    }
+}
+
+<div class="br-mainpanel">
+    <div class="br-pageheader">
+
+    </div>
+    <div class="br-pagetitle">
+        <i class="icon ion-ios-book-outline"></i>
+        <div>
+            <h4 data-i18n="registration-requests" id="lbl_titulo">Registro de solicitudes</h4>
+        </div>
+    </div>
+
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+            <div class="row">
+
+                <div class="col-sm-3">
+                    <div class="form-group mg-b-0">
+                        <label id="lbl_codigo_buscador" data-i18n="code">Codigo: </label><span class="tx-danger">*</span>
+                        <input class="form-control" name="txt_codigo" id="txt_codigo" type="text" placeholder="00000000">
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group mg-b-0">
+                        <label id="lbl_fecha_inicio_buscador" data-i18n="start-date">Fecha Inicio: </label> <span class="tx-danger">*</span>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                </div>
+                            </div>
+                            <input type="text" name="txt_fecha_inicio" id="txt_fecha_inicio" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group mg-b-0">
+                        <label id="lbl_fecha_fin_buscador" data-i18n="end-date">Fecha Fin: </label> <span class="tx-danger">*</span>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                </div>
+                            </div>
+                            <input type="text" name="txt_fecha_fin" id="txt_fecha_fin" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group mg-b-0">
+                        <label id="lbl_dni_buscador" data-i18n="identification-document">DNI: </label>  <span class="tx-danger">*</span>
+                        <input class="form-control" name="txt_nrodocumento" id="txt_nrodocumento" type="text" placeholder="00000000">
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label><span class="tx-danger">&nbsp;</span></label>
+                        <div class="input-group">
+                            <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_buscar"><i class="fa fa-search"></i> <span id="lbl_buscar_buscador" data-i18n="search">Buscar</span> </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group mg-b-0">
+                        <label id="lbl_estado_buscador" data-i18n="state">Estado </label> <span class="tx-danger">*</span>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label class="ckbox">
+                                    <input type="checkbox" checked="" id="check_all"><span id="lbl_marcar_buscador" data-i18n="mark-unmark">Marcar / Desmarcar todos</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row" id="div_checks">
+                            <!-- DYNAMIC -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr />
+
+            <div class="table-wrapper">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h6 class="tx-inverse tx-uppercase tx-bold" id="lbl_listado_registro" data-i18n="record-list"> Listado de informes</h6>
+                    </div>
+                    <div class="col-sm-2">
+                        <a href="#" onclick="changeTitles()" class="btn btn-dark btn-icon rounded-circle" title="Nueva Solicitud" data-toggle="modal" data-target="#modal_register" style="float: right;"><div><i class="fa fa-plus"></i></div></a>
+                    </div>
+                </div>
+                <br />
+                <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_data" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th class="wd-10p" id="lbl_table_codigo" data-i18n="code">Código</th>
+                            <th class="wd-30p" id="lbl_table_servicios" data-i18n="services" style="width: 300px;">Servicios</th>
+                            <th class="wd-25p" id="lbl_table_porcentaje"  data-i18n="percentage">Porcentaje</th>
+                            <th class="wd-25p" id="lbl_table_enviado_por" data-i18n="send-for">Enviado por</th>
+                            <th class="wd-15p" id="lbl_table_fecha_hora" data-i18n="date-hour">Fecha y hora</th>
+                            <th class="wd-10p" id="lbl_table_estado" data-i18n="state">Estado</th>
+                            <th class="wd-10p" id="lbl_table_estado" data-i18n="country">País</th>
+                            <th class="wd-10p" id="lbl_table_accion" data-i18n="action">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl_list_work_integrity">
+                        <!-- DYNAMIC -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Datos con display -->
+        <a class="descargaTitle" data-i18n="download" style="display:none;">asdas</a>
+        <a class="subirTitle" data-i18n="go_up" style="display:none;">asdas</a>
+        <a class="debeTener" data-i18n="must_have" style="display:none;">asdas</a>
+
+        <!-- Modal Register -->
+        <div id="modal_register" class="modal fade">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content tx-size-sm">
+                    <div class="modal-header pd-x-20">
+                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="lbl_modal_register_registro_verificacion" data-i18n="modal-verification">Registro de verificación</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body pd-20">
+
+                        <div id="wizard2">
+                            <h3 id="lbl_modal_register_informacion_personal" data-i18n="personal-information"> <span data-i18n="personal-information"> a</span></h3>
+
+                            <section>
+
+                                <div class="row">
+                                    <div class="col-sm-9">
+                                        <h3 data-i18n="personal-information">Información Personal</h3>
+                                    </div>
+                                    <div class="col-sm-1" >
+                                        <label style="margin-left:-12px;padding-left:-12px;" data-i18n="download">Descargar</label>
+
+                                        <a href="#" id="btn_Download" class="btn btn-dark btn-icon rounded-circle" data-toggle="tooltip" data-placement="top" title="Descargar" style="float: right;"><div><i class="icon ion-archive"></i></div></a>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-sm-1" >
+                                        <label data-i18n="go_up" style="margin-left:-18px;padding-left:-18px;">Subir</label>
+
+                                        <a id="btn_upload" class="btn btn-dark btn-icon rounded-circle" data-toggle="tooltip" data-placement="top" title="Subir" style="float: right;" href="javascript:$('#modal_upload').modal('show');"><div><i class="icon ion-upload"></i></div></a>
+
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row mg-b-25">
+                                    @{
+                                        if (Context.Request.Cookies["IdPais"].Value == "2")
+                                        {
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" data-i18n="complete_names">Nombres completos: </label><span class="tx-danger">*</span>
+                                                    <input class="form-control" type="text" id="txt_nombres_completos" placeholder="-" required>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_nombres" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div><!-- col-4 -->
+                                            <div class="col-lg-4 input-for-peru" style="display:none;">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" data-i18n="date_birth">Fecha de nacimiento: </label><span class="tx-danger">*</span>
+                                                    <input class="form-control" type="date" id="txt_fecha_nacimiento" placeholder="-" required>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_fecha" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div><!-- col-4 -->
+
+                                            <div class="col-lg-4 input-for-peru" style="display:none;">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" data-i18n="place_birth">Lugar de nacimiento: </label><span class="tx-danger">*</span>
+                                                    <input class="form-control" type="text" id="txt_lugar_nacimiento" placeholder="-" required>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_lugar_nacimiento" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div><!-- col-4 -->
+                                            <div class="col-lg-4">
+                                                <div class="form-group mg-b-10-force">
+                                                    <label class="form-control-label" id="lbl_modal_register_tipo_documento" data-i18n="document-type">Tipo de documento: </label><span class="tx-danger">*</span>
+                                                    <select class="form-control" id="sl_tipo_documento" data-placeholder="-" required>
+                                                    </select>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_tipoDocumento" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div>
+                                            <!-- col-4 -->
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" id="lbl_modal_register_nro_documento" data-i18n="document_number">Nro de documento: </label><span class="tx-danger">*</span>
+                                                    <input class="form-control" type="number" id="txt_nro_documento" placeholder="-" required>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_nro_documento" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div><!-- col-4 -->
+                                        }
+                                        else
+                                        {
+                                            <div class="col-lg-3" id="cambiar_size_tipo_documento">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" id="lbl_modal_register_tipo_documento" data-i18n="document-type">Tipo de documento: </label><span class="tx-danger">*</span>
+                                                    <select class="form-control" id="sl_tipo_documento" data-placeholder="-" required>
+                                                    </select>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_tipoDocumento" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div>
+
+                                            <!-- col-4 -->
+                                            <div class="col-lg-2" id="cambiar_size_nro_documento">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" id="lbl_modal_register_nro_documento" data-i18n="document_number">Nummero de documento:</label><span class="tx-danger">*</span>
+                                                    <input class="form-control" type="number" id="txt_nro_documento" placeholder="-" required>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_nro_documento" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div><!-- col-4 -->
+                                            <div class="col-lg-2" id="div_boton_consultar_dni">
+                                                <div class="form-group ">
+                                                    <label><span class="tx-danger">&nbsp;</span></label>
+                                                    <div class="input-group">
+                                                        <button class="btn btn-oblong btn-warning btn-block mg-b-2" onclick="btn_consultar_dni()"> <span>Extraer</span> </button>
+                                                    </div>
+                                                </div>
+
+                                            </div><!-- col-4 -->
+                                            <div class="col-lg-5 input-for-peru" style="display:none;" id="cambiar_size_nombres_completos">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" data-i18n="complete_names_2">Apellidos y Nombres: </label><span class="tx-danger">*</span>
+                                                    <input class="form-control" type="text" id="txt_nombres_completos" placeholder="-" required>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_nombres" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div><!-- col-4 -->
+
+
+                                            <!-- Ubigeo -->
+                                            @*<div class="col-lg-4 input-for-peru" style="display:none;">
+                    <div class="form-group">
+                        <label class="form-control-label" data-i18n="place_birth">Lugar de nacimiento: </label><span class="tx-danger">*</span>
+                        <input class="form-control" type="text" id="txt_lugar_nacimiento" placeholder="-" required>
+                        <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_lugar_nacimiento" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                    </div>
+                </div>*@
+
+                                            <div class="col-lg-4 input-for-peru" style="display:none;">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" data-i18n="">Lugar. Nac. Departamento: </label><span class="tx-danger">*</span>
+                                                    <select class="form-control" id="sl_lugar_nacimiento_departamento" data-placeholder="-" required>
+                                                    </select>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_lugar_nacimiento_departamento" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 input-for-peru" style="display:none;">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" data-i18n="">Lugar. Nac. Provincia: </label><span class="tx-danger">*</span>
+                                                    <select class="form-control" id="sl_lugar_nacimiento_provincia" data-placeholder="-" required>
+                                                    </select>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_lugar_nacimiento_provincia" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 input-for-peru" style="display:none;">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" data-i18n="">Lugar. Nac. Distrito: </label><span class="tx-danger">*</span>
+                                                    <select class="form-control" id="sl_lugar_nacimiento_distrito" data-placeholder="-" required>
+                                                    </select>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_lugar_nacimiento_distrito" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div>
+                                            <!-- -->
+
+                                            <div class="col-lg-4 input-for-peru" style="display:none;">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" data-i18n="date_birth">Fecha de nacimiento: </label><span class="tx-danger">*</span>
+                                                    <input class="form-control" type="date" id="txt_fecha_nacimiento" placeholder="-" required>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_fecha" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div><!-- col-4 -->
+
+                                        }
+                                    }
+
+
+
+
+                                    <!-- col-4Tipo de documento -->
+
+
+
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" id="lbl_modal_register_celular" data-i18n="mobile">Célular: </label><span class="tx-danger">*</span>
+                                            <input class="form-control" type="text" id="txt_celular" placeholder="-" required>
+                                            <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_celular" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                        </div>
+                                    </div><!-- col-4 -->
+
+
+
+
+                                    @{
+                                        if (Context.Request.Cookies["IdPais"].Value == "2")
+                                        {
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" id="lbl_modal_register_direccion" data-i18n="address">Dirección: </label><span class="tx-danger">*</span>
+                                                    <input class="form-control" type="text" id="txt_direccion" placeholder="-" required>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_direccion" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div><!-- col-4 -->
+                                            <div class="col-lg-4" style="display:none;">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" id="lbl_modal_register_telefono" data-i18n="phone">Telefono: </label><span class="tx-danger"></span>
+                                                    <input class="form-control" type="text" id="txt_telefono" placeholder="-" required>
+                                                </div>
+                                            </div><!-- col-4 -->
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" id="lbl_modal_register_departamento" data-i18n="department">Departamento: </label><span class="tx-danger">*</span>
+                                                    <input class="form-control" type="text" id="txt_ciudad" placeholder="-" required>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_departamento" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div><!-- col-4 -->
+
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" id="lbl_modal_register_distrito" data-i18n="district">Ciudad: </label><span class="tx-danger">*</span>
+                                                    <input class="form-control" type="text" id="txt_barrio" placeholder="-" required>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_ciudad" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div><!-- col-4 -->
+                                        }
+                                        else
+                                        {
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" id="lbl_modal_register_telefono" data-i18n="phone">Telefono: </label><span class="tx-danger"></span>
+                                                    <input class="form-control" type="text" id="txt_telefono" placeholder="-" required">
+                                                </div>
+                                            </div><!-- col-4 -->
+                                            <div class="col-lg-4" style="display:none;">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" id="lbl_modal_register_departamento" data-i18n="department">Departamento: </label><span class="tx-danger">*</span>
+                                                    <input class="form-control" type="text" id="txt_ciudad" placeholder="-" required>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_departamento" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div><!-- col-4 -->
+
+                                            <div class="col-lg-4" style="display:none;">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" id="lbl_modal_register_distrito" data-i18n="district">Ciudad: </label><span class="tx-danger">*</span>
+                                                    <input class="form-control" type="text" id="txt_barrio" placeholder="-" required>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_ciudad" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div><!-- col-4 -->
+                                        }
+                                    }
+
+
+                                    @{
+                                        if (Context.Request.Cookies["IdPais"].Value == "2")
+                                        {
+
+                                        }
+                                        else
+                                        {
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" id="lbl_modal_register_direccion" data-i18n="address">Dirección: </label><span class="tx-danger">*</span>
+                                                    <input class="form-control" type="text" id="txt_direccion" placeholder="-" required>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_direccion" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div><!-- col-4 -->
+                                        }
+                                    }
+
+
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" id="lbl_modal_register_email" data-i18n="email">Email: </label><span class="tx-danger">*</span>
+                                            <input class="form-control" type="text" id="txt_email" placeholder="example@atenea.com" required>
+                                            <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_email" data-i18n="insert_valid_email">Valor prueba</li></ul></div>
+
+                                        </div>
+                                    </div><!-- col-4 -->
+
+                                    <div class="col-lg-4">
+                                        <div class="form-group mg-b-10-force">
+                                            <label class="form-control-label" id="lbl_modal_register_servicio" data-i18n="service">Servicio: </label><span class="tx-danger">*</span>
+                                            <select class="form-control" id="sl_servicio" data-placeholder="-" required>
+                                            </select>
+                                            <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_servicio" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                        </div>
+                                    </div><!-- col-4 -->
+
+                                    <div class="col-lg-4">
+                                        <div class="form-group mg-b-10-force">
+                                            <label><span class="tx-danger">&nbsp;</span></label>
+                                            <div class="input-group">
+                                                <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_add_list"><i class="fa fa-plus-circle"></i> <span id="lbl_modal_register_agregar" data-i18n="add">Agregar</span> </button>
+                                            </div>
+                                        </div>
+
+                                    </div><!-- col-4 -->
+                                    <div class="col-lg-4" id="boton_brasil">
+                                        <div class="form-group mg-b-10-force">
+                                            <label><span class="tx-danger">&nbsp;</span></label>
+                                            <div class="input-group">
+                                                <button type="button" class="btn btn-oblong btn-primary btn-block mg-b-2" id="btn_guardar_registro_brasil"><i class="fa fa-save"></i> <span id="lbl_modal_register_save" data-i18n="save">Salvar</span></button>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div><!-- row -->
+
+                                <div class="table-wrapper">
+                                    <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_list" style="width: 100%;">
+                                        <thead class="font-size-8">
+                                            <tr>
+                                                <th class="wd-3p" id="lbl_modal_register_table_id">ID</th>
+                                                <th class="wd-10p" id="lbl_modal_register_table_tipo_documento">T. Doc.</th>
+                                                <th class="wd-10p" id="lbl_modal_register_table_numero_documento">N°. Doc.</th>
+                                                <th class="wd-10p" id="lbl_modal_register_table_telefono">Tel.</th>
+                                                <th class="wd-10p" id="lbl_modal_register_table_celular">Cel.</th>
+                                                <th class="wd-10p" id="lbl_modal_register_table_departamento">Departamento</th>
+                                                <th class="wd-10p" id="lbl_modal_register_table_distrito">Distrito</th>
+                                                <th class="wd-10p" id="lbl_modal_register_table_direccion">Dirección</th>
+                                                <th class="wd-10p" id="lbl_modal_register_table_email">Email</th>
+                                                <th class="wd-10p" id="lbl_modal_register_table_servicio">Serv.</th>
+                                                <th class="wd-5p" id="lbl_modal_register_table_accion">Acción</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="font-size-8" id="tbody_list_add">
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </section>
+                            <div class="row mg-t-10" id="div_register_sl_forma_pago" style="visibility:hidden;">
+                            </div>
+
+                            @{
+                                if (Context.Request.Cookies["IdPais"].Value == "2")
+                                {
+
+                                    <div id="section_completar_informacion" style="display:none;">
+
+                                <div class="row mg-t-10">
+                                    <div class="col-lg-5">
+                                        <div class="form-group">
+                                            <label class="form-control-label" id="lbl_modal_register_facturar_nombre" data-i18n="billing-on-behalf-of">Facturar en nombre de: </label><span class="tx-danger">*</span>
+                                            <select class="form-control" id="sl_facturar_nombre" required>
+                                            </select>
+                                            <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_facturar_nombre" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                        </div>
+                                    </div>
+                                        </div>
+                                        <div>
+                                            <label class="mg-b-10" id="lbl_modal_register_forma_pago" data-i18n="way-to-pay">Forma de pago </label><span class="tx-danger">*</span>
+
+                                            <div class="row mg-t-10" id="div_register_sl_forma_pagos"></div>
+
+                                        </div>
+
+                                        <div class="parsley-select mg-t-30">
+                                            <div class="parsley-input">
+                                                <label id="lbl_modal_register_comentario" data-i18n="comment">Comentario: </label><span class="tx-danger">*</span>
+                                                <input type="text" id="txt_comentario" class="form-control" placeholder="-">
+                                                <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_comentario" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mg-t-30">
+                                            <a id="btn_guardar_registro" class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2 text-white" data-i18n="save"> </a>
+                                        </div>
+
+                                        <div class="content_loader" id="content_loader" style="display:none">
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+
+                                    <h3 id="lbl_modal_register_completar_informacion" data-i18n="complete-information"> <span data-i18n="complete-information">a</span></h3>
+                                    <section id="section_completar_informacion">
+
+                                        <div class="row mg-t-10">
+                                            <div class="col-lg-5">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" id="lbl_modal_register_facturar_nombre" data-i18n="billing-on-behalf-of">Facturar en nombre de: </label><span class="tx-danger">*</span>
+                                                    <select class="form-control" id="sl_facturar_nombre" required>
+                                                    </select>
+                                                    <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_facturar_nombre" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @*col-4*@
+                                        <div>
+                                <label class="mg-b-10" id="lbl_modal_register_forma_pago" data-i18n="way-to-pay">Forma de pago </label><span class="tx-danger">*</span>
+
+                                            <div class="row mg-t-10" id="div_register_sl_forma_pagos"></div>
+
+                                </div>
+
+                                <div class="parsley-select mg-t-30">
+                                    <div class="parsley-input">
+                                        <label id="lbl_modal_register_comentario" data-i18n="comment">Comentario: </label><span class="tx-danger">*</span>
+                                        <input type="text" id="txt_comentario" class="form-control" placeholder="-">
+                                        <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_comentario" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                            </div>
+                                            @*form-group*@
+                                </div>
+
+                                <div class="parsley-select mg-t-30">
+                                    <div class="parsley-input">
+                                        <label id="" data-i18n="">Voucher: </label><span class="tx-danger"> JPG,PNG</span>
+                                        <input type="file" id="file_voucher" accept=".jpg, .png, .jpeg,|image/*" class="form-control" placeholder="-" required>
+                                        <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_file_voucher" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                            </div>
+                                            @*form-group*@
+                                </div>
+
+                                <div class="col-lg-4" style="padding-right: 0px; padding-left: 0px;">
+                                    <div class="form-group mg-b-10-force">
+                                        <label><span class="tx-danger">&nbsp;</span></label>
+                                        <div class="input-group">
+                                            <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_voucher_agregar"><i class="fa fa-plus-circle"></i> <span id="" data-i18n="add">Agregar</span> </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="parsley-select mg-t-30">
+                                            @*Tabla*@
+                                    <div class="table-wrapper">
+                                        <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_voucher_list" style="width: 100%;">
+                                            <thead class="font-size-8">
+                                                <tr>
+                                                            <th class="wd-5p" data-i18n="index">INDEX</th>
+                                                            <th class="wd-15p" data-i18n="name">NOMBRE</th>
+                                                            <th class="wd-15p" data-i18n="action">ACCIÓN</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                                <div class="parsley-select mg-t-30">
+                                    <div class="parsley-input">
+                                                <label id="" data-i18n="attached">Adjunto: </label><span class="tx-danger">  PDF</span>
+                                        <input type="file" id="file_habeas_data" accept="application/pdf" class="form-control" placeholder="-" required>
+                                        <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_file_habeas_data" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                                </div>
+                                            @*form-group*@
+                                        </div>
+                                        @*TABLA PDF'S*@
+                                <div class="col-lg-4" style="padding-right: 0px; padding-left: 0px;">
+                                    <div class="form-group mg-b-10-force">
+                                        <label><span class="tx-danger">&nbsp;</span></label>
+                                        <div class="input-group">
+                                            <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_habeas_agregar"><i class="fa fa-plus-circle"></i> <span id="" data-i18n="add">Agregar</span> </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="parsley-select mg-t-30">
+                                            @*Tabla*@
+                                    <div class="table-wrapper">
+                                        <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_habeas_list" style="width: 100%;">
+                                            <thead class="font-size-8">
+                                                <tr>
+                                                            <th class="wd-5p" data-i18n="index">INDEX</th>
+                                                            <th class="wd-15p" data-i18n="name">NOMBRE</th>
+                                                            <th class="wd-15p" data-i18n="action">ACCIÓN</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="mg-t-30">
+                                    <a id="btn_guardar_registro" class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2 text-white" data-i18n="save"> </a>
+                                </div>
+
+                                <div class="content_loader" id="content_loader" style="display:none">
+                                </div>
+                            </section>
+                                }
+                            }
+
+
+
+                        </div>
+
+                    </div><!-- modal-body -->
+                </div>
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+        <!-- Modal Upload -->
+        
+        <div id="modal_upload" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content bd-0 tx-14">
+                    <div class="modal-header pd-y-20 pd-x-25">
+                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="lbl_title_modal_upload">IMPORTACIÓN</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body pd-25">
+                        <div class="wd-400">
+                            <div class="d-flex mg-b-30">
+                                <div class="parsley-input">
+                                    <label id="lbl_archivo_importacion">Archivo de importación: <span class="tx-danger">*</span><span id="lbl_registros" class="tx-success"></span></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="form-control" id="input_file_importacion">
+                                    </div>
+                                </div><!-- form-group -->
+                            </div>
+                        </div>
+                                @{
+                                    if (Context.Request.Cookies["IdPais"].Value == "2")
+                                    {
+                                <div style="display:none;">
+                                        <div class="wd-400">
+                                            <div class="form-group mg-b-10-force">
+                                                <label class="form-control-label">Facturar en nombre de: <span class="tx-danger">*</span></label>
+                                                <select class="form-control" id="sl_facturar_nombre_importacion" data-placeholder="Choose country">
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div>
+                                            <p class="mg-b-10">Forma de pago <span class="tx-danger">*</span></p>
+                                            <div class="row mg-t-10" id="div_importacion_sl_forma_pago">
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="wd-400">
+                                            <div class="parsley-input">
+                                                <label>Comentario: <span class="tx-danger"></span></label>
+                                                <input type="text" id="txt_comentario_importacion" class="form-control wd-400" placeholder="Ingresar comentario">
+                                            </div><!-- form-group -->
+                                        </div>
+                                </div>
+                                    }
+                                    else
+                                    {
+                        <div class="wd-400">
+                            <div class="form-group mg-b-10-force">
+                                <label class="form-control-label">Facturar en nombre de: <span class="tx-danger">*</span></label>
+                                <select class="form-control" id="sl_facturar_nombre_importacion" data-placeholder="Choose country">
+                                </select>
+                            </div>
+                        </div>
+                        <br />
+                        <div>
+                            <p class="mg-b-10">Forma de pago <span class="tx-danger">*</span></p>
+                            <div class="row mg-t-10" id="div_importacion_sl_forma_pago">
+                            </div>
+                        </div>
+                        <br />
+                        <div class="wd-400">
+                            <div class="parsley-input">
+                                <label>Comentario: <span class="tx-danger"></span></label>
+                                <input type="text" id="txt_comentario_importacion" class="form-control wd-400" placeholder="Ingresar comentario">
+                            </div><!-- form-group -->
+                        </div>
+                        <br />
+                        <div class="wd-400">
+                            <div class="parsley-input">
+                                <label id="" data-i18n="">Voucher </label><span class="tx-danger"></span>
+                                <input type="file" id="file_voucher_importacion" class="form-control" placeholder="-" required>
+                                <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_file_voucher_importacion" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                            </div><!-- form-group -->
+                        </div>
+
+                        <div class="col-lg-4" style="padding-right: 0px; padding-left: 0px;">
+                            <div class="form-group mg-b-10-force">
+                                <label><span class="tx-danger">&nbsp;</span></label>
+                                <div class="input-group">
+                                    <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_voucher_agregar_importacion"><i class="fa fa-plus-circle"></i> <span id="" data-i18n="add">Agregar</span> </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wd-400">
+                            <!-- -->
+                            <div class="parsley-select mg-t-30">
+                                <!-- Tabla -->
+                                <div class="table-wrapper">
+                                    <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_voucher_list_importacion" style="width: 100%;">
+                                        <thead class="font-size-8">
+                                            <tr>
+
+                                                                <th class="wd-5p" data-i18n="index">INDEX</th>
+                                                                <th class="wd-15p" data-i18n="name">NOMBRE</th>
+                                                                <th class="wd-15p" data-i18n="action">ACCIÓN</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <br />
+                        <div class="wd-400">
+                            <div class="parsley-input">
+                                                <label id="" data-i18n="attached">Adjunto: </label><span class="tx-danger">  PDF</span>
+                                <input type="file" id="file_habeas_data_importacion" class="form-control" placeholder="-" required>
+                                <div><ul class="parsley-errors-list filled"><li class="parsley-required" id="ul_error_file_habeas_data_importacion" data-i18n="field_needs_be_filled">Valor prueba</li></ul></div>
+
+                            </div><!-- form-group -->
+                        </div>
+
+                        <div class="col-lg-4" style="padding-right: 0px; padding-left: 0px;">
+                            <div class="form-group mg-b-10-force">
+                                <label><span class="tx-danger">&nbsp;</span></label>
+                                <div class="input-group">
+                                    <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_habeas_agregar_importacion"><i class="fa fa-plus-circle"></i> <span id="" data-i18n="add">Agregar</span> </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- -->
+                        <div class="parsley-select mg-t-30">
+                            <!-- Tabla -->
+                            <div class="table-wrapper">
+                                <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_habeas_list_importacion" style="width: 100%;">
+                                    <thead class="font-size-8">
+                                        <tr>
+                                                            <th class="wd-5p" data-i18n="index">INDEX</th>
+                                                            <th class="wd-15p" data-i18n="name">NOMBRE</th>
+                                                            <th class="wd-15p" data-i18n="action">ACCIÓN</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                                    }
+
+                                }
+
+
+                    </div>
+                    <div class="modal-footer">
+                                <button type="button" class="btn btn-primary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" id="btn_guardar_importacion" data-i18n="save">Guardar</button>
+                                <button type="button" class="btn btn-secondary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" data-dismiss="modal" data-i18n="close">Cerrar</button>
+                    </div>
+                    <div class="modal-body">
+                        <hr />
+                        <span id="txt_message_error" class="tx-danger"></span>
+                    </div>
+                    <div class="content_loader" id="content_loader_upload">
+                    </div>
+                </div>
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+        <!-- Modal Upload -->
+        <div id="modal_Transaction" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content bd-0 tx-14">
+                    <div class="modal-header pd-y-20 pd-x-25">
+                        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="lbl_title_modal_upload">Estado</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body pd-25">
+                        <div class="wd-300">
+                            <div class="d-flex mg-b-30">
+                                <div class="parsley-input" style="width:100%">
+                                    <label id="lbl_archivo_importacion">Modificar Estado: <span class="tx-danger">*</span><span id="lbl_registros" class="tx-success"></span></label>
+                                    <div class="custom-file">
+                                        <select id="cboEstados" class="form-control  ClassStatusCivil" data-placeholder="Choose Browser">
+                                        </select>
+                                    </div>
+                                </div><!-- form-group -->
+                            </div>
+                        </div>
+
+                        <div class="wd-300">
+                            <div class="form-group mg-b-10-force">
+                                <label class="form-control-label">Porcentaje Progreso % :<span class="tx-danger">*</span></label>
+                                <input type="number" maxlength="3" id="txtPorcentaje" class="form-control" placeholder="-" required>
+                                <br />
+                                <input type="checkbox" id="chkEnvioCorreo" name="checkStatus" value=""><span style="margin-left:.2rem">Enviar Correo</span>
+                                <input type="number" id="idIntegrity" class="form-control" style="display:none">
+                            </div>
+                        </div>
+                        <br />
+
+
+                    </div>
+                    <div class="modal-footer">
+                                <button type="button" class="btn btn-primary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" id="btnGuardarEstado"> <span data-i18n="save">Guardar</span></button>
+                                <button type="button" class="btn btn-secondary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" data-dismiss="modal"> <span data-i18n="close">Cerrar</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <hr />
+                        <span id="txt_message_error" class="tx-danger"></span>
+                    </div>
+
+                </div>
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+
+
+
+    </div>
+
+</div>
+
+<script>
+    var urlGetDocumentType = '@Url.Action("GetDocumentType", "Services", new { IdPais = 0 })';
+    var urlGetWorkIntegrity = '@Url.Action("GetWorkIntegrity", "Services")';
+    var urlGetBranchOffices = '@Url.Action("GetBranchOffices", "Services")';
+    var urlGetPayMethod = '@Url.Action("GetPayMethod", "Services")';
+    var urlSaveWorkIntegrity = '@Url.Action("SaveWorkIntegrity", "Services")';
+    var urlConsultRequestIntegrity = '@Url.Action("ConsultRequestIntegrity", "Services")';
+    var urlGetStatusIntegrity = '@Url.Action("GetStatusIntegrity", "Services")';
+    var urlProcesarTramaCollaborator = '@Url.Action("ProcesarTramaCollaborator", "Services")';
+    var urlGetSessionValue = '@Url.Action("GetValueSession", "Login")';
+    var urlGetPrivilegios = '@Url.Action("GetAccess", "Login")';
+    var urlUpdateStatus = '@Url.Action("UpdateStatusIntegrity", "WorkIntegrity")';
+    var urlGetDniApi = '@Url.Action("GetDniApi", "Services")';
+
+    var urlGetDepartamento = '@Url.Action("GetListDepartments", "Ubigeo")';
+    var urlGetProvincia = '@Url.Action("GetListProvinces", "Ubigeo")';
+    var urlGetDistrito = '@Url.Action("GetListDistricts", "Ubigeo")';
+
+    $('#txt_fecha_inicio').val('@FechaInicio');
+    $('#txt_fecha_fin').val('@FechaFin');
+
+
+
+
+
+</script>
+@Scripts.Render("~/bundles/work-integrity")

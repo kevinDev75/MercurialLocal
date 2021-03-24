@@ -1,0 +1,42 @@
+﻿@using Mercurial.CrossCuting.Utilities;
+@model List<Mercurial.DomainEntities.Home.ModelMenu>
+<br />
+@{
+    if (Model != null)
+    {
+        foreach (var item in Model.Where(x => x.NumNivel == "1" && x.status == Mercurial.CrossCuting.Utilities.Enums.Status.active))
+        {
+            <label class="sidebar-label pd-x-10 mg-t-20 op-3 FontMenu">@item.Description</label>
+            <ul class="br-sideleft-menu">
+                @foreach (var Menu in Model.Where(x => x.NumNivel == "2" && x.idModule == item.idModule))
+                {
+                    var countSubMenu = Model.Where(y => y.IdSubMenu == Menu.IdMenu).Count();
+                    var stylMenu = countSubMenu == 0 ? "br-menu-link" : "br-menu-link with-sub";
+                    <li class="br-menu-item">
+                        @if (countSubMenu == 0)
+                        {
+                            <a class="@stylMenu">
+                                <i class="menu-item-icon icon @Menu.icon tx-20"></i>
+                                <span class="menu-item-label">@Html.ActionLink(Menu.Description, Menu.View, Menu.Control, null, new { @class = "page-scroll" })</span>
+                            </a><!-- br-menu-link -->
+                        }
+                        else
+                        {
+                            <a class="@stylMenu">
+                                <i class="menu-item-icon icon @Menu.icon tx-20"></i>
+                                <span class="menu-item-label">@Menu.Description</span>
+                            </a><!-- br-menu-link -->
+                            <ul class="br-menu-sub">
+                                @foreach (var SubMenu in Model.Where(z => z.IdSubMenu == Menu.IdMenu))
+                                {
+                                    <li class="sub-item"><a class="sub-link">@Html.ActionLink(SubMenu.Description, SubMenu.View, SubMenu.Control, null, new { @class = "page-scroll" })</a></li>
+                                }
+                            </ul>
+                        }
+
+                    </li>
+                }
+            </ul>
+        }
+    }
+}

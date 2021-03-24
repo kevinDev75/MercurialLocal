@@ -1,0 +1,382 @@
+﻿
+@{
+    ViewBag.Title = "WorkIntegrityDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    bool OpcionVerVoucher = (bool)ViewData["OpcionVerVoucher"];
+    bool OpcionDescargarHabeasData = (bool)ViewData["OpcionDescargarHabeasData"];
+}
+
+<div class="br-mainpanel">
+    <div class="br-pageheader">
+
+    </div>
+    <div class="br-pagetitle">
+        <i class="icon ion-ios-book-outline"></i>
+        <div>
+            <div class="row">
+                <h4 id="lbl_registro_verificacion" style="margin-left:10px;">Detalle</h4>
+                <h4 style="margin-left:10px; margin-right:10px;">-</h4>
+                <h4 id="lbl_numero_documento">S0001</h4>
+            </div>
+
+        </div>
+    </div>
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+            
+            @*<div class="row">
+
+                    <div class="col-sm-3">
+                        <div class="form-group mg-b-10-force">
+                            <label class="form-control-label" id="lbl_servicio">Servicio: <span class="tx-danger">*</span></label>
+                            <select class="form-control select2">
+                                <option label="[Seleccionar]"></option>
+                                <option value="1">TEST 01</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group mg-b-0">
+                            <label id="lbl_fecha_inicio">Fecha Inicio: <span class="tx-danger">*</span></label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="txt_fecha_inicio" id="txt_fecha_inicio" class="form-control fc-datepicker" placeholder="MM/DD/YYYY">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group mg-b-0">
+                            <label id="lbl_fecha_fin">Fecha Fin: <span class="tx-danger">*</span></label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="txt_fecha_fin" id="txt_fecha_fin" class="form-control fc-datepicker" placeholder="MM/DD/YYYY">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label><span class="tx-danger">&nbsp;</span></label>
+                            <div class="input-group">
+                                <button class="btn btn-oblong btn-warning btn-block mg-b-2" id="btn_buscar"><i class="fa fa-search"></i> <span id="lbl_buscar">Buscar</span> </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <br />
+
+                <hr />*@
+
+            <div class="table-wrapper">
+                @*<div class="row">
+        <div class="col-sm-12">
+            <h6 class="tx-inverse tx-uppercase tx-bold" id="lbl_listado_registro"> Listado de informes</h6>
+        </div>
+        </div>*@
+
+                @if (OpcionVerVoucher == true || OpcionDescargarHabeasData == true)
+                {
+                    Mercurial.DomainEntities.Work.VM.GetWorkIntegrityVm getWorkIntegrityVm = (Mercurial.DomainEntities.Work.VM.GetWorkIntegrityVm)ViewData["WorkIntegrity"];
+                    <div class="row" style="margin-bottom:4px">
+                        @{
+                            if (Context.Request.Cookies["IdPais"].Value == "2")
+                            {
+
+                            }
+                            else
+                            {
+                                <div class="col-sm-12">
+                                    <h6 class="tx-inverse tx-uppercase tx-bold" data-i18n="">Archivos Adjuntos</h6>
+                                    <br />
+                                </div>
+                            }
+                        }
+
+
+
+                        <div class="col-lg-12">
+                            <div class="row">
+                                @if (OpcionVerVoucher && getWorkIntegrityVm.ListVoucher != null && getWorkIntegrityVm.ListVoucher.Count > 0)
+                                {
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label style="font-size:15pt;">Vouchers</label>
+                                            @foreach (var row in getWorkIntegrityVm.ListVoucher)
+                                            {
+                                                byte[] encbuff = System.Text.Encoding.UTF8.GetBytes(row.RutaArchivo);
+                                                string RutaVoucher = Convert.ToBase64String(encbuff);
+
+                                                <label class="rdiobox">
+                                                    <button data-route="@RutaVoucher" data-typefile="@row.ExtensionArchivo" class="btn styleIcon previewClass"><i class="fa fa-folder"></i></button>
+                                                    <b style="font-size:10pt;">@row.NombreArchivo</b>
+                                                </label>
+                                            }
+                                        </div>
+                                    </div>
+                                }
+
+                                @if (OpcionDescargarHabeasData && getWorkIntegrityVm.ListHabeasData != null && getWorkIntegrityVm.ListHabeasData.Count > 0)
+                                {
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label style="font-size:15pt;">Habeas Data</label>
+
+                                            @*<label class="rdiobox">
+                                        <button onclick="downloadFilePDF();" class="btn styleIcon"><i class="fa fa-folder"></i></button>
+                                        <b style="font-size:10pt;">Adjunto</b>
+                                    </label>*@
+
+                                            @foreach (var row in getWorkIntegrityVm.ListHabeasData)
+                                            {
+                                                var ruta = row.RutaArchivo.Replace('\\', '/');
+                                                var nombre = row.NombreArchivo;
+                                                <label class="rdiobox">
+                                                    <button onclick="downloadFilePDF('@ruta','@nombre', '@row.ExtensionArchivo');" class="btn styleIcon"><i class="fa fa-folder"></i></button>
+                                                    <b style="font-size:10pt;">Adjunto</b>
+                                                </label>
+                                            }
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <br />
+                }
+                <div class="row">
+                    @{
+                        if (Context.Request.Cookies["IdPais"].Value == "2")
+                        {
+                            <div class="col-sm-10">
+                                &nbsp;
+                            </div>
+
+                        }
+                        else
+                        {
+                            <div class="col-sm-10">
+                                <h6 class="tx-inverse tx-uppercase tx-bold" id="lbl_listado_registro" data-i18n="record-list">Listado de informes</h6>
+                            </div>
+
+                        }
+                    }
+                    <div class="col-sm-1"  style="display:none">
+                        <label data-i18n="advance">Avance</label>
+
+                        <a href="#" class="btn btn-primary btn-icon rounded-circle" onclick="ChangeStatus()" title="Modificar estado" data-toggle="modal" data-target="#modal_Transaction"> <div><i class="icon ion-clock"></i></div></a>
+
+                    </div>
+
+
+
+                    @*<div class="col-sm-1" id="btn_download_csv" style="display:none">
+                <label data-i18n="download" style="margin-left:22px;">Descargar</label>
+
+                <a href="#" class="btn btn-dark btn-icon rounded-circle" id="btnZip" title="Descargar todos los reportes" style="float: right;"><div><i class="fa fa-book"></i></div></a>
+            </div>*@
+                    @{
+                        if (Context.Request.Cookies["IdPais"].Value == "2")
+                        {
+                            <div class="col-sm-10">
+                                &nbsp;
+                            </div>
+
+                        }
+                        else
+                        {
+
+                            <div class="col-sm-10">
+                                <h6><label class="tx-inverse tx-uppercase tx-bold" data-i18n="comment">Comentario</label> <label class="form-control-label" id="lbl_commentary">-</label></h6>
+
+                            </div>
+                        }
+                    }
+
+
+                </div>
+
+                <br />
+                <br /><br />
+                      <div class="row">
+                          <div class="col-sm-1" id="btn_change_status" style="display:none">
+                              <label data-i18n="advance">Avance</label>
+
+                              <a href="#" class="btn btn-primary btn-icon rounded-circle" onclick="ChangeStatus()" title="Modificar estado" data-toggle="modal" data-target="#modal_Transaction"> <div><i class="icon ion-clock"></i></div></a>
+
+                          </div>
+                          <div class="col-sm-1" id="btn_download_csv">
+                              <label data-i18n="download">Descarga</label>
+
+                              <a href="#" style="margin-bottom:1rem" class="btn btn-dark btn-icon rounded-circle" id="btnSelectZip" title="Descargar reportes Seleccionados"><div><i class="fa fa-book"></i></div></a>
+                              <br />
+                              <li style="list-style:none">
+                                  <input id="chkSelAll" type="checkbox">
+                                  <label for="chkSelAll">Seleccionar todos</label>
+                              </li>
+                          </div>
+                      </div>
+                
+                <br /> <br />
+                <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_data" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th class="wd-10p" style="width: 10px !important;" id="lblCheck">Check</th>
+                            <th class="wd-10p" id="lbl_table_tipo_documento">T. Documento</th>
+                            <th class="wd-10p" id="lbl_table_num_documento">Nro. Documento</th>
+                            <th class="wd-15p">Nombres</th>
+                            <th class="wd-10p" id="lbl_table_num_servicio" data-i18n="services">Serviço </th>
+                            <th class="wd-10p" id="lbl_table_num_departamento" data-i18n="department">Departamento</th>
+                            <th class="wd-10p" id="lbl_table_num_distrito" data-i18n="district">Distrito</th>
+                            <th class="wd-10p" id="lbl_table_num_direccion" data-i18n="address">Endereço</th>
+                            <th class="wd-10p" id="lbl_table_num_email">Email</th>
+                            <th class="wd-10p" id="lbl_table_num_celular">Célular</th>
+                            <th class="wd-10p" id="lbl_table_num_accion" data-i18n="action">Açao</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="modalIMG" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body mb-0 p-0">
+                <img id="imgPreview" src="https://i.gifer.com/YCZH.gif" alt="" style="width:100%">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline-primary btn-rounded btn-md ml-4 text-center" data-dismiss="modal" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Seleccionar Operador</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-lg-12">
+                    <div class="form-group mg-b-10-force">
+                        <label class="form-control-label" data-i18n="">Operador:</label><span class="tx-danger">*</span>
+                        <select class="form-control" id="sl_user_rol" data-placeholder="-" required="">
+                            @*<option>[Seleccionar]</option>
+                                <option value="1"> DNI</option>
+                                <option value="2"> CARNET EXT</option>
+                                <option value="3"> Pasaporte</option>*@
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btn_guardar_user_rol">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Upload -->
+<div id="modal_Transaction" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bd-0 tx-14">
+            <div class="modal-header pd-y-20 pd-x-25">
+                <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="lbl_title_modal_upload">Estado</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body pd-25">
+                <div class="wd-300">
+                    <div class="d-flex mg-b-30">
+                        <div class="parsley-input" style="width:100%">
+                            <label id="lbl_archivo_importacion">Modificar Estado: <span class="tx-danger">*</span><span id="lbl_registros" class="tx-success"></span></label>
+                            <div class="custom-file">
+                                <select id="cboEstados" class="form-control  ClassStatusCivil" data-placeholder="Choose Browser">
+                                </select>
+                            </div>
+                        </div><!-- form-group -->
+                    </div>
+                </div>
+
+                <div class="wd-300">
+                    <div class="form-group mg-b-10-force">
+                        <label class="form-control-label">Porcentaje Progreso % :<span class="tx-danger">*</span></label>
+                        <input type="number" maxlength="3" id="txtPorcentaje" class="form-control" placeholder="-" required>
+                        <br />
+                        <input type="checkbox" id="chkEnvioCorreo" name="checkStatus" value=""><span style="margin-left:.2rem">Enviar Correo</span>
+                        <input type="number" id="idIntegrity" class="form-control" style="display:none">
+                    </div>
+                </div>
+                <br />
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" id="btnGuardarEstado"> <span data-i18n="save">Guardar</span></button>
+                <button type="button" class="btn btn-secondary tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium" data-dismiss="modal"> <span data-i18n="close">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <hr />
+                <span id="txt_message_error" class="tx-danger"></span>
+            </div>
+
+        </div>
+    </div><!-- modal-dialog -->
+</div><!-- modal -->
+
+<script>
+    var urlGetDetailWorkIntegrity = '@Url.Action("GetListWorkIntegrityDetail", "Services")';
+    var urlGetdonwloadFile = '@Url.Action("GetFileDonwload", "Services")';
+    var urlValidateFile = '@Url.Action("ValidateFile", "Services")';
+    var urlValidateFileExcel = '@Url.Action("ValidateFileExcel", "Services")';
+    var urlGetPrivilegios = '@Url.Action("GetAccess", "Login")';
+    var urlGetAccess = '@Url.Action("GetAccess", "Login")';
+    var urlGetdonwloadFileExcel = '@Url.Action("GetFileDonwloadExcel", "Services")';
+    var urlGetdonwloadFile2 = '@Url.Action("GetFileDownload", "Services")';
+    var urlDownloadBase64  = '@Url.Action("GetPreviewFileBase64", "Services")';
+    var urlGetUserRol  = '@Url.Action("GetUsers_Rol", "Users")';
+    var urlSetUserRol = '@Url.Action("UpdateUserInWorkIntegrityDetail", "WorkIntegrity")';
+    var urlGetCommentaryWorkIntegrity = '@Url.Action("GetCommentaryWorkIntegrity", "WorkIntegrity")';
+    var urlGetCommentaryWorkIntegrity = '@Url.Action("GetCommentaryWorkIntegrity", "WorkIntegrity")';
+    var UrlGetFilesZip= '@Url.Action("GenerateZipReport", "WorkIntegrity")';
+    var urlUpdateStatus = '@Url.Action("UpdateStatusIntegrity", "WorkIntegrity")';
+    var urlConsultRequestIntegrity = '@Url.Action("ConsultRequestIntegrity", "Services")';
+    var urlGetStatusIntegrity = '@Url.Action("GetStatusIntegrity", "Services")';
+    var urlGetWorkIntegrity2 = '@Url.Action("GetWorkIntegrity2", "Services")';
+
+
+     var UrlGetFilesSelect= '@Url.Action("GenerateZipSelect", "WorkIntegrity")';
+
+
+</script>
+
+@Scripts.Render("~/bundles/work-integrity-detail")
